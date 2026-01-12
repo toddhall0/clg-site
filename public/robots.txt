@@ -1,0 +1,5 @@
+# robots.txt for Camelback Law Group
+User-agent: *
+Allow: /
+
+Sitemap: https://www.clglawaz.com/sitemap.xml

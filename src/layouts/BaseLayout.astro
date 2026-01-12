@@ -1,0 +1,638 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// TODO: Confirm business information
+const businessInfo = {
+  name: "Camelback Law Group",
+  phone: "(602) 899-1383", // TODO: confirm
+  email: "info@clglawaz.com", // TODO: confirm
+  address: {
+    street: "2720 E Camelback Rd",
+    city: "Phoenix",
+    state: "AZ",
+    zip: "85016"
+  },
+  url: "https://www.clglawaz.com"
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "LegalService"],
+  "@id": businessInfo.url,
+  "name": businessInfo.name,
+  "description": description,
+  "url": businessInfo.url,
+  "telephone": businessInfo.phone,
+  "email": businessInfo.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": businessInfo.address.street,
+    "addressLocality": businessInfo.address.city,
+    "addressRegion": businessInfo.address.state,
+    "postalCode": businessInfo.address.zip,
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Arizona"
+  },
+  "priceRange": "$$$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:30",
+    "closes": "17:30"
+  },
+  "sameAs": []
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title}>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonicalURL}>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:site_name" content={businessInfo.name}>
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content={canonicalURL}>
+  <meta property="twitter:title" content={title}>
+  <meta property="twitter:description" content={description}>
+  
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="US-AZ">
+  <meta name="geo.placename" content="Phoenix">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+  
+  <!-- Favicon (placeholder) -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="/" class="logo">
+        <span class="logo-text">Camelback Law Group</span>
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Schedule a Consultation</a>
+    </nav>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- About Column -->
+        <div class="footer-col footer-about">
+          <h3>Camelback Law Group</h3>
+          <p>A boutique commercial real estate law firm serving Arizona developers, investors, lenders, and homebuilders with sophisticated transaction counsel.</p>
+        </div>
+        
+        <!-- Services Column -->
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Commercial Transactions</a></li>
+            <li><a href="#services">Purchase & Sale Agreements</a></li>
+            <li><a href="#services">Commercial Leasing</a></li>
+            <li><a href="#services">Due Diligence & Title</a></li>
+            <li><a href="#services">Loan Opinions</a></li>
+            <li><a href="#services">Entity Structuring</a></li>
+          </ul>
+        </div>
+        
+        <!-- Industries Column -->
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <ul>
+            <li><a href="#industries">Developers</a></li>
+            <li><a href="#industries">Investors</a></li>
+            <li><a href="#industries">Homebuilders</a></li>
+            <li><a href="#industries">Lenders</a></li>
+            <li><a href="#industries">Brokers</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Column -->
+        <div class="footer-col footer-contact">
+          <h4>Contact</h4>
+          <address>
+            <p>{businessInfo.address.street}<br>
+            {businessInfo.address.city}, {businessInfo.address.state} {businessInfo.address.zip}</p>
+            <p><a href={`tel:${businessInfo.phone.replace(/[^0-9]/g, '')}`}>{businessInfo.phone}</a></p>
+            <p><a href={`mailto:${businessInfo.email}`}>{businessInfo.email}</a></p>
+          </address>
+          
+          <!-- Google Maps Embed -->
+          <div class="footer-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.0!2d-111.9423!3d33.5092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDMwJzMzLjEiTiAxMTHCsDU2JzMwLjAiVw!5e0!3m2!1sen!2sus!4v1"
+              width="100%" 
+              height="150" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Camelback Law Group Office Location"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Camelback Law Group. All rights reserved.</p>
+        <p class="footer-disclaimer">This website is for informational purposes only and does not constitute legal advice. Attorney advertising.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle?.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+      navLinks?.classList.toggle('active');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            navLinks?.classList.remove('active');
+            menuToggle?.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+
+    // Sticky header shadow on scroll
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header?.classList.add('scrolled');
+      } else {
+        header?.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
+
+<style is:global>
+  /* ===== CSS Variables ===== */
+  :root {
+    /* Colors - Teal theme based on CLG logo */
+    --color-charcoal: #1a1f1f;
+    --color-charcoal-light: #232a2a;
+    --color-charcoal-lighter: #2d3636;
+    --color-teal: #1a9ba5;
+    --color-teal-light: #2eb8c4;
+    --color-teal-dark: #147a82;
+    --color-teal-sky: #a8d8dc;
+    --color-teal-sky-dark: #7cc5ca;
+    --color-slate: #1e3a3f;
+    --color-slate-light: #2a4d52;
+    --color-slate-dark: #152a2d;
+    --color-cream: #f5f5f2;
+    --color-cream-dark: #e8e8e4;
+    --color-white: #ffffff;
+    --color-gray-400: #9ca3a3;
+    --color-gray-500: #6b7575;
+    --color-gray-600: #4b5555;
+    
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+    
+    /* Layout */
+    --max-width: 1200px;
+    --header-height: 80px;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 400ms ease;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ===== Reset & Base ===== */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-cream);
+    background-color: var(--color-charcoal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  a:hover {
+    color: var(--color-teal-light);
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  /* ===== Typography ===== */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+  }
+
+  h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+  h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+  h4 { font-size: 1.25rem; }
+
+  p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ===== Header ===== */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: rgba(26, 26, 31, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: box-shadow var(--transition-base);
+  }
+
+  .site-header.scrolled {
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-container {
+    max-width: var(--max-width);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+
+  .logo-text {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-white);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-cream);
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-teal);
+    transition: width var(--transition-base);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-cta {
+    flex-shrink: 0;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-white);
+    background: var(--color-teal);
+    border-radius: 4px;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .nav-cta:hover {
+    color: var(--color-white);
+    background: var(--color-teal-light);
+    transform: translateY(-1px);
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    width: 32px;
+    height: 32px;
+    position: relative;
+  }
+
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--color-cream);
+    transition: transform var(--transition-base);
+  }
+
+  .hamburger {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    left: 0;
+  }
+
+  .hamburger::before { top: -7px; }
+  .hamburger::after { top: 7px; }
+
+  /* ===== Footer ===== */
+  .site-footer {
+    background: var(--color-charcoal-light);
+    border-top: 1px solid var(--color-charcoal-lighter);
+    padding: var(--spacing-3xl) 0 var(--spacing-lg);
+  }
+
+  .footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .footer-col h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-teal);
+  }
+
+  .footer-col h4 {
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-teal);
+  }
+
+  .footer-about p {
+    font-size: 0.95rem;
+    color: var(--color-gray-400);
+    line-height: 1.7;
+  }
+
+  .footer-col ul li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .footer-col ul a {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+  }
+
+  .footer-col ul a:hover {
+    color: var(--color-teal-light);
+  }
+
+  .footer-contact address {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .footer-contact address p {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .footer-contact a:hover {
+    color: var(--color-teal-light);
+  }
+
+  .footer-map {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .footer-map iframe {
+    display: block;
+    filter: grayscale(80%) contrast(0.9) brightness(0.8);
+    transition: filter var(--transition-base);
+  }
+
+  .footer-map:hover iframe {
+    filter: grayscale(50%) contrast(1) brightness(0.9);
+  }
+
+  .footer-bottom {
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-charcoal-lighter);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+  }
+
+  .footer-disclaimer {
+    margin-top: var(--spacing-xs);
+    font-size: 0.8rem;
+    color: var(--color-gray-600);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-about {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background: var(--color-charcoal);
+      flex-direction: column;
+      padding: var(--spacing-lg);
+      gap: var(--spacing-md);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform var(--transition-base), opacity var(--transition-base), visibility var(--transition-base);
+      border-bottom: 1px solid var(--color-charcoal-lighter);
+    }
+
+    .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .mobile-menu-toggle {
+      display: block;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .footer-about {
+      grid-column: 1;
+    }
+  }
+</style>
