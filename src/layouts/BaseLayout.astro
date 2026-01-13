@@ -10,7 +10,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // TODO: Confirm business information
 const businessInfo = {
   name: "Camelback Law Group",
-  phone: "(602) 899-1383", // TODO: confirm
+  phone: "(480) 203-3039",
   email: "info@clglawaz.com", // TODO: confirm
   address: {
     street: "2720 E Camelback Rd",
@@ -23,10 +23,10 @@ const businessInfo = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "LegalService"],
+  "@type": ["LocalBusiness", "LegalService", "ProfessionalService"],
   "@id": businessInfo.url,
   "name": businessInfo.name,
-  "description": description,
+  "description": "Camelback Law Group is a boutique commercial real estate law firm in Phoenix, Arizona serving developers, investors, lenders, and homebuilders with sophisticated transaction counsel.",
   "url": businessInfo.url,
   "telephone": businessInfo.phone,
   "email": businessInfo.email,
@@ -38,10 +38,21 @@ const jsonLd = {
     "postalCode": businessInfo.address.zip,
     "addressCountry": "US"
   },
-  "areaServed": {
-    "@type": "State",
-    "name": "Arizona"
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "33.5097",
+    "longitude": "-112.0416"
   },
+  "areaServed": [
+    { "@type": "State", "name": "Arizona" },
+    { "@type": "City", "name": "Phoenix" },
+    { "@type": "City", "name": "Scottsdale" },
+    { "@type": "City", "name": "Tempe" },
+    { "@type": "City", "name": "Mesa" },
+    { "@type": "City", "name": "Chandler" },
+    { "@type": "City", "name": "Gilbert" },
+    { "@type": "City", "name": "Glendale" }
+  ],
   "priceRange": "$$$$",
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -49,6 +60,73 @@ const jsonLd = {
     "opens": "08:30",
     "closes": "17:30"
   },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Commercial Real Estate Legal Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Real Estate Transactions",
+          "description": "Structuring, negotiation, and closing support for commercial real estate transactions across asset types."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Purchase & Sale Agreements",
+          "description": "Risk allocation, contingencies, due diligence, and closing mechanics for commercial property transactions."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Commercial Leasing",
+          "description": "Retail, office, and industrial lease negotiation and drafting for landlords and tenants."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Due Diligence & Title Review",
+          "description": "Title and survey review, exceptions analysis, endorsements, and due diligence planning."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Loan Opinions & Real Estate Finance",
+          "description": "Lender-ready loan opinion letters including FHA/HUD multifamily transactions."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Entity Structuring",
+          "description": "LLCs, joint ventures, limited partnerships, governance documents, and investor protections."
+        }
+      }
+    ]
+  },
+  "knowsAbout": [
+    "Commercial Real Estate Law",
+    "Real Estate Transactions",
+    "Purchase and Sale Agreements",
+    "Commercial Leasing",
+    "Title Review",
+    "Due Diligence",
+    "Loan Opinions",
+    "FHA/HUD Multifamily",
+    "Entity Structuring",
+    "Arizona Real Estate Law",
+    "Phoenix Commercial Real Estate"
+  ],
   "sameAs": []
 };
 ---
@@ -64,8 +142,11 @@ const jsonLd = {
   <title>{title}</title>
   <meta name="title" content={title}>
   <meta name="description" content={description}>
+  <meta name="keywords" content="commercial real estate attorney Phoenix, Arizona real estate lawyer, commercial property lawyer, real estate transaction attorney, purchase agreement lawyer, commercial lease attorney, title review attorney, due diligence lawyer, loan opinion attorney, FHA HUD attorney, real estate closing attorney Phoenix, commercial real estate law firm Arizona, Scottsdale real estate attorney, Mesa real estate lawyer, Tempe commercial property attorney">
+  <meta name="author" content="Camelback Law Group">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href={canonicalURL}>
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content={canonicalURL}>
@@ -112,6 +193,7 @@ const jsonLd = {
         <li><a href="#services">Services</a></li>
         <li><a href="#resource">Resources</a></li>
         <li><a href="#insights">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="nav-cta">Schedule a Consultation</a>
     </nav>
@@ -169,7 +251,7 @@ const jsonLd = {
           <!-- Google Maps Embed -->
           <div class="footer-map">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.0!2d-111.9423!3d33.5092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDMwJzMzLjEiTiAxMTHCsDU2JzMwLjAiVw!5e0!3m2!1sen!2sus!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.4!2d-112.0416!3d33.5097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0d5a7e6b8a1d%3A0x1234567890abcdef!2s2720%20E%20Camelback%20Rd%2C%20Phoenix%2C%20AZ%2085016!5e0!3m2!1sen!2sus!4v1"
               width="100%" 
               height="150" 
               style="border:0;" 
