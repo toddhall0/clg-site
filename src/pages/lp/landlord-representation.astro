@@ -1,0 +1,528 @@
+---
+const title = "Landlord Representation | Commercial Lease Attorneys | Camelback Law Group";
+const description = "Commercial lease drafting and enforcement for landlords. Protect your property with experienced Phoenix landlord attorneys. Call (480) 203-3039.";
+const canonicalURL = "https://www.clglawaz.com/lp/landlord-representation";
+
+const businessInfo = {
+  name: "Camelback Law Group",
+  phone: "(480) 203-3039",
+  phoneRaw: "4802033039",
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1002547078"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-1002547078');
+  </script>
+
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href={canonicalURL}>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="lp-header">
+    <nav class="header-container">
+      <a href="/" class="logo">
+        <span class="logo-text">Camelback Law Group</span>
+      </a>
+      <a href={`tel:${businessInfo.phoneRaw}`} class="header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        <span>{businessInfo.phone}</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <p class="geo-indicator">Phoenix, Arizona</p>
+          <h1>Landlord Representation</h1>
+          <p class="hero-subhead">Drafting & enforcement. Protect your property.</p>
+
+          <div class="content-section">
+            <h2>Legal Counsel for Commercial Landlords</h2>
+            <p>Your commercial property is a significant investment. Protecting that investment requires well-drafted leases, proper documentation, and—when necessary—effective enforcement of your rights as a landlord.</p>
+
+            <p>Our landlord representation services include:</p>
+
+            <ul class="feature-list">
+              <li><strong>Lease Drafting</strong> — Custom commercial leases that protect your interests and minimize disputes</li>
+              <li><strong>Lease Negotiations</strong> — Advocating for favorable terms while maintaining tenant relationships</li>
+              <li><strong>Lease Amendments</strong> — Modifications, extensions, and renewals done right</li>
+              <li><strong>Default Notices</strong> — Proper documentation when tenants breach lease terms</li>
+              <li><strong>Lease Enforcement</strong> — Protecting your rights when tenants don't perform</li>
+              <li><strong>Estoppel Certificates</strong> — Accurate documentation for property sales or refinancing</li>
+              <li><strong>Subordination Agreements</strong> — Coordinating lender and tenant priorities</li>
+            </ul>
+
+            <p>We help landlords create clear expectations from the start and address problems efficiently when they arise.</p>
+          </div>
+
+          <a href={`tel:${businessInfo.phoneRaw}`} class="phone-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            Call {businessInfo.phone}
+          </a>
+        </div>
+
+        <div class="hero-form-container" id="contact-form">
+          <div class="form-header">
+            <h2>Discuss Your Property</h2>
+            <p>Response within one business day.</p>
+          </div>
+          <form
+            name="lp-landlord-rep"
+            method="POST"
+            action="/thank-you-contact"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="hero-form"
+          >
+            <input type="hidden" name="form-name" value="lp-landlord-rep">
+            <input type="hidden" name="source" value="Google Ads - Landlord Representation">
+            <p class="hidden" aria-hidden="true">
+              <label>Don't fill this out: <input name="bot-field"></label>
+            </p>
+
+            <div class="form-group">
+              <label for="name">Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="Your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="you@company.com">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            </div>
+
+            <div class="form-group">
+              <label for="property-type">Property Type</label>
+              <select id="property-type" name="property-type">
+                <option value="">Select property type</option>
+                <option value="retail">Retail</option>
+                <option value="office">Office</option>
+                <option value="industrial">Industrial/Warehouse</option>
+                <option value="mixed-use">Mixed-Use</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">How Can We Help?</label>
+              <textarea id="message" name="message" rows="3" placeholder="New lease, tenant issue, or other landlord matter?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Get Landlord Representation</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lp-footer">
+    <div class="footer-container">
+      <div class="footer-main">
+        <span class="footer-logo">Camelback Law Group</span>
+        <a href={`tel:${businessInfo.phoneRaw}`} class="footer-phone">{businessInfo.phone}</a>
+      </div>
+      <div class="footer-legal">
+        <p>&copy; {new Date().getFullYear()} Camelback Law Group. All rights reserved.</p>
+        <p class="disclaimer">This website is for informational purposes only and does not constitute legal advice.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style>
+  :root {
+    --color-charcoal: #1a1f1f;
+    --color-charcoal-light: #232a2a;
+    --color-charcoal-lighter: #2d3636;
+    --color-teal: #1a9ba5;
+    --color-teal-light: #2eb8c4;
+    --color-teal-dark: #147a82;
+    --color-copper: #b87333;
+    --color-copper-light: #d4894a;
+    --color-cream: #f5f5f2;
+    --color-white: #ffffff;
+    --color-gray-400: #9ca3a3;
+    --color-gray-500: #6b7575;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --max-width: 1100px;
+    --header-height: 70px;
+    --transition-fast: 150ms ease;
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-cream);
+    background-color: var(--color-charcoal);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  .hidden { display: none !important; }
+
+  .lp-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: rgba(26, 26, 31, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+  }
+
+  .header-container {
+    max-width: var(--max-width);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-text {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-white);
+  }
+
+  .header-phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-teal);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-white);
+    transition: background var(--transition-fast);
+  }
+
+  .header-phone:hover { background: var(--color-teal-light); }
+  .header-phone svg { width: 18px; height: 18px; }
+
+  .hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    min-height: 100vh;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.12) 0%, transparent 50%),
+      linear-gradient(160deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 100%);
+    z-index: -1;
+  }
+
+  .hero-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+
+  .geo-indicator {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-content h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .hero-subhead {
+    font-size: 1.25rem;
+    color: var(--color-teal);
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .content-section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .content-section h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .content-section p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .feature-list {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-md);
+  }
+
+  .feature-list li {
+    list-style: disc;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-cream);
+  }
+
+  .feature-list li strong {
+    color: var(--color-white);
+  }
+
+  .phone-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--color-copper);
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--color-white);
+    transition: background var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .phone-cta:hover {
+    background: var(--color-copper-light);
+    transform: translateY(-2px);
+  }
+
+  .phone-cta svg { width: 22px; height: 22px; }
+
+  .hero-form-container {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: sticky;
+    top: calc(var(--header-height) + var(--spacing-md));
+  }
+
+  .form-header {
+    background: var(--color-teal-dark);
+    padding: var(--spacing-md) var(--spacing-lg);
+    text-align: center;
+  }
+
+  .form-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 0.25rem;
+  }
+
+  .form-header p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .hero-form {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-cream);
+  }
+
+  .required { color: var(--color-copper); }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    color: var(--color-white);
+    background: var(--color-charcoal);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 4px;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--color-gray-500);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 3px rgba(26, 155, 165, 0.15);
+  }
+
+  .form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239ca3af'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25rem;
+    padding-right: 2.5rem;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .btn-submit {
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    color: var(--color-white);
+    background: var(--color-copper);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .btn-submit:hover {
+    background: var(--color-copper-light);
+    transform: translateY(-2px);
+  }
+
+  .lp-footer {
+    padding: var(--spacing-lg) 0;
+    background: var(--color-charcoal);
+    border-top: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    text-align: center;
+  }
+
+  .footer-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-teal);
+  }
+
+  .footer-phone {
+    font-weight: 600;
+    color: var(--color-cream);
+  }
+
+  .footer-phone:hover { color: var(--color-teal-light); }
+
+  .footer-legal {
+    font-size: 0.85rem;
+    color: var(--color-gray-500);
+  }
+
+  .disclaimer {
+    margin-top: var(--spacing-xs);
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .hero-content { text-align: center; }
+    .feature-list { text-align: left; }
+
+    .hero-form-container {
+      position: static;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header-phone span { display: none; }
+    .header-phone { padding: 0.5rem; }
+    .footer-main { flex-direction: column; gap: var(--spacing-sm); }
+  }
+</style>
