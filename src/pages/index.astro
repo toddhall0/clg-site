@@ -336,35 +336,163 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
         <h2>Practical Insights from the Deal Table</h2>
         <p>Short, useful posts designed to help deal teams spot issues early and keep momentum to closing.</p>
       </header>
-      
-      <div class="insights-grid">
-        <article class="insight-card">
-          <span class="insight-category">Purchase Agreements</span>
-          <h3>Key Issues in Arizona Commercial Purchase Agreements</h3>
-          <p>Essential provisions and common pitfalls in commercial real estate contracts.</p>
-          <a href="/insights/arizona-commercial-purchase-agreements" class="insight-link">Read More →</a>
-        </article>
-        
-        <article class="insight-card">
-          <span class="insight-category">Title & Survey</span>
-          <h3>Understanding Title Reports and Survey Issues</h3>
-          <p>What buyers need to know about title commitments and ALTA surveys in Arizona transactions.</p>
-          <a href="/insights/title-report-survey-issues" class="insight-link">Read More →</a>
-        </article>
-        
-        <article class="insight-card">
-          <span class="insight-category">Due Diligence</span>
-          <h3>Due Diligence Mistakes That Delay Closings</h3>
-          <p>Practical tips to keep your transaction timeline on track.</p>
-          <a href="/insights/due-diligence-mistakes-delay-closings" class="insight-link">Read More →</a>
-        </article>
+
+      <div class="insights-carousel-wrapper">
+        <div class="insights-carousel" id="insights-carousel">
+          <article class="insight-card">
+            <span class="insight-category">Purchase Agreements</span>
+            <h3>Key Issues in Arizona Commercial Purchase Agreements</h3>
+            <p>Essential provisions and common pitfalls in commercial real estate contracts.</p>
+            <a href="/insights/arizona-commercial-purchase-agreements" class="insight-link">Read More →</a>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-category">Title & Survey</span>
+            <h3>Understanding Title Reports and Survey Issues</h3>
+            <p>What buyers need to know about title commitments and ALTA surveys in Arizona transactions.</p>
+            <a href="/insights/title-report-survey-issues" class="insight-link">Read More →</a>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-category">Due Diligence</span>
+            <h3>Due Diligence Mistakes That Delay Closings</h3>
+            <p>Practical tips to keep your transaction timeline on track.</p>
+            <a href="/insights/due-diligence-mistakes-delay-closings" class="insight-link">Read More →</a>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-category">Commercial Leasing</span>
+            <h3>Commercial Lease Review: What We Analyze</h3>
+            <p>We analyze every clause to protect your interests before you sign.</p>
+            <a href="/insights/lease-review-services" class="insight-link">Read More →</a>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-category">Commercial Leasing</span>
+            <h3>Lease Negotiation Strategies for Stronger Terms</h3>
+            <p>Experienced advocates help you secure favorable lease terms.</p>
+            <a href="/insights/lease-negotiation" class="insight-link">Read More →</a>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-category">Commercial Leasing</span>
+            <h3>Landlord Representation: Protecting Your Property</h3>
+            <p>Drafting and enforcement services for commercial landlords.</p>
+            <a href="/insights/landlord-representation" class="insight-link">Read More →</a>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-category">Commercial Leasing</span>
+            <h3>Tenant Representation: Leveling the Playing Field</h3>
+            <p>We fight for your terms in commercial lease negotiations.</p>
+            <a href="/insights/tenant-representation" class="insight-link">Read More →</a>
+          </article>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-btn carousel-prev" aria-label="Previous articles">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <div class="carousel-dots" id="carousel-dots"></div>
+          <button class="carousel-btn carousel-next" aria-label="Next articles">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
       </div>
-      
+
       <div class="insights-cta">
         <a href="#contact" class="btn btn-secondary">Subscribe to Updates</a>
       </div>
     </div>
   </section>
+
+  <script>
+    // Insights Carousel
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.getElementById('insights-carousel');
+      const dotsContainer = document.getElementById('carousel-dots');
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+
+      if (!carousel) return;
+
+      const cards = carousel.querySelectorAll('.insight-card');
+      const totalCards = cards.length;
+      const visibleCards = window.innerWidth <= 768 ? 1 : 3;
+      const totalSlides = Math.ceil(totalCards / visibleCards);
+      let currentSlide = 0;
+      let autoRotateInterval;
+
+      // Create dots
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer?.appendChild(dot);
+      }
+
+      const dots = dotsContainer?.querySelectorAll('.carousel-dot');
+
+      function updateCarousel() {
+        const cardWidth = cards[0]?.offsetWidth || 0;
+        const gap = 24; // var(--spacing-md) = 1.5rem = 24px
+        const offset = currentSlide * (cardWidth + gap) * visibleCards;
+        carousel.style.transform = `translateX(-${offset}px)`;
+
+        dots?.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentSlide);
+        });
+      }
+
+      function goToSlide(index) {
+        currentSlide = index;
+        if (currentSlide >= totalSlides) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = totalSlides - 1;
+        updateCarousel();
+        resetAutoRotate();
+      }
+
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentSlide - 1);
+      }
+
+      function startAutoRotate() {
+        autoRotateInterval = setInterval(nextSlide, 7000);
+      }
+
+      function resetAutoRotate() {
+        clearInterval(autoRotateInterval);
+        startAutoRotate();
+      }
+
+      prevBtn?.addEventListener('click', prevSlide);
+      nextBtn?.addEventListener('click', nextSlide);
+
+      // Pause on hover
+      carousel.addEventListener('mouseenter', () => clearInterval(autoRotateInterval));
+      carousel.addEventListener('mouseleave', startAutoRotate);
+
+      // Handle resize
+      window.addEventListener('resize', () => {
+        const newVisibleCards = window.innerWidth <= 768 ? 1 : 3;
+        if (newVisibleCards !== visibleCards) {
+          location.reload();
+        }
+        updateCarousel();
+      });
+
+      startAutoRotate();
+    });
+  </script>
 
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact" class="section contact">
@@ -1065,14 +1193,20 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     text-align: center;
   }
 
-  /* ===== INSIGHTS ===== */
-  .insights-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  /* ===== INSIGHTS CAROUSEL ===== */
+  .insights-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .insights-carousel {
+    display: flex;
     gap: var(--spacing-lg);
+    transition: transform 0.5s ease;
   }
 
   .insight-card {
+    flex: 0 0 calc((100% - 2 * var(--spacing-lg)) / 3);
     background: var(--color-charcoal-light);
     border: 1px solid var(--color-charcoal-lighter);
     border-radius: 8px;
@@ -1116,6 +1250,58 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-teal);
+  }
+
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 50%;
+    color: var(--color-cream);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .carousel-btn:hover {
+    background: var(--color-teal);
+    border-color: var(--color-teal);
+  }
+
+  .carousel-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .carousel-dots {
+    display: flex;
+    gap: var(--spacing-xs);
+  }
+
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-charcoal-lighter);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+  }
+
+  .carousel-dot.active,
+  .carousel-dot:hover {
+    background: var(--color-teal);
   }
 
   .insights-cta {
@@ -1222,8 +1408,8 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .insights-grid {
-      grid-template-columns: 1fr;
+    .insight-card {
+      flex: 0 0 calc((100% - var(--spacing-lg)) / 2);
     }
 
     .contact-grid {
@@ -1273,6 +1459,10 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
 
     .form-row {
       grid-template-columns: 1fr;
+    }
+
+    .insight-card {
+      flex: 0 0 100%;
     }
   }
 
