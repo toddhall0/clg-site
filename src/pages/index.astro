@@ -799,6 +799,31 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     position: absolute;
     inset: 0;
     background:
+      /* Corporate texture - diagonal lines */
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 30px,
+        rgba(26, 155, 165, 0.08) 30px,
+        rgba(26, 155, 165, 0.08) 31px
+      ),
+      /* Corporate texture - vertical grid */
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 60px,
+        rgba(26, 155, 165, 0.06) 60px,
+        rgba(26, 155, 165, 0.06) 61px
+      ),
+      /* Corporate texture - horizontal grid */
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 60px,
+        rgba(168, 216, 220, 0.06) 60px,
+        rgba(168, 216, 220, 0.06) 61px
+      ),
+      /* Original gradients */
       radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.12) 0%, transparent 50%),
       radial-gradient(ellipse 60% 40% at 80% 60%, rgba(168, 216, 220, 0.1) 0%, transparent 50%),
       linear-gradient(160deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 50%, var(--color-charcoal) 100%);
