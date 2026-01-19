@@ -179,8 +179,8 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: var(--spacing-2xl);
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-xl);
     align-items: center;
   }
 
@@ -192,9 +192,11 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
     width: 100%;
     aspect-ratio: 4/5;
     object-fit: cover;
+    object-position: center top;
     border-radius: 8px;
     border: 3px solid var(--color-charcoal-lighter);
     box-shadow: var(--shadow-lg);
+    image-rendering: -webkit-optimize-contrast;
   }
 
   .member-intro h1 {
@@ -237,7 +239,7 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
 
   /* Main Content */
   .member-content {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-2xl) 0;
   }
 
   .member-container {
@@ -247,8 +249,8 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
   }
 
   .member-section {
-    margin-bottom: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
     border-bottom: 1px solid var(--color-charcoal-lighter);
   }
 
@@ -257,18 +259,18 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
   }
 
   .member-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: var(--color-teal);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   .section-content {
     color: var(--color-cream);
-    line-height: 1.8;
+    line-height: 1.65;
   }
 
   .section-content p {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   .section-content p:last-child {
@@ -283,8 +285,8 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
 
   .work-list li {
     position: relative;
-    padding-left: var(--spacing-lg);
-    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
     color: var(--color-cream);
   }
 
@@ -292,15 +294,15 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
     content: '';
     position: absolute;
     left: 0;
-    top: 10px;
-    width: 8px;
-    height: 8px;
+    top: 8px;
+    width: 6px;
+    height: 6px;
     background: var(--color-teal);
     border-radius: 50%;
   }
 
   .education-list li {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   .education-list li strong {
@@ -317,17 +319,17 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
   .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
   }
 
   .two-column h3,
   .community-service h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: var(--font-body);
     font-weight: 600;
     color: var(--color-white);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
   }
 
   .two-column ul,
@@ -349,18 +351,18 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
     background: var(--color-charcoal-light);
     border: 1px solid var(--color-charcoal-lighter);
     border-radius: 8px;
-    padding: var(--spacing-xl);
-    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
   }
 
   .member-cta h3 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     margin-bottom: var(--spacing-xs);
   }
 
   .member-cta p {
     color: var(--color-gray-400);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   /* Buttons */
