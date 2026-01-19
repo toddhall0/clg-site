@@ -1,0 +1,447 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const member = {
+  name: "James J. Hamula",
+  role: "Partner",
+  email: "jhamula@clglawaz.com",
+  phone: "(602) 753-8319",
+  photo: "/images/team/james-hamula.jpg",
+  linkedin: "",
+};
+
+const title = `${member.name} | ${member.role} | Camelback Law Group`;
+const description = `James J. Hamula is a Partner at Camelback Law Group with over 35 years of experience in environmental, real estate, and business law, advising clients on complex, high-stakes legal challenges.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="team-member-page">
+    <!-- Hero Section -->
+    <header class="member-hero">
+      <div class="member-hero-bg"></div>
+      <div class="member-hero-container">
+        <div class="member-photo-wrapper">
+          <img src={member.photo} alt={member.name} class="member-photo" />
+        </div>
+        <div class="member-intro">
+          <h1>{member.name}</h1>
+          <p class="member-role">{member.role}</p>
+          <div class="member-contact">
+            <a href={`mailto:${member.email}`} class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              {member.email}
+            </a>
+            <a href={`tel:${member.phone.replace(/[^0-9]/g, '')}`} class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              {member.phone}
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="member-content">
+      <div class="member-container">
+
+        <!-- Professional Experience -->
+        <section class="member-section">
+          <h2>Professional Experience</h2>
+          <div class="section-content">
+            <p>With more than 35 years of experience, Jim is a senior partner-level lawyer who has served as trusted counsel to business owners, executives, boards of directors, and institutions facing complex, high-stakes legal challenges. His practice focuses on environmental, real estate, and business law, and is distinguished by a rare combination of elite law-firm experience, general counsel-equivalent in-house leadership, and senior executive management in large domestic and international organizations.</p>
+
+            <p>Clients turn to Jim not only for deep technical command of the law, but for disciplined strategic judgment when legal decisions carry significant financial, operational, regulatory, and reputational consequences.</p>
+          </div>
+        </section>
+
+        <!-- Environmental Law -->
+        <section class="member-section">
+          <h2>Environmental Law</h2>
+          <div class="section-content">
+            <p>Jim is nationally recognized for his work in environmental law, particularly in the investigation, remediation, redevelopment, and reuse of contaminated properties. Over the course of his career, he has led legal strategy on some of the most complex Superfund and state-supervised cleanups in the United States, involving industrial facilities, waterways, groundwater systems, and large residential communities.</p>
+
+            <p>He has served as national environmental counsel to Fortune 500 companies, managing legacy environmental liability portfolios accumulated over decades of operations and implementing multi-year, regulator-approved investigation and remediation programs under CERCLA, RCRA, the Clean Water Act, and parallel state regimes. His environmental practice is defined by an ability to integrate legal analysis with environmental science, engineering, regulatory strategy, and public communications to achieve durable, defensible, commercially successful outcomes.</p>
+          </div>
+        </section>
+
+        <!-- Business & Real Estate -->
+        <section class="member-section">
+          <h2>Business & Real Estate</h2>
+          <div class="section-content">
+            <p>In addition to his environmental practice, Jim advises clients on a wide range of business and real estate matters, including corporate formation and governance, mergers and acquisitions, financings, commercial real estate acquisitions and dispositions, leasing, development, and transactions involving environmental risk.</p>
+
+            <p>He previously served as Associate General Counsel to a large, diversified enterprise, where he was a principal legal advisor on major acquisitions, real estate development, construction, commercial leasing, corporate governance initiatives, and enterprise-wide compliance programs. That in-house experience informs a pragmatic, business-first approach that clients consistently describe as "general counsel-level" in both perspective and execution.</p>
+          </div>
+        </section>
+
+        <!-- Executive Leadership -->
+        <section class="member-section">
+          <h2>Executive Leadership</h2>
+          <div class="section-content">
+            <p>Jim's career also includes nearly a decade in senior executive leadership roles with a global organization operating across multiple continents. In those roles, he managed large professional staffs and multimillion-dollar budgets, managed public affairs and communication strategies, oversaw international legal compliance and risk management, directed property acquisition and construction programs, protected intellectual property assets, and worked directly with senior political leaders, including heads of state and senior ministerial officials.</p>
+
+            <p>That executive experience—uncommon among practicing lawyers—shapes his ability to advise leaders at the highest levels, build trust among competing stakeholders, and guide institutions through sensitive, high-visibility challenges.</p>
+          </div>
+        </section>
+
+        <!-- Why Clients Hire Jim -->
+        <section class="member-section">
+          <h2>Why Clients Hire Jim</h2>
+          <div class="section-content">
+            <p>Clients hire Jim for matters where the stakes extend well beyond technical compliance. With decades of experience advising senior decision-makers, he brings a general counsel-caliber perspective to complex problems involving legal risk, financial exposure, regulatory scrutiny, operational realities, and reputational impact. Clients rely on him to see the full landscape, identify solutions that align legal strategy with business and organizational objectives, and achieve outcomes that withstand scrutiny over time.</p>
+
+            <p>Jim is frequently engaged when problems are technically complex, politically sensitive, multi-jurisdictional, or long-term in nature. He has a proven ability to lead multi-disciplinary teams, coordinate with regulators, community leaders, and other stakeholders, and develop strategies that are both legally sound and operationally achievable.</p>
+
+            <p>Above all, clients value Jim's steady hand. Whether navigating environmental enforcement, managing long-tail liability portfolios, structuring complex real estate or business transactions, or advising during institutional or public-facing crises, he is known for clear communication, disciplined judgment, and the ability to guide clients through uncertainty toward sound, lasting outcomes.</p>
+          </div>
+        </section>
+
+        <!-- Areas of Practice -->
+        <section class="member-section">
+          <h2>Areas of Practice</h2>
+          <div class="section-content">
+            <ul class="work-list">
+              <li>Environmental law and regulatory compliance</li>
+              <li>Superfund and state-supervised cleanups</li>
+              <li>Contaminated property remediation and redevelopment</li>
+              <li>Legacy environmental liability management</li>
+              <li>Commercial real estate acquisitions and dispositions</li>
+              <li>Real estate development and leasing</li>
+              <li>Corporate formation and governance</li>
+              <li>Mergers and acquisitions</li>
+              <li>Transactions involving environmental risk</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="member-section">
+          <h2>Education</h2>
+          <div class="section-content">
+            <ul class="education-list">
+              <li>
+                <strong>Brigham Young University</strong>
+                <span>J.D., 1985</span>
+              </li>
+              <li>
+                <strong>Brigham Young University</strong>
+                <span>M.A., 1985 (Political Philosophy; published in BYU Law Review)</span>
+              </li>
+              <li>
+                <strong>Brigham Young University</strong>
+                <span>B.A., 1981, Magna Cum Laude, Highest Honors</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Bar Admissions & Recognition -->
+        <section class="member-section">
+          <h2>Bar Admissions & Recognition</h2>
+          <div class="section-content">
+            <div class="two-column">
+              <div>
+                <h3>Bar Admissions</h3>
+                <ul>
+                  <li>State Bar of Arizona (#101271)</li>
+                </ul>
+                <p class="note">Has worked on projects in more than 25 states, teaming with local counsel.</p>
+              </div>
+              <div>
+                <h3>Recognition</h3>
+                <ul>
+                  <li>Recognized by peers and national publications for excellence in environmental law</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="member-cta">
+          <h3>Work with Jim</h3>
+          <p>Ready to discuss your legal matter?</p>
+          <a href="/#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </section>
+
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .team-member-page {
+    background: var(--color-charcoal);
+  }
+
+  /* Hero Section */
+  .member-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+  }
+
+  .member-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
+      linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 100%);
+    z-index: 0;
+  }
+
+  .member-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+
+  .member-photo-wrapper {
+    position: relative;
+  }
+
+  .member-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+    border: 3px solid var(--color-charcoal-lighter);
+    box-shadow: var(--shadow-lg);
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  .member-intro h1 {
+    font-size: 2.75rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-white);
+  }
+
+  .member-role {
+    font-size: 1.25rem;
+    color: var(--color-teal);
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .member-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-cream);
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+  }
+
+  .contact-link:hover {
+    color: var(--color-teal);
+  }
+
+  .contact-link svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-teal);
+  }
+
+  /* Main Content */
+  .member-content {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .member-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .member-section {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .member-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .member-section h2 {
+    font-size: 1.35rem;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-content {
+    color: var(--color-cream);
+    line-height: 1.65;
+  }
+
+  .section-content p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-content .note {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-top: var(--spacing-xs);
+  }
+
+  .work-list,
+  .education-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .work-list li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-cream);
+  }
+
+  .work-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-teal);
+    border-radius: 50%;
+  }
+
+  .education-list li {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .education-list li strong {
+    display: block;
+    color: var(--color-white);
+    font-size: 1.05rem;
+  }
+
+  .education-list li span {
+    color: var(--color-gray-400);
+    font-size: 0.95rem;
+  }
+
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .two-column h3 {
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .two-column ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .two-column li {
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.95rem;
+  }
+
+  /* CTA Section */
+  .member-cta {
+    text-align: center;
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .member-cta h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .member-cta p {
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+    border-color: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    color: var(--color-white);
+    background: var(--color-teal-light);
+    border-color: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .member-hero-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .member-photo-wrapper {
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    .member-intro h1 {
+      font-size: 2rem;
+    }
+
+    .member-contact {
+      justify-content: center;
+    }
+
+    .two-column {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+  }
+</style>
