@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const member = {
+  name: "Todd Hall",
+  role: "Partner / Founder",
+  email: "th@clglawaz.com",
+  phone: "(480) 203-3039",
+  photo: "/images/team/todd-hall.jpg", // Upload photo to this location
+  linkedin: "https://www.linkedin.com/in/todd-hall-180a764/",
+};
+
+const title = `${member.name} | ${member.role} | Camelback Law Group`;
+const description = `Todd Hall is the founding partner of Camelback Law Group, with extensive experience in commercial real estate acquisitions, development, leasing, and finance throughout Arizona.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="team-member-page">
+    <!-- Hero Section -->
+    <header class="member-hero">
+      <div class="member-hero-bg"></div>
+      <div class="member-hero-container">
+        <div class="member-photo-wrapper">
+          <img src={member.photo} alt={member.name} class="member-photo" />
+        </div>
+        <div class="member-intro">
+          <h1>{member.name}</h1>
+          <p class="member-role">{member.role}</p>
+          <div class="member-contact">
+            <a href={`mailto:${member.email}`} class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              {member.email}
+            </a>
+            <a href={`tel:${member.phone.replace(/[^0-9]/g, '')}`} class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              {member.phone}
+            </a>
+            {member.linkedin && (
+              <a href={member.linkedin} class="contact-link" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+                LinkedIn
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="member-content">
+      <div class="member-container">
+
+        <!-- Professional Experience -->
+        <section class="member-section">
+          <h2>Professional Experience</h2>
+          <div class="section-content">
+            <p>Mr. Hall has extensive experience representing clients in the acquisition, finance, development, leasing, and disposition of commercial real estate throughout Arizona and across the United States.</p>
+
+            <p>Recent engagements have included acquisition, financing, disposition, and leasing of office, retail, industrial, and mixed-use development projects, as well as master-planned community development projects. Mr. Hall has represented REITs with respect to acquisition and disposition of properties across the United States, and has represented private equity firms in connection with joint venture arrangements with developers.</p>
+
+            <p>Mr. Hall has served as both landlord and tenant counsel in leasing transactions for office, retail, and industrial projects. Representative transactions have included ground leasing, lease restructurings on retail projects, and sale-leaseback arrangements.</p>
+
+            <p>His clients have included local, regional, national, and international mixed-use developers, private equity firms, multi-family operators and developers, and national restaurant companies.</p>
+
+            <p>Previously, Mr. Hall worked with Fennemore Craig P.C. in Phoenix, served as in-house counsel for a national homebuilder/developer, and served as in-house counsel for an international master-planned community developer.</p>
+          </div>
+        </section>
+
+        <!-- Areas of Practice -->
+        <section class="member-section">
+          <h2>Areas of Practice</h2>
+          <div class="section-content">
+            <ul class="work-list">
+              <li>Real estate acquisitions and dispositions</li>
+              <li>Land development, including entitlements and development agreements</li>
+              <li>Complex real estate financing</li>
+              <li>Joint development agreements</li>
+              <li>Acquisition and disposition of partially developed assets</li>
+              <li>Complex due diligence investigations</li>
+              <li>Commercial leasing</li>
+              <li>Sale/leaseback transactions</li>
+              <li>Acquisition and disposition of distressed assets</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="member-section">
+          <h2>Education</h2>
+          <div class="section-content">
+            <ul class="education-list">
+              <li>
+                <strong>Vanderbilt University Law School</strong>
+                <span>J.D., 2003</span>
+              </li>
+              <li>
+                <strong>University of Kentucky</strong>
+                <span>B.A., 2000</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Bar Admissions & Organizations -->
+        <section class="member-section">
+          <h2>Bar Admissions & Professional Activities</h2>
+          <div class="section-content">
+            <div class="two-column">
+              <div>
+                <h3>Bar Admissions</h3>
+                <ul>
+                  <li>State Bar of Arizona</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Professional Organizations</h3>
+                <ul>
+                  <li>Urban Land Institute</li>
+                  <li>Valley Partnership</li>
+                  <li>Pinal Partnership</li>
+                </ul>
+              </div>
+            </div>
+            <div class="community-service">
+              <h3>Community & Professional Service</h3>
+              <ul>
+                <li>Former member, Planning Commission, Town of Gilbert</li>
+                <li>Former member, Parks, Recreation and Library Services Advisory Board, Town of Gilbert</li>
+                <li>Former member, State Bar of Arizona Real Estate Transactions Manual Committee</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="member-cta">
+          <h3>Work with Todd</h3>
+          <p>Ready to discuss your commercial real estate matter?</p>
+          <a href="/#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </section>
+
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .team-member-page {
+    background: var(--color-charcoal);
+  }
+
+  /* Hero Section */
+  .member-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+  }
+
+  .member-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
+      linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 100%);
+    z-index: 0;
+  }
+
+  .member-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+  }
+
+  .member-photo-wrapper {
+    position: relative;
+  }
+
+  .member-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid var(--color-charcoal-lighter);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .member-intro h1 {
+    font-size: 2.75rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-white);
+  }
+
+  .member-role {
+    font-size: 1.25rem;
+    color: var(--color-teal);
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .member-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-cream);
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+  }
+
+  .contact-link:hover {
+    color: var(--color-teal);
+  }
+
+  .contact-link svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-teal);
+  }
+
+  /* Main Content */
+  .member-content {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .member-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .member-section {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .member-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .member-section h2 {
+    font-size: 1.5rem;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-content {
+    color: var(--color-cream);
+    line-height: 1.8;
+  }
+
+  .section-content p {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .section-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .work-list,
+  .education-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .work-list li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-cream);
+  }
+
+  .work-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-teal);
+    border-radius: 50%;
+  }
+
+  .education-list li {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .education-list li strong {
+    display: block;
+    color: var(--color-white);
+    font-size: 1.05rem;
+  }
+
+  .education-list li span {
+    color: var(--color-gray-400);
+    font-size: 0.95rem;
+  }
+
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .two-column h3,
+  .community-service h3 {
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .two-column ul,
+  .community-service ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .two-column li,
+  .community-service li {
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.95rem;
+  }
+
+  /* CTA Section */
+  .member-cta {
+    text-align: center;
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+  }
+
+  .member-cta h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .member-cta p {
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-md);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+    border-color: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    color: var(--color-white);
+    background: var(--color-teal-light);
+    border-color: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .member-hero-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .member-photo-wrapper {
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    .member-intro h1 {
+      font-size: 2rem;
+    }
+
+    .member-contact {
+      justify-content: center;
+    }
+
+    .two-column {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+  }
+</style>
