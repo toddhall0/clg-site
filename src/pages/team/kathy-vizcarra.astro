@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const member = {
+  name: "Kathy Vizcarra",
+  role: "Legal Assistant",
+  email: "kv@clglawaz.com",
+  phone: "(602) 341-3609",
+  photo: "/images/team/kathy-vizcarra.jpg",
+  linkedin: "",
+};
+
+const title = `${member.name} | ${member.role} | Camelback Law Group`;
+const description = `Kathy Vizcarra is a Legal Assistant at Camelback Law Group specializing in corporate commercial real estate with over a decade of experience in office operations and executive support.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="team-member-page">
+    <!-- Hero Section -->
+    <header class="member-hero">
+      <div class="member-hero-bg"></div>
+      <div class="member-hero-container">
+        <div class="member-photo-wrapper">
+          <img src={member.photo} alt={member.name} class="member-photo" />
+        </div>
+        <div class="member-intro">
+          <h1>{member.name}</h1>
+          <p class="member-role">{member.role}</p>
+          <div class="member-contact">
+            <a href={`mailto:${member.email}`} class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              {member.email}
+            </a>
+            <a href={`tel:${member.phone.replace(/[^0-9]/g, '')}`} class="contact-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              {member.phone}
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="member-content">
+      <div class="member-container">
+
+        <!-- Professional Experience -->
+        <section class="member-section">
+          <h2>Professional Experience</h2>
+          <div class="section-content">
+            <p>Kathy Vizcarra is a Legal Assistant specializing in corporate commercial real estate, bringing over a decade of experience in office operations, executive support, and regulatory coordination.</p>
+
+            <p>She supports attorneys with document preparation, transaction organization, deadline management, and client communication, ensuring accuracy, confidentiality, and efficiency throughout the legal process.</p>
+
+            <p>Known for her attention to detail and strong organizational skills, Kathy plays a key role in supporting complex real estate matters and maintaining seamless day-to-day operations.</p>
+          </div>
+        </section>
+
+        <!-- Areas of Support -->
+        <section class="member-section">
+          <h2>Areas of Support</h2>
+          <div class="section-content">
+            <ul class="work-list">
+              <li>Document preparation and management</li>
+              <li>Transaction organization and coordination</li>
+              <li>Deadline tracking and calendar management</li>
+              <li>Client communication and correspondence</li>
+              <li>Office operations and administrative support</li>
+              <li>Regulatory coordination</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="member-section">
+          <h2>Education</h2>
+          <div class="section-content">
+            <ul class="education-list">
+              <li>
+                <strong>Arizona State University</strong>
+                <span>B.S. in Tourism Development and Management</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Personal -->
+        <section class="member-section">
+          <h2>About Kathy</h2>
+          <div class="section-content">
+            <p>An Arizona native, Kathy brings local knowledge and a deep commitment to the Phoenix community to her work at Camelback Law Group.</p>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="member-cta">
+          <h3>Contact Camelback Law Group</h3>
+          <p>Ready to discuss your commercial real estate matter?</p>
+          <a href="/#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </section>
+
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .team-member-page {
+    background: var(--color-charcoal);
+  }
+
+  /* Hero Section */
+  .member-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+  }
+
+  .member-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
+      linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 100%);
+    z-index: 0;
+  }
+
+  .member-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+
+  .member-photo-wrapper {
+    position: relative;
+  }
+
+  .member-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
+    border: 3px solid var(--color-charcoal-lighter);
+    box-shadow: var(--shadow-lg);
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  .member-intro h1 {
+    font-size: 2.75rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-white);
+  }
+
+  .member-role {
+    font-size: 1.25rem;
+    color: var(--color-teal);
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .member-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-cream);
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+  }
+
+  .contact-link:hover {
+    color: var(--color-teal);
+  }
+
+  .contact-link svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-teal);
+  }
+
+  /* Main Content */
+  .member-content {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .member-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .member-section {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .member-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .member-section h2 {
+    font-size: 1.35rem;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-content {
+    color: var(--color-cream);
+    line-height: 1.65;
+  }
+
+  .section-content p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .section-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .work-list,
+  .education-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .work-list li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-cream);
+  }
+
+  .work-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-teal);
+    border-radius: 50%;
+  }
+
+  .education-list li {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .education-list li strong {
+    display: block;
+    color: var(--color-white);
+    font-size: 1.05rem;
+  }
+
+  .education-list li span {
+    color: var(--color-gray-400);
+    font-size: 0.95rem;
+  }
+
+  /* CTA Section */
+  .member-cta {
+    text-align: center;
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+  }
+
+  .member-cta h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .member-cta p {
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+    border-color: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    color: var(--color-white);
+    background: var(--color-teal-light);
+    border-color: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .member-hero-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .member-photo-wrapper {
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    .member-intro h1 {
+      font-size: 2rem;
+    }
+
+    .member-contact {
+      justify-content: center;
+    }
+  }
+</style>
