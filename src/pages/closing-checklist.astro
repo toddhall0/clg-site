@@ -1,0 +1,591 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Free Commercial Real Estate Closing Checklist | Camelback Law Group";
+const description = "Download a free, attorney-built Commercial Real Estate Closing Checklist for Arizona transactions. Avoid last-minute surprises and close with confidence.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="lp-hero">
+    <div class="lp-hero-bg"></div>
+    <div class="lp-container">
+      <div class="lp-content">
+        <p class="lp-pill">Free Resource</p>
+        <h1>Commercial Real Estate Closing Checklist</h1>
+        <p class="lp-subhead">A practical, attorney-built checklist to help Arizona developers and investors avoid last-minute surprises at closing.</p>
+
+        <ul class="lp-benefits">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Covers every phase from LOI to post-closing</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Title, survey, and due diligence line items</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Loan document and lender requirement tracking</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Built by Arizona commercial real estate attorneys</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lp-form-side">
+        <!-- Sample Checklist Preview -->
+        <div class="checklist-preview">
+          <div class="preview-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="preview-icon">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            <span>Checklist Preview</span>
+          </div>
+          <div class="preview-body">
+            <div class="preview-title">Commercial RE Closing Checklist</div>
+            <div class="preview-subtitle">Camelback Law Group — Arizona</div>
+            <div class="preview-section">
+              <div class="preview-section-head">1. Letter of Intent / Pre-Contract</div>
+              <div class="preview-item"><span class="checkbox"></span> LOI executed and key terms confirmed</div>
+              <div class="preview-item"><span class="checkbox"></span> Earnest money deposit amount and timeline</div>
+              <div class="preview-item"><span class="checkbox"></span> Feasibility period deadlines identified</div>
+            </div>
+            <div class="preview-section">
+              <div class="preview-section-head">2. Due Diligence</div>
+              <div class="preview-item"><span class="checkbox"></span> Title commitment ordered and reviewed</div>
+              <div class="preview-item"><span class="checkbox"></span> ALTA survey ordered and reviewed</div>
+              <div class="preview-item"><span class="checkbox"></span> Environmental reports (Phase I / Phase II)</div>
+            </div>
+            <div class="preview-section">
+              <div class="preview-section-head">3. Financing & Loan Documents</div>
+              <div class="preview-item"><span class="checkbox"></span> Loan commitment received</div>
+              <div class="preview-item"><span class="checkbox"></span> Loan documents reviewed by counsel</div>
+              <div class="preview-item faded"><span class="checkbox"></span> Opinion letter requirements confirmed</div>
+            </div>
+            <div class="preview-fade"></div>
+          </div>
+        </div>
+
+        <!-- Download Form -->
+        <div class="lp-form-container">
+          <h2>Download the Free Checklist</h2>
+          <p class="form-intro">Enter your information below and we'll send the checklist directly to your inbox.</p>
+          <form
+            name="closing-checklist"
+            method="POST"
+            action="/thank-you"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="lp-form"
+          >
+            <input type="hidden" name="form-name" value="closing-checklist">
+            <input type="hidden" name="source" value="Closing Checklist Landing Page">
+            <p class="hidden" aria-hidden="true">
+              <label>Don't fill this out: <input name="bot-field"></label>
+            </p>
+
+            <div class="form-group">
+              <label for="cl-name">Name <span class="required">*</span></label>
+              <input type="text" id="cl-name" name="name" required placeholder="Your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="cl-email">Email <span class="required">*</span></label>
+              <input type="email" id="cl-email" name="email" required placeholder="you@company.com">
+            </div>
+
+            <div class="form-group">
+              <label for="cl-company">Company <span class="optional">(optional)</span></label>
+              <input type="text" id="cl-company" name="company" placeholder="Your company name">
+            </div>
+
+            <div class="form-group">
+              <label for="cl-role">Your Role</label>
+              <select id="cl-role" name="role">
+                <option value="">Select your role</option>
+                <option value="developer">Developer / Builder</option>
+                <option value="investor">Investor</option>
+                <option value="lender">Lender</option>
+                <option value="broker">Broker</option>
+                <option value="attorney">Attorney</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Download the Checklist</button>
+
+            <p class="form-privacy">We respect your privacy. No spam — just the checklist.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Inside -->
+  <section class="whats-inside">
+    <div class="inside-container">
+      <h2>What's Inside the Checklist</h2>
+      <div class="inside-grid">
+        <div class="inside-card">
+          <div class="inside-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+          </div>
+          <h3>Pre-Contract Phase</h3>
+          <p>LOI review, earnest money structuring, and key term confirmation before you sign.</p>
+        </div>
+        <div class="inside-card">
+          <div class="inside-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <h3>Due Diligence</h3>
+          <p>Title commitments, ALTA surveys, environmental reports, zoning, and property condition reviews.</p>
+        </div>
+        <div class="inside-card">
+          <div class="inside-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3>Financing & Loan Docs</h3>
+          <p>Loan commitment tracking, document review checklists, and opinion letter requirements.</p>
+        </div>
+        <div class="inside-card">
+          <div class="inside-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>Closing & Post-Closing</h3>
+          <p>Final walkthrough items, closing statement review, recording, and post-closing deliverables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-container">
+      <h2>Need Help With Your Next Transaction?</h2>
+      <p>Our attorneys can walk you through every step of the closing process.</p>
+      <div class="cta-actions">
+        <a href="/#contact" class="btn btn-primary">Get in Touch</a>
+        <a href="/#services" class="btn btn-secondary">View Our Services</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ===== Hero ===== */
+  .lp-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+  }
+
+  .lp-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 60%, rgba(168, 216, 220, 0.1) 0%, transparent 50%),
+      linear-gradient(160deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 50%, var(--color-charcoal) 100%);
+    z-index: -1;
+  }
+
+  .lp-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+
+  .lp-pill {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    background: rgba(26, 155, 165, 0.1);
+    border: 1px solid rgba(26, 155, 165, 0.3);
+    border-radius: 50px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .lp-content h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .lp-subhead {
+    font-size: 1.15rem;
+    color: var(--color-gray-400);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  /* Benefits List */
+  .lp-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .lp-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: var(--color-cream);
+  }
+
+  .lp-benefits svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--color-teal);
+  }
+
+  /* ===== Checklist Preview ===== */
+  .checklist-preview {
+    background: var(--color-charcoal);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .preview-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-charcoal-lighter);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-gray-400);
+  }
+
+  .preview-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .preview-body {
+    padding: 1.25rem;
+    position: relative;
+  }
+
+  .preview-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 0.15rem;
+  }
+
+  .preview-subtitle {
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .preview-section {
+    margin-bottom: 0.75rem;
+  }
+
+  .preview-section-head {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-teal);
+    margin-bottom: 0.4rem;
+  }
+
+  .preview-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-cream);
+    padding: 0.25rem 0;
+    padding-left: 0.25rem;
+  }
+
+  .preview-item.faded {
+    opacity: 0.4;
+  }
+
+  .checkbox {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--color-charcoal-lighter);
+    border-radius: 2px;
+    background: var(--color-charcoal-light);
+  }
+
+  .preview-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to top, var(--color-charcoal) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  /* ===== Form ===== */
+  .lp-form-container {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+  }
+
+  .lp-form-container h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 0.25rem;
+  }
+
+  .form-intro {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .lp-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-cream);
+  }
+
+  .required {
+    color: var(--color-copper);
+  }
+
+  .optional {
+    color: var(--color-gray-500);
+    font-weight: 400;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    color: var(--color-white);
+    background: var(--color-charcoal);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 4px;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .form-group input::placeholder {
+    color: var(--color-gray-500);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--color-teal);
+    box-shadow: 0 0 0 3px rgba(26, 155, 165, 0.15);
+  }
+
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3a3' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  .btn-full {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    border: none;
+  }
+
+  .form-privacy {
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+    text-align: center;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  /* ===== What's Inside ===== */
+  .whats-inside {
+    padding: var(--spacing-2xl) 0;
+    background: var(--color-charcoal-light);
+  }
+
+  .inside-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .inside-container h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--color-white);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .inside-card {
+    background: var(--color-charcoal);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: border-color var(--transition-base);
+  }
+
+  .inside-card:hover {
+    border-color: var(--color-teal);
+  }
+
+  .inside-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto var(--spacing-sm);
+    color: var(--color-teal);
+  }
+
+  .inside-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .inside-card h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .inside-card p {
+    font-size: 0.875rem;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+  }
+
+  /* ===== CTA Banner ===== */
+  .cta-banner {
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, var(--color-teal-dark) 0%, var(--color-charcoal) 100%);
+  }
+
+  .cta-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    text-align: center;
+  }
+
+  .cta-container h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .cta-container > p {
+    font-size: 1.1rem;
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1024px) {
+    .inside-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .lp-container {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .lp-content {
+      text-align: center;
+    }
+
+    .lp-benefits {
+      align-items: flex-start;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .inside-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
