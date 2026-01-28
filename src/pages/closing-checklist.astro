@@ -36,7 +36,7 @@ const description = "Download a free, attorney-built Commercial Real Estate Clos
 
       <div class="lp-form-side">
         <!-- Sample Checklist Preview -->
-        <div class="checklist-preview">
+        <div class="checklist-preview" id="checklist-trigger">
           <div class="preview-header">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="preview-icon">
               <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -66,58 +66,14 @@ const description = "Download a free, attorney-built Commercial Real Estate Clos
             </div>
             <div class="preview-fade"></div>
           </div>
-        </div>
-
-        <!-- Download Form -->
-        <div class="lp-form-container">
-          <h2>Download the Free Checklist</h2>
-          <p class="form-intro">Enter your information below and we'll send the checklist directly to your inbox.</p>
-          <form
-            name="closing-checklist"
-            method="POST"
-            action="/thank-you"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            class="lp-form"
-          >
-            <input type="hidden" name="form-name" value="closing-checklist">
-            <input type="hidden" name="source" value="Closing Checklist Landing Page">
-            <p class="hidden" aria-hidden="true">
-              <label>Don't fill this out: <input name="bot-field"></label>
-            </p>
-
-            <div class="form-group">
-              <label for="cl-name">Name <span class="required">*</span></label>
-              <input type="text" id="cl-name" name="name" required placeholder="Your full name">
-            </div>
-
-            <div class="form-group">
-              <label for="cl-email">Email <span class="required">*</span></label>
-              <input type="email" id="cl-email" name="email" required placeholder="you@company.com">
-            </div>
-
-            <div class="form-group">
-              <label for="cl-company">Company <span class="optional">(optional)</span></label>
-              <input type="text" id="cl-company" name="company" placeholder="Your company name">
-            </div>
-
-            <div class="form-group">
-              <label for="cl-role">Your Role</label>
-              <select id="cl-role" name="role">
-                <option value="">Select your role</option>
-                <option value="developer">Developer / Builder</option>
-                <option value="investor">Investor</option>
-                <option value="lender">Lender</option>
-                <option value="broker">Broker</option>
-                <option value="attorney">Attorney</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-full">Download the Checklist</button>
-
-            <p class="form-privacy">We respect your privacy. No spam — just the checklist.</p>
-          </form>
+          <!-- Hover overlay -->
+          <div class="preview-overlay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="overlay-icon">
+              <path d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            </svg>
+            <span class="overlay-text">Download Full Checklist</span>
+            <span class="overlay-subtext">Fill out a quick form to get your free copy</span>
+          </div>
         </div>
       </div>
     </div>
@@ -179,6 +135,93 @@ const description = "Download a free, attorney-built Commercial Real Estate Clos
       </div>
     </div>
   </section>
+
+  <!-- Download Modal -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal" id="download-modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <div class="modal-header">
+        <h2>Download the Full Checklist</h2>
+        <p>Enter your information and we'll send it directly to your inbox.</p>
+      </div>
+      <form
+        name="closing-checklist"
+        method="POST"
+        action="/thank-you"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="modal-form"
+      >
+        <input type="hidden" name="form-name" value="closing-checklist">
+        <input type="hidden" name="source" value="Closing Checklist Landing Page">
+        <p class="hidden" aria-hidden="true">
+          <label>Don't fill this out: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-group">
+          <label for="cl-name">Name <span class="required">*</span></label>
+          <input type="text" id="cl-name" name="name" required placeholder="Your full name">
+        </div>
+
+        <div class="form-group">
+          <label for="cl-email">Email <span class="required">*</span></label>
+          <input type="email" id="cl-email" name="email" required placeholder="you@company.com">
+        </div>
+
+        <div class="form-group">
+          <label for="cl-company">Company <span class="optional">(optional)</span></label>
+          <input type="text" id="cl-company" name="company" placeholder="Your company name">
+        </div>
+
+        <div class="form-group">
+          <label for="cl-role">Your Role</label>
+          <select id="cl-role" name="role">
+            <option value="">Select your role</option>
+            <option value="developer">Developer / Builder</option>
+            <option value="investor">Investor</option>
+            <option value="lender">Lender</option>
+            <option value="broker">Broker</option>
+            <option value="attorney">Attorney</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Download the Checklist</button>
+
+        <p class="form-privacy">We respect your privacy. No spam — just the checklist.</p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const trigger = document.getElementById('checklist-trigger');
+    const backdrop = document.getElementById('modal-backdrop');
+    const modal = document.getElementById('download-modal');
+    const closeBtn = document.getElementById('modal-close');
+
+    function openModal() {
+      backdrop.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      backdrop.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    trigger?.addEventListener('click', openModal);
+    closeBtn?.addEventListener('click', closeModal);
+    backdrop?.addEventListener('click', (e) => {
+      if (e.target === backdrop) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
 </BaseLayout>
 
 <style>
@@ -359,29 +402,128 @@ const description = "Download a free, attorney-built Commercial Real Estate Clos
     pointer-events: none;
   }
 
-  /* ===== Form ===== */
-  .lp-form-container {
-    background: var(--color-charcoal-light);
-    border: 1px solid var(--color-charcoal-lighter);
-    border-radius: 8px;
-    padding: var(--spacing-xl);
+  /* ===== Preview Hover Overlay ===== */
+  .checklist-preview {
+    cursor: pointer;
+    position: relative;
   }
 
-  .lp-form-container h2 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-white);
+  .preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 122, 130, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+    z-index: 2;
+  }
+
+  .checklist-preview:hover .preview-overlay {
+    opacity: 1;
+  }
+
+  .overlay-icon {
+    width: 48px;
+    height: 48px;
+    color: #ffffff;
     margin-bottom: 0.25rem;
   }
 
-  .form-intro {
-    font-size: 0.9rem;
-    color: var(--color-gray-400);
-    margin-bottom: var(--spacing-md);
+  .overlay-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.01em;
   }
 
-  .lp-form {
+  .overlay-subtext {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* ===== Modal ===== */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 12px;
+    padding: var(--spacing-xl);
+    width: 90%;
+    max-width: 480px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-backdrop.active .modal {
+    transform: translateY(0);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    color: var(--color-gray-400);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    padding: 0;
+  }
+
+  .modal-close:hover {
+    color: var(--color-white);
+  }
+
+  .modal-close svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-header {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .modal-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 0.35rem;
+  }
+
+  .modal-header p {
+    font-size: 0.95rem;
+    color: var(--color-gray-400);
+  }
+
+  .modal-form {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
