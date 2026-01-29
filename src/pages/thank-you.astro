@@ -14,11 +14,21 @@ const description = "Thank you for your interest. Your resource is on its way.";
         </svg>
       </div>
       <h1>Thank You!</h1>
-      <p class="thank-you-message">Your request has been received. The resource you requested will be sent to the email address you provided shortly.</p>
-      <p class="thank-you-note">Please check your inbox (and spam folder) within the next few minutes.</p>
+      <p class="thank-you-message" id="thank-you-message">Your request has been received. The resource you requested will be sent to the email address you provided shortly.</p>
+      <p class="thank-you-note" id="thank-you-note">Please check your inbox (and spam folder) within the next few minutes.</p>
+      <div id="download-section" class="download-section" style="display:none;">
+        <a href="/resources/closing-checklist.docx" download class="btn btn-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download Closing Checklist
+        </a>
+      </div>
       <div class="thank-you-ctas">
         <a href="/" class="btn btn-primary">Return to Homepage</a>
-        <a href="#contact" class="btn btn-secondary">Schedule a Consultation</a>
+        <a href="/#contact" class="btn btn-secondary">Schedule a Consultation</a>
       </div>
     </div>
   </section>
@@ -118,9 +128,49 @@ const description = "Thank you for your interest. Your resource is on its way.";
     transform: translateY(-2px);
   }
 
+  .download-section {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    color: var(--color-white);
+    background: var(--color-teal);
+    border: 2px solid var(--color-teal);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+  }
+
+  .btn-download:hover {
+    color: var(--color-white);
+    background: var(--color-teal-light);
+    border-color: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
   @media (max-width: 480px) {
     .thank-you-ctas {
       flex-direction: column;
     }
   }
 </style>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('resource') === 'closing-checklist') {
+    document.getElementById('thank-you-message').textContent =
+      'Your closing checklist is ready to download.';
+    document.getElementById('thank-you-note').textContent =
+      'Click the button below to get your free Commercial Real Estate Closing Checklist.';
+    document.getElementById('download-section').style.display = '';
+  }
+</script>
