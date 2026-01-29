@@ -156,6 +156,12 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
           <p>Modern tools for clarity, speed, and cost-effective service—without cutting corners.</p>
         </div>
       </div>
+
+      <div class="about-recognition">
+        <a href="https://www.bestlawyers.com/firms/camelback-law-group/105201/US" target="_blank" rel="noopener noreferrer" class="best-lawyers-badge">
+          <img src="https://www.bestlawyers.com/Logos/ListedFirm/105201/US/32/O/Basic.png" title="Best Lawyers - Firm Logo" alt="Best Lawyers - Firm Logo">
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1031,6 +1037,28 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     color: var(--color-gray-400);
     line-height: 1.6;
     position: relative;
+  }
+
+  .about-recognition {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .best-lawyers-badge {
+    display: inline-block;
+    transition: opacity var(--transition-fast);
+  }
+
+  .best-lawyers-badge:hover {
+    opacity: 0.85;
+  }
+
+  .best-lawyers-badge img {
+    height: 80px;
+    width: auto;
   }
 
   /* ===== SERVICES ===== */

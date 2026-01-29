@@ -297,6 +297,12 @@ const jsonLd = {
         </div>
       </div>
       
+      <div class="footer-recognition">
+        <a href="https://www.bestlawyers.com/firms/camelback-law-group/105201/US" target="_blank" rel="noopener noreferrer" class="footer-badge">
+          <img src="https://www.bestlawyers.com/Logos/ListedFirm/105201/US/32/O/Basic.png" title="Best Lawyers - Firm Logo" alt="Best Lawyers - Firm Logo">
+        </a>
+      </div>
+
       <div class="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Camelback Law Group. All rights reserved.</p>
         <p class="footer-disclaimer">This website is for informational purposes only and does not constitute legal advice. Attorney advertising.</p>
@@ -785,6 +791,27 @@ const jsonLd = {
 
   .footer-map:hover iframe {
     filter: grayscale(50%) contrast(1) brightness(0.9);
+  }
+
+  .footer-recognition {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .footer-badge {
+    display: inline-block;
+    transition: opacity var(--transition-fast);
+  }
+
+  .footer-badge:hover {
+    opacity: 0.85;
+  }
+
+  .footer-badge img {
+    height: 60px;
+    width: auto;
   }
 
   .footer-bottom {
