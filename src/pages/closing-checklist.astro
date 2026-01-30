@@ -44,26 +44,66 @@ const description = "Download a free, attorney-built Commercial Real Estate Clos
             <span>Checklist Preview</span>
           </div>
           <div class="preview-body">
-            <div class="preview-title">Commercial RE Closing Checklist</div>
-            <div class="preview-subtitle">Camelback Law Group — Arizona</div>
-            <div class="preview-section">
-              <div class="preview-section-head">Pre-Closing: Closing Documents</div>
-              <div class="preview-item"><span class="checkbox"></span> Deed prepared (Special Warranty or as negotiated)</div>
-              <div class="preview-item"><span class="checkbox"></span> Bill of Sale for personal property</div>
-              <div class="preview-item"><span class="checkbox"></span> Assignment of Leases and Security Deposits</div>
+            <!-- Document header -->
+            <div class="preview-doc-header">
+              <div class="preview-firm-name">Camelback Law Group</div>
+              <div class="preview-firm-contact">(480) 203-3039 &middot; www.clglawaz.com</div>
             </div>
-            <div class="preview-section">
-              <div class="preview-section-head">Title & Escrow</div>
-              <div class="preview-item"><span class="checkbox"></span> Final title commitment received and reviewed</div>
-              <div class="preview-item"><span class="checkbox"></span> Title objections resolved; curative docs obtained</div>
-              <div class="preview-item"><span class="checkbox"></span> Pro-rations calculated and approved</div>
+            <div class="preview-doc-title">Commercial Real Estate Closing Checklist</div>
+            <div class="preview-doc-line"></div>
+
+            <!-- Property info fields -->
+            <div class="preview-fields">
+              <div class="preview-field"><span class="preview-field-label">Property:</span><span class="preview-field-blank"></span></div>
+              <div class="preview-field-row">
+                <div class="preview-field"><span class="preview-field-label">Purchase Price:</span><span class="preview-field-blank"></span></div>
+                <div class="preview-field"><span class="preview-field-label">Closing Date:</span><span class="preview-field-blank"></span></div>
+              </div>
             </div>
-            <div class="preview-section">
-              <div class="preview-section-head">Final Verifications</div>
-              <div class="preview-item"><span class="checkbox"></span> Walk-through completed; condition confirmed</div>
-              <div class="preview-item"><span class="checkbox"></span> Insurance bound; effective at closing</div>
-              <div class="preview-item faded"><span class="checkbox"></span> Lender clear to close; funding confirmed</div>
-            </div>
+            <div class="preview-party-key">Party Key: B = Buyer | S = Seller | T = Title/Escrow | L = Lender | B/S = Both</div>
+
+            <!-- Section header -->
+            <div class="preview-section-banner">Pre-Closing Preparation</div>
+            <div class="preview-section-head">Closing Documents</div>
+
+            <!-- Table -->
+            <table class="preview-table">
+              <thead>
+                <tr>
+                  <th class="col-check">&check;</th>
+                  <th class="col-item">Item</th>
+                  <th class="col-party">Party</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="checkbox"></span></td>
+                  <td>Deed prepared (Special Warranty or as negotiated)</td>
+                  <td>S</td>
+                </tr>
+                <tr>
+                  <td><span class="checkbox"></span></td>
+                  <td>Bill of Sale for personal property</td>
+                  <td>S</td>
+                </tr>
+                <tr>
+                  <td><span class="checkbox"></span></td>
+                  <td>Assignment of Leases and Security Deposits</td>
+                  <td>S</td>
+                </tr>
+                <tr>
+                  <td><span class="checkbox"></span></td>
+                  <td>Assignment of Contracts, Warranties, and Permits</td>
+                  <td>S</td>
+                </tr>
+                <tr class="faded">
+                  <td><span class="checkbox"></span></td>
+                  <td>Tenant notification letters prepared</td>
+                  <td>B/S</td>
+                </tr>
+              </tbody>
+            </table>
+
             <div class="preview-fade"></div>
           </div>
           <!-- Hover overlay -->
@@ -341,44 +381,129 @@ const description = "Download a free, attorney-built Commercial Real Estate Clos
     position: relative;
   }
 
-  .preview-title {
+  .preview-doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+  }
+
+  .preview-firm-name {
     font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     color: #1a1f1f;
-    margin-bottom: 0.15rem;
   }
 
-  .preview-subtitle {
-    font-size: 0.8rem;
+  .preview-firm-contact {
+    font-size: 0.6rem;
     color: #667085;
-    margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #e4e7ec;
   }
 
-  .preview-section {
-    margin-bottom: 0.75rem;
-  }
-
-  .preview-section-head {
+  .preview-doc-title {
     font-size: 0.85rem;
-    font-weight: 600;
-    color: #147a82;
+    font-weight: 700;
+    color: #b47a2b;
+    text-transform: uppercase;
     margin-bottom: 0.4rem;
   }
 
-  .preview-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    color: #344054;
-    padding: 0.25rem 0;
-    padding-left: 0.25rem;
+  .preview-doc-line {
+    height: 1px;
+    background: #1a1f1f;
+    margin-bottom: 0.6rem;
   }
 
-  .preview-item.faded {
+  .preview-fields {
+    margin-bottom: 0.4rem;
+  }
+
+  .preview-field {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .preview-field-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #1a1f1f;
+    white-space: nowrap;
+  }
+
+  .preview-field-blank {
+    flex: 1;
+    border-bottom: 1px solid #d0d5dd;
+    height: 0.7rem;
+  }
+
+  .preview-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .preview-party-key {
+    font-size: 0.55rem;
+    color: #667085;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #e4e7ec;
+  }
+
+  .preview-section-banner {
+    background: #1a1f1f;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .preview-section-head {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #1a1f1f;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.65rem;
+    color: #344054;
+  }
+
+  .preview-table th {
+    text-align: left;
+    font-weight: 600;
+    color: #1a1f1f;
+    border-bottom: 1.5px solid #1a1f1f;
+    padding: 0.2rem 0.35rem;
+    font-size: 0.6rem;
+  }
+
+  .preview-table td {
+    padding: 0.25rem 0.35rem;
+    border-bottom: 1px solid #e4e7ec;
+    vertical-align: top;
+  }
+
+  .preview-table .col-check {
+    width: 20px;
+  }
+
+  .preview-table .col-party {
+    width: 32px;
+    text-align: center;
+  }
+
+  .preview-table tr.faded {
     opacity: 0.4;
   }
 
