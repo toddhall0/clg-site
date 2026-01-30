@@ -581,6 +581,46 @@ const description = "Download a free, attorney-built Commercial Real Estate Clos
     padding-right: 2.5rem;
   }
 
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+    border-color: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    color: var(--color-white);
+    background: var(--color-teal-light);
+    border-color: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    color: var(--color-teal);
+    background: transparent;
+    border-color: var(--color-teal);
+  }
+
+  .btn-secondary:hover {
+    color: var(--color-white);
+    background: var(--color-teal);
+    transform: translateY(-2px);
+  }
+
   .btn-full {
     width: 100%;
     justify-content: center;
