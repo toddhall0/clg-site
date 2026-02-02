@@ -8,8 +8,26 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
 <BaseLayout title={title} description={description}>
 
   <!-- ===== HERO SECTION ===== -->
+  <!--
+    Hero background images rotate automatically every 7 seconds.
+    To swap images, replace the background-image URLs below.
+    Browse free options at:
+      - https://unsplash.com/s/photos/camelback-mountain
+      - https://unsplash.com/s/photos/phoenix-skyline
+      - https://unsplash.com/s/photos/modern-office-building
+      - https://www.pexels.com/search/camelback%20mountain/
+  -->
   <section class="hero">
-    <div class="hero-photo"></div>
+    <div class="hero-slideshow">
+      <!-- Slide 1: Arizona desert with saguaro cacti, Phoenix AZ (Pexels #4061938) -->
+      <div class="hero-slide active" style="background-image: url('https://images.pexels.com/photos/4061938/pexels-photo-4061938.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')"></div>
+      <!-- Slide 2: Modern glass office tower, architectural perspective (Unsplash, Sean Pollock) -->
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&q=80')"></div>
+      <!-- Slide 3: City skyline at dusk (Unsplash) -->
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&h=1080&fit=crop&q=80')"></div>
+      <!-- Slide 4: Desert cacti in Superstition Mountains, AZ (Pexels #19874667) -->
+      <div class="hero-slide" style="background-image: url('https://images.pexels.com/photos/19874667/pexels-photo-19874667.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')"></div>
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Camelback Law Group</h1>
@@ -462,6 +480,19 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     </div>
   </section>
 
+  <script>
+    // Hero slideshow — rotates background images every 7 seconds
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length > 1) {
+      let current = 0;
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 7000);
+    }
+  </script>
+
 </BaseLayout>
 
 <style>
@@ -593,13 +624,23 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     overflow: hidden;
   }
 
-  .hero-photo {
+  .hero-slideshow {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&h=1080&fit=crop');
+    z-index: 0;
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
     background-size: cover;
     background-position: center;
-    z-index: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
   }
 
   .hero-overlay {
