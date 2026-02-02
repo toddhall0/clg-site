@@ -7,50 +7,60 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
 
 <BaseLayout title={title} description={description}>
 
-  <!-- Page-wide texture overlay -->
-  <div class="page-texture"></div>
-
   <!-- ===== HERO SECTION ===== -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-container">
-      <div class="hero-content">
-        <span class="hero-pill">Phoenix • Arizona • Commercial Real Estate</span>
-        <h1>Sophisticated Commercial Real Estate Counsel for Arizona Developers, Investors, and Lenders</h1>
-        <p class="hero-subhead">Deal-focused legal services for complex commercial real estate transactions—delivered with senior-level experience, modern technology, and practical judgment.</p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Schedule an Introduction</a>
-          <a href="#resource" class="btn btn-secondary">Download a Free Closing Checklist</a>
+    <div class="hero-photo"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Camelback Law Group</h1>
+      <div class="hero-accent"></div>
+      <p class="hero-tagline">Sophisticated Commercial Real Estate Counsel for Arizona Developers, Investors, and Lenders</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Schedule an Introduction</a>
+        <a href="#services" class="btn btn-secondary">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll to Explore</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 14l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / WHY CLG SECTION ===== -->
+  <section id="about" class="section about">
+    <div class="section-container">
+      <header class="section-header">
+        <h2>Why Camelback Law Group</h2>
+        <div class="header-accent"></div>
+        <p>A boutique commercial real estate firm built for transaction velocity—senior attention, deal sense, and technology-enabled efficiency.</p>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-tile">
+          <div class="about-number">01</div>
+          <h3>Senior-Level Attention</h3>
+          <p>Experienced counsel on every matter—not passed down a chain of associates.</p>
+        </div>
+
+        <div class="about-tile">
+          <div class="about-number">02</div>
+          <h3>Deal-Focused, Not Over-Lawyered</h3>
+          <p>We protect what matters while keeping momentum toward execution and closing.</p>
+        </div>
+
+        <div class="about-tile">
+          <div class="about-number">03</div>
+          <h3>Technology-Enabled Efficiency</h3>
+          <p>Modern tools for clarity, speed, and cost-effective service—without cutting corners.</p>
         </div>
       </div>
-      <div class="hero-card">
-        <h3>How We Help Our Clients</h3>
-        <ul>
-          <li>
-            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 6L9 17l-5-5"/>
-            </svg>
-            <span>Keep deals moving without over-lawyering</span>
-          </li>
-          <li>
-            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 6L9 17l-5-5"/>
-            </svg>
-            <span>Allocate risk clearly in PSAs, leases, and development agreements</span>
-          </li>
-          <li>
-            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 6L9 17l-5-5"/>
-            </svg>
-            <span>Reduce closing surprises through disciplined due diligence</span>
-          </li>
-          <li>
-            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 6L9 17l-5-5"/>
-            </svg>
-            <span>Deliver lender-ready loan opinions for multifamily financing</span>
-          </li>
-        </ul>
+
+      <div class="about-recognition">
+        <a href="https://www.bestlawyers.com/firms/camelback-law-group/105201/US" target="_blank" rel="noopener noreferrer" class="best-lawyers-badge">
+          <img src="https://www.bestlawyers.com/Logos/ListedFirm/105201/US/32/O/Basic.png" title="Best Lawyers - Firm Logo" alt="Best Lawyers - Firm Logo">
+        </a>
       </div>
     </div>
   </section>
@@ -60,9 +70,10 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     <div class="section-container">
       <header class="section-header">
         <h2>Built for People Who Do Deals</h2>
+        <div class="header-accent"></div>
         <p>We work with sophisticated commercial real estate professionals who value speed, precision, and practical judgment—without BigLaw bloat or solo-practice bandwidth risk.</p>
       </header>
-      
+
       <div class="industries-grid">
         <div class="industry-tile">
           <div class="industry-icon">
@@ -73,7 +84,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
           <h3>Developers</h3>
           <p>Entitlements, development agreements, risk allocation, and execution from dirt to disposition.</p>
         </div>
-        
+
         <div class="industry-tile">
           <div class="industry-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -83,7 +94,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
           <h3>Investors</h3>
           <p>Multifamily, retail, and land acquisitions with a focus on diligence, structure, and closing certainty.</p>
         </div>
-        
+
         <div class="industry-tile">
           <div class="industry-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -93,7 +104,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
           <h3>Homebuilders</h3>
           <p>Lot development, takedowns, and agreements aligned with construction realities.</p>
         </div>
-        
+
         <div class="industry-tile">
           <div class="industry-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -103,7 +114,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
           <h3>Lenders</h3>
           <p>Commercial loan opinions and deal support for multifamily financing.</p>
         </div>
-        
+
         <div class="industry-tile industry-tile-accent">
           <div class="industry-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -129,149 +140,100 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     </div>
   </section>
 
-  <!-- ===== ABOUT / WHY CLG SECTION ===== -->
-  <section id="about" class="section about">
-    <div class="section-container">
-      <header class="section-header">
-        <h2>Why Camelback Law Group</h2>
-        <p>A boutique commercial real estate firm built for transaction velocity—senior attention, deal sense, and technology-enabled efficiency.</p>
-      </header>
-      
-      <div class="about-grid">
-        <div class="about-tile">
-          <div class="about-number">01</div>
-          <h3>Senior-Level Attention</h3>
-          <p>Experienced counsel on every matter—not passed down a chain of associates.</p>
-        </div>
-        
-        <div class="about-tile">
-          <div class="about-number">02</div>
-          <h3>Deal-Focused, Not Over-Lawyered</h3>
-          <p>We protect what matters while keeping momentum toward execution and closing.</p>
-        </div>
-        
-        <div class="about-tile">
-          <div class="about-number">03</div>
-          <h3>Technology-Enabled Efficiency</h3>
-          <p>Modern tools for clarity, speed, and cost-effective service—without cutting corners.</p>
-        </div>
-      </div>
+  <!-- ===== SERVICES SECTION (Full-bleed background) ===== -->
+  <section id="services" class="section services-fullbleed">
+    <div class="services-bg"></div>
+    <div class="services-panel">
+      <h2>Core Practice Areas</h2>
+      <div class="header-accent header-accent-light"></div>
 
-      <div class="about-recognition">
-        <a href="https://www.bestlawyers.com/firms/camelback-law-group/105201/US" target="_blank" rel="noopener noreferrer" class="best-lawyers-badge">
-          <img src="https://www.bestlawyers.com/Logos/ListedFirm/105201/US/32/O/Basic.png" title="Best Lawyers - Firm Logo" alt="Best Lawyers - Firm Logo">
+      <div class="services-list">
+        <a href="#contact" class="service-row">
+          <span class="service-name">Commercial Real Estate Transactions</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="service-row">
+          <span class="service-name">Purchase & Sale Agreements</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="service-row">
+          <span class="service-name">Commercial Leasing</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="service-row">
+          <span class="service-name">Development & Master-Planned Communities</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="service-row">
+          <span class="service-name">Due Diligence & Title Review</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="service-row">
+          <span class="service-name">Homebuilder & Lot Development</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="service-row">
+          <span class="service-name">Loan Opinions & Real Estate Finance</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="service-row">
+          <span class="service-name">Entity Structuring</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== SERVICES SECTION ===== -->
-  <section id="services" class="section services">
+  <!-- ===== INSIGHTS SECTION (2x2 Image Grid) ===== -->
+  <section id="insights" class="section insights">
     <div class="section-container">
       <header class="section-header">
-        <h2>Core Practice Areas</h2>
-        <p>Purpose-built coverage for commercial real estate transactions, development, leasing, due diligence, and finance—organized for how deals actually run.</p>
+        <h2>Practical Insights from the Deal Table</h2>
+        <div class="header-accent"></div>
       </header>
-      
-      <div class="services-grid">
-        <div class="service-tile">
-          <h3>Commercial Real Estate Transactions</h3>
-          <p>Structuring, negotiation, and closing support across asset types.</p>
-        </div>
-        
-        <div class="service-tile">
-          <h3>Purchase & Sale Agreements</h3>
-          <p>Risk allocation, contingencies, diligence, and closing mechanics.</p>
-        </div>
-        
-        <div class="service-tile">
-          <h3>Commercial Leasing</h3>
-          <p>Retail, office, and industrial leases for landlords and tenants.</p>
-        </div>
-        
-        <div class="service-tile">
-          <h3>Development & Master-Planned Communities</h3>
-          <p>Development agreements, infrastructure, and execution frameworks.</p>
-        </div>
-        
-        <div class="service-tile">
-          <h3>Due Diligence & Title Review</h3>
-          <p>Title/survey review, exceptions, endorsements, and diligence planning.</p>
-        </div>
-        
-        <div class="service-tile">
-          <h3>Homebuilder & Lot Development</h3>
-          <p>Lot takedowns, development standards, and phased deal structures.</p>
-        </div>
-        
-        <div class="service-tile">
-          <h3>Loan Opinions & Real Estate Finance</h3>
-          <p>Lender-ready opinions for multifamily transactions.</p>
-        </div>
-        
-        <div class="service-tile">
-          <h3>Entity Structuring</h3>
-          <p>LLCs, JVs, LPs, governance documents, and investor protections.</p>
-        </div>
-      </div>
-      
-      <div class="services-cta-row">
-        <a href="#contact" class="btn btn-primary">Schedule an Introduction</a>
-        <a href="#resource" class="btn btn-secondary">Download Free Checklist</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== EXPERIENCE SECTION ===== -->
-  <section class="section experience">
-    <div class="section-container">
-      <header class="section-header">
-        <h2>Experience That Moves Deals Forward</h2>
-        <p>We help clients keep momentum, reduce ambiguity, and close with confidence—through disciplined drafting, diligence, and execution.</p>
-      </header>
-      
-      <div class="experience-grid">
-        <div class="stat-tile">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
+      <div class="insights-grid">
+        <a href="/insights/arizona-commercial-purchase-agreements" class="insight-card insight-card-feature">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Commercial buildings" loading="lazy">
+          <div class="insight-card-overlay">
+            <span class="insight-category">Purchase Agreements</span>
+            <h3>Key Issues in Arizona Commercial Purchase Agreements</h3>
+            <div class="card-accent"></div>
           </div>
-          <h4>Decades of CRE Experience</h4>
-        </div>
-        
-        <div class="stat-tile">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
+        </a>
+
+        <a href="/insights/title-report-survey-issues" class="insight-card">
+          <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=800&h=600&fit=crop" alt="City architecture" loading="lazy">
+          <div class="insight-card-overlay">
+            <span class="insight-category">Title & Survey</span>
+            <h3>Understanding Title Reports and Survey Issues</h3>
+            <div class="card-accent"></div>
           </div>
-          <h4>Arizona + Southwest Focus</h4>
-        </div>
-        
-        <div class="stat-tile">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-            </svg>
+        </a>
+
+        <a href="/insights/due-diligence-mistakes-delay-closings" class="insight-card">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" alt="Property due diligence" loading="lazy">
+          <div class="insight-card-overlay">
+            <span class="insight-category">Due Diligence</span>
+            <h3>Due Diligence Mistakes That Delay Closings</h3>
+            <div class="card-accent"></div>
           </div>
-          <h4>Finance + Lending</h4>
-        </div>
-        
-        <div class="stat-tile">
-          <div class="stat-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
+        </a>
+
+        <a href="/insights/lease-review-services" class="insight-card">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Commercial office space" loading="lazy">
+          <div class="insight-card-overlay">
+            <span class="insight-category">Commercial Leasing</span>
+            <h3>Commercial Lease Review: What We Analyze</h3>
+            <div class="card-accent"></div>
           </div>
-          <h4>Deal-Centric Workflow</h4>
-        </div>
+        </a>
       </div>
-      
-      <div class="experience-matters">
-        <h3>Representative Matters</h3>
-        <p>Representation of developers in master-planned community projects • Counsel on multifamily acquisitions and dispositions • Loan opinions for commercial and multifamily transactions • Retail and office leasing for landlords and tenants.</p>
+
+      <div class="insights-more">
+        <a href="/insights/lease-negotiation" class="more-link">Lease Negotiation Strategies →</a>
+        <a href="/insights/landlord-representation" class="more-link">Landlord Representation →</a>
+        <a href="/insights/tenant-representation" class="more-link">Tenant Representation →</a>
       </div>
     </div>
   </section>
@@ -281,9 +243,10 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     <div class="section-container">
       <header class="section-header">
         <h2>Free Resource for Deal Professionals</h2>
+        <div class="header-accent"></div>
         <p>Commercial Real Estate Closing Checklist (Arizona) — a practical, attorney-built checklist to help developers and investors avoid last-minute surprises.</p>
       </header>
-      
+
       <div class="resource-grid">
         <div class="resource-form-tile">
           <form
@@ -298,17 +261,17 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
             <p class="hidden" aria-hidden="true">
               <label>Don't fill this out if you're human: <input name="bot-field"></label>
             </p>
-            
+
             <div class="form-group">
               <label for="lead-name">Name</label>
               <input type="text" id="lead-name" name="name" required placeholder="Your full name">
             </div>
-            
+
             <div class="form-group">
               <label for="lead-email">Email</label>
               <input type="email" id="lead-email" name="email" required placeholder="you@company.com">
             </div>
-            
+
             <div class="form-group">
               <label for="lead-interest">I'm interested in...</label>
               <select id="lead-interest" name="interest" required>
@@ -318,13 +281,13 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
                 <option value="retail-lease-guide">A Tenant's Guide to Negotiating a Commercial Lease</option>
               </select>
             </div>
-            
+
             <button type="submit" class="btn btn-primary btn-full">Download the Checklist</button>
-            
+
             <p class="form-note">Also available: Title and Survey Review Checklist and A Tenant's Guide to Negotiating a Commercial Lease.</p>
           </form>
         </div>
-        
+
         <div class="resource-alt-tile">
           <h3>Prefer a quick conversation?</h3>
           <p>If you're under contract, negotiating terms, or preparing to close, we're happy to talk through your transaction and help you move forward with confidence.</p>
@@ -338,179 +301,15 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     </div>
   </section>
 
-  <!-- ===== INSIGHTS SECTION (Articles) ===== -->
-  <section id="insights" class="section insights">
-    <div class="section-container">
-      <header class="section-header">
-        <h2>Practical Insights from the Deal Table</h2>
-        <p>Short, useful posts designed to help deal teams spot issues early and keep momentum to closing.</p>
-      </header>
-
-      <div class="insights-carousel-wrapper">
-        <div class="insights-carousel" id="insights-carousel">
-          <article class="insight-card">
-            <span class="insight-category">Purchase Agreements</span>
-            <h3>Key Issues in Arizona Commercial Purchase Agreements</h3>
-            <p>Essential provisions and common pitfalls in commercial real estate contracts.</p>
-            <a href="/insights/arizona-commercial-purchase-agreements" class="insight-link">Read More →</a>
-          </article>
-
-          <article class="insight-card">
-            <span class="insight-category">Title & Survey</span>
-            <h3>Understanding Title Reports and Survey Issues</h3>
-            <p>What buyers need to know about title commitments and ALTA surveys in Arizona transactions.</p>
-            <a href="/insights/title-report-survey-issues" class="insight-link">Read More →</a>
-          </article>
-
-          <article class="insight-card">
-            <span class="insight-category">Due Diligence</span>
-            <h3>Due Diligence Mistakes That Delay Closings</h3>
-            <p>Practical tips to keep your transaction timeline on track.</p>
-            <a href="/insights/due-diligence-mistakes-delay-closings" class="insight-link">Read More →</a>
-          </article>
-
-          <article class="insight-card">
-            <span class="insight-category">Commercial Leasing</span>
-            <h3>Commercial Lease Review: What We Analyze</h3>
-            <p>We analyze every clause to protect your interests before you sign.</p>
-            <a href="/insights/lease-review-services" class="insight-link">Read More →</a>
-          </article>
-
-          <article class="insight-card">
-            <span class="insight-category">Commercial Leasing</span>
-            <h3>Lease Negotiation Strategies for Stronger Terms</h3>
-            <p>Experienced advocates help you secure favorable lease terms.</p>
-            <a href="/insights/lease-negotiation" class="insight-link">Read More →</a>
-          </article>
-
-          <article class="insight-card">
-            <span class="insight-category">Commercial Leasing</span>
-            <h3>Landlord Representation: Protecting Your Property</h3>
-            <p>Drafting and enforcement services for commercial landlords.</p>
-            <a href="/insights/landlord-representation" class="insight-link">Read More →</a>
-          </article>
-
-          <article class="insight-card">
-            <span class="insight-category">Commercial Leasing</span>
-            <h3>Tenant Representation: Leveling the Playing Field</h3>
-            <p>We fight for your terms in commercial lease negotiations.</p>
-            <a href="/insights/tenant-representation" class="insight-link">Read More →</a>
-          </article>
-        </div>
-
-        <div class="carousel-controls">
-          <button class="carousel-btn carousel-prev" aria-label="Previous articles">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M15 19l-7-7 7-7"/>
-            </svg>
-          </button>
-          <div class="carousel-dots" id="carousel-dots"></div>
-          <button class="carousel-btn carousel-next" aria-label="Next articles">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 5l7 7-7 7"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="insights-cta">
-        <a href="#contact" class="btn btn-secondary">Subscribe to Updates</a>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    // Insights Carousel
-    document.addEventListener('DOMContentLoaded', () => {
-      const carousel = document.getElementById('insights-carousel');
-      const dotsContainer = document.getElementById('carousel-dots');
-      const prevBtn = document.querySelector('.carousel-prev');
-      const nextBtn = document.querySelector('.carousel-next');
-
-      if (!carousel) return;
-
-      const cards = carousel.querySelectorAll('.insight-card');
-      const totalCards = cards.length;
-      const visibleCards = window.innerWidth <= 768 ? 1 : 3;
-      const totalSlides = Math.ceil(totalCards / visibleCards);
-      let currentSlide = 0;
-      let autoRotateInterval;
-
-      // Create dots
-      for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer?.appendChild(dot);
-      }
-
-      const dots = dotsContainer?.querySelectorAll('.carousel-dot');
-
-      function updateCarousel() {
-        const cardWidth = cards[0]?.offsetWidth || 0;
-        const gap = 24; // var(--spacing-md) = 1.5rem = 24px
-        const offset = currentSlide * (cardWidth + gap) * visibleCards;
-        carousel.style.transform = `translateX(-${offset}px)`;
-
-        dots?.forEach((dot, i) => {
-          dot.classList.toggle('active', i === currentSlide);
-        });
-      }
-
-      function goToSlide(index) {
-        currentSlide = index;
-        if (currentSlide >= totalSlides) currentSlide = 0;
-        if (currentSlide < 0) currentSlide = totalSlides - 1;
-        updateCarousel();
-        resetAutoRotate();
-      }
-
-      function nextSlide() {
-        goToSlide(currentSlide + 1);
-      }
-
-      function prevSlide() {
-        goToSlide(currentSlide - 1);
-      }
-
-      function startAutoRotate() {
-        autoRotateInterval = setInterval(nextSlide, 7000);
-      }
-
-      function resetAutoRotate() {
-        clearInterval(autoRotateInterval);
-        startAutoRotate();
-      }
-
-      prevBtn?.addEventListener('click', prevSlide);
-      nextBtn?.addEventListener('click', nextSlide);
-
-      // Pause on hover
-      carousel.addEventListener('mouseenter', () => clearInterval(autoRotateInterval));
-      carousel.addEventListener('mouseleave', startAutoRotate);
-
-      // Handle resize
-      window.addEventListener('resize', () => {
-        const newVisibleCards = window.innerWidth <= 768 ? 1 : 3;
-        if (newVisibleCards !== visibleCards) {
-          location.reload();
-        }
-        updateCarousel();
-      });
-
-      startAutoRotate();
-    });
-  </script>
-
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact" class="section contact">
     <div class="section-container">
       <header class="section-header">
         <h2>Get a Second Set of Eyes on Your Deal</h2>
+        <div class="header-accent"></div>
         <p>Whether you're under contract, negotiating terms, or preparing to close, we're happy to talk through your transaction and help you move forward with confidence.</p>
       </header>
-      
+
       <div class="contact-grid">
         <div class="contact-form-tile">
           <form
@@ -525,25 +324,25 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
             <p class="hidden" aria-hidden="true">
               <label>Don't fill this out if you're human: <input name="bot-field"></label>
             </p>
-            
+
             <div class="form-row">
               <div class="form-group">
                 <label for="contact-name">Name *</label>
                 <input type="text" id="contact-name" name="name" required placeholder="Your full name">
               </div>
-              
+
               <div class="form-group">
                 <label for="contact-email">Email *</label>
                 <input type="email" id="contact-email" name="email" required placeholder="you@company.com">
               </div>
             </div>
-            
+
             <div class="form-row">
               <div class="form-group">
                 <label for="contact-phone">Phone (optional)</label>
                 <input type="tel" id="contact-phone" name="phone" placeholder="(555) 123-4567">
               </div>
-              
+
               <div class="form-group">
                 <label for="contact-role">Your Role *</label>
                 <select id="contact-role" name="role" required>
@@ -557,7 +356,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
                 </select>
               </div>
             </div>
-            
+
             <div class="form-row">
               <div class="form-group">
                 <label for="contact-property-type">Property Type</label>
@@ -573,7 +372,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
                   <option value="other">Other</option>
                 </select>
               </div>
-              
+
               <div class="form-group">
                 <label for="contact-stage">Deal Stage</label>
                 <select id="contact-stage" name="stage">
@@ -587,7 +386,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
                 </select>
               </div>
             </div>
-            
+
             <div class="form-group">
               <label for="contact-timeline">Timeline</label>
               <select id="contact-timeline" name="timeline">
@@ -598,22 +397,22 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
                 <option value="exploring">Just exploring</option>
               </select>
             </div>
-            
+
             <div class="form-group">
               <label for="contact-message">Tell us about your deal</label>
               <textarea id="contact-message" name="message" rows="4" placeholder="Briefly describe your transaction, any key issues, and how we can help..."></textarea>
             </div>
-            
+
             <button type="submit" class="btn btn-primary btn-full">Send</button>
-            
+
             <p class="form-note">We typically respond within one business day.</p>
           </form>
         </div>
-        
+
         <div class="contact-info-tile">
           <div class="contact-details">
             <h3>Direct Contact</h3>
-            
+
             <div class="contact-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
@@ -623,18 +422,17 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
                 <a href="tel:4802033039">(480) 203-3039</a>
               </div>
             </div>
-            
+
             <div class="contact-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
               <div>
                 <strong>Email</strong>
-                <!-- TODO: Confirm email address -->
                 <a href="mailto:info@clglawaz.com">info@clglawaz.com</a>
               </div>
             </div>
-            
+
             <div class="contact-item">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
@@ -642,20 +440,19 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
               </svg>
               <div>
                 <strong>Office</strong>
-                <!-- TODO: Confirm address -->
                 <address>2720 E Camelback Rd<br>Phoenix, AZ 85016</address>
               </div>
             </div>
           </div>
-          
+
           <div class="contact-map">
-            <iframe 
+            <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.4!2d-112.0416!3d33.5097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b0d5a7e6b8a1d%3A0x1234567890abcdef!2s2720%20E%20Camelback%20Rd%2C%20Phoenix%2C%20AZ%2085016!5e0!3m2!1sen!2sus!4v1"
-              width="100%" 
-              height="200" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
+              width="100%"
+              height="200"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Camelback Law Group Office Location"
             ></iframe>
@@ -668,39 +465,6 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
 </BaseLayout>
 
 <style>
-  /* ===== Page-wide Texture ===== */
-  .page-texture {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-    background-image:
-      /* Diagonal lines - corporate feel */
-      repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 30px,
-        rgba(26, 155, 165, 0.08) 30px,
-        rgba(26, 155, 165, 0.08) 31px
-      ),
-      /* Grid lines - vertical */
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 60px,
-        rgba(26, 155, 165, 0.06) 60px,
-        rgba(26, 155, 165, 0.06) 61px
-      ),
-      /* Grid lines - horizontal */
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 60px,
-        rgba(168, 216, 220, 0.06) 60px,
-        rgba(168, 216, 220, 0.06) 61px
-      );
-  }
-
   /* ===== Utility Classes ===== */
   .hidden {
     display: none !important;
@@ -736,14 +500,14 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
   }
 
   .btn-secondary {
-    color: var(--color-teal);
+    color: var(--color-white);
     background: transparent;
-    border-color: var(--color-teal);
+    border-color: var(--color-white);
   }
 
   .btn-secondary:hover {
     color: var(--color-white);
-    background: var(--color-teal);
+    background: rgba(255,255,255,0.15);
     transform: translateY(-2px);
   }
 
@@ -764,6 +528,32 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     width: 100%;
   }
 
+  /* ===== Accent Underlines ===== */
+  .header-accent {
+    width: 60px;
+    height: 3px;
+    background: var(--color-teal);
+    margin: var(--spacing-sm) auto var(--spacing-md);
+  }
+
+  .header-accent-light {
+    background: var(--color-white);
+  }
+
+  .card-accent {
+    width: 40px;
+    height: 3px;
+    background: var(--color-teal);
+    margin-top: var(--spacing-sm);
+  }
+
+  .hero-accent {
+    width: 60px;
+    height: 3px;
+    background: var(--color-teal);
+    margin: 0 auto var(--spacing-lg);
+  }
+
   /* ===== Section Base ===== */
   .section {
     padding: var(--spacing-3xl) 0;
@@ -782,7 +572,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
   }
 
   .section-header h2 {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0;
   }
 
   .section-header p {
@@ -794,140 +584,170 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
   /* ===== HERO ===== */
   .hero {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     align-items: center;
-    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-3xl);
+    justify-content: center;
+    text-align: center;
     overflow: hidden;
   }
 
-  .hero-bg {
+  .hero-photo {
     position: absolute;
     inset: 0;
-    background:
-      /* Corporate texture - diagonal lines */
-      repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 30px,
-        rgba(26, 155, 165, 0.08) 30px,
-        rgba(26, 155, 165, 0.08) 31px
-      ),
-      /* Corporate texture - vertical grid */
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 60px,
-        rgba(26, 155, 165, 0.06) 60px,
-        rgba(26, 155, 165, 0.06) 61px
-      ),
-      /* Corporate texture - horizontal grid */
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 60px,
-        rgba(168, 216, 220, 0.06) 60px,
-        rgba(168, 216, 220, 0.06) 61px
-      ),
-      /* Original gradients */
-      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.12) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 40% at 80% 60%, rgba(168, 216, 220, 0.1) 0%, transparent 50%),
-      linear-gradient(160deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 50%, var(--color-charcoal) 100%);
-    z-index: -1;
-  }
-
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60%;
-    background-image: url('https://images.unsplash.com/photo-1486325212027-8a89ae31fc32?w=1920&h=800&fit=crop');
+    background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&h=1080&fit=crop');
     background-size: cover;
-    background-position: center bottom;
-    opacity: 0.06;
-    mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    background-position: center;
+    z-index: 0;
   }
 
-  .hero-container {
-    max-width: var(--max-width);
-    margin: 0 auto;
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 31, 31, 0.4) 0%,
+      rgba(26, 31, 31, 0.6) 50%,
+      rgba(26, 31, 31, 0.85) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
     padding: 0 var(--spacing-md);
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: var(--spacing-2xl);
-    align-items: center;
-  }
-
-  .hero-pill {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-teal);
-    background: rgba(26, 155, 165, 0.1);
-    border: 1px solid rgba(26, 155, 165, 0.3);
-    border-radius: 50px;
-    margin-bottom: var(--spacing-md);
   }
 
   .hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
     margin-bottom: var(--spacing-md);
-    line-height: 1.15;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
 
-  .hero-subhead {
-    font-size: 1.2rem;
-    color: var(--color-gray-400);
+  .hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--color-cream);
     line-height: 1.7;
     margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-ctas {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: var(--spacing-sm);
   }
 
-  .hero-card {
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-cream);
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+    cursor: pointer;
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  .hero-scroll:hover {
+    opacity: 1;
+  }
+
+  .hero-scroll span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ===== ABOUT ===== */
+  .about {
+    background: var(--color-charcoal);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .about-tile {
     background: var(--color-charcoal-light);
     border: 1px solid var(--color-charcoal-lighter);
     border-radius: 8px;
     padding: var(--spacing-xl);
-    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
   }
 
-  .hero-card h3 {
+  .about-number {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(26, 155, 165, 0.15);
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    line-height: 1;
+  }
+
+  .about-tile h3 {
     font-size: 1.25rem;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+    position: relative;
   }
 
-  .hero-card ul {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  .hero-card li {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
+  .about-tile p {
     font-size: 0.95rem;
-    color: var(--color-cream);
-    line-height: 1.5;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+    position: relative;
   }
 
-  .check-icon {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    color: var(--color-teal);
-    margin-top: 2px;
+  .about-recognition {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .best-lawyers-badge {
+    display: inline-block;
+    transition: opacity var(--transition-fast);
+  }
+
+  .best-lawyers-badge:hover {
+    opacity: 0.85;
+  }
+
+  .best-lawyers-badge img {
+    height: 80px;
+    width: auto;
   }
 
   /* ===== INDUSTRIES ===== */
@@ -999,167 +819,162 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     color: var(--color-teal-light);
   }
 
-  /* ===== ABOUT ===== */
-  .about-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
-  }
-
-  .about-tile {
-    background: var(--color-charcoal-light);
-    border: 1px solid var(--color-charcoal-lighter);
-    border-radius: 8px;
-    padding: var(--spacing-xl);
+  /* ===== SERVICES (Full-bleed Background) ===== */
+  .services-fullbleed {
     position: relative;
+    padding: var(--spacing-3xl) 0;
     overflow: hidden;
-  }
-
-  .about-number {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    font-weight: 700;
-    color: rgba(26, 155, 165, 0.15);
-    position: absolute;
-    top: -10px;
-    right: 20px;
-    line-height: 1;
-  }
-
-  .about-tile h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-sm);
-    position: relative;
-  }
-
-  .about-tile p {
-    font-size: 0.95rem;
-    color: var(--color-gray-400);
-    line-height: 1.6;
-    position: relative;
-  }
-
-  .about-recognition {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: var(--spacing-xl);
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid var(--color-charcoal-lighter);
   }
 
-  .best-lawyers-badge {
-    display: inline-block;
-    transition: opacity var(--transition-fast);
+  .services-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1486325212027-8a89ae31fc32?w=1920&h=1080&fit=crop');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
   }
 
-  .best-lawyers-badge:hover {
-    opacity: 0.85;
+  .services-panel {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(26, 155, 165, 0.88);
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    text-align: center;
   }
 
-  .best-lawyers-badge img {
-    height: 80px;
-    width: auto;
+  .services-panel h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0;
   }
 
-  /* ===== SERVICES ===== */
-  .services {
-    background: var(--color-charcoal-light);
+  .services-list {
+    margin-top: var(--spacing-lg);
+    text-align: left;
   }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-md);
-  }
-
-  .service-tile {
-    background: var(--color-charcoal);
-    border: 1px solid var(--color-charcoal-lighter);
-    border-radius: 8px;
-    padding: var(--spacing-lg);
-    transition: border-color var(--transition-base);
-  }
-
-  .service-tile:hover {
-    border-color: var(--color-teal);
-  }
-
-  .service-tile h3 {
-    font-size: 1rem;
-    font-family: var(--font-body);
+  .service-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-sm);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 600;
-    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-display);
+    color: var(--color-white);
+    transition: padding-left var(--transition-fast);
+  }
+
+  .service-row:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .service-row svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .service-row:hover {
+    padding-left: var(--spacing-md);
     color: var(--color-white);
   }
 
-  .service-tile p {
-    font-size: 0.875rem;
-    color: var(--color-gray-400);
-    line-height: 1.6;
+  .service-row:hover svg {
+    opacity: 1;
+    transform: translateX(4px);
   }
 
-  .services-cta-row {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-2xl);
+  /* ===== INSIGHTS (2x2 Image Grid) ===== */
+  .insights {
+    background: var(--color-charcoal);
   }
 
-  /* ===== EXPERIENCE ===== */
-  .experience-grid {
+  .insights-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
 
-  .stat-tile {
-    background: var(--color-charcoal-light);
-    border: 1px solid var(--color-charcoal-lighter);
-    border-radius: 8px;
-    padding: var(--spacing-lg);
-    text-align: center;
+  .insight-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: flex-end;
   }
 
-  .stat-icon {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto var(--spacing-sm);
-    color: var(--color-teal);
-  }
-
-  .stat-icon svg {
+  .insight-card img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
   }
 
-  .stat-tile h4 {
-    font-size: 0.95rem;
-    font-family: var(--font-body);
+  .insight-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .insight-card-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: var(--spacing-lg);
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  }
+
+  .insight-category {
+    display: inline-block;
+    font-size: 0.7rem;
     font-weight: 600;
-    color: var(--color-cream);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-teal-sky);
+    margin-bottom: var(--spacing-xs);
   }
 
-  .experience-matters {
-    background: linear-gradient(135deg, var(--color-slate-dark) 0%, var(--color-charcoal-light) 100%);
-    border: 1px solid var(--color-slate);
-    border-radius: 8px;
-    padding: var(--spacing-xl);
-    text-align: center;
+  .insight-card h3 {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    line-height: 1.3;
+    color: var(--color-white);
   }
 
-  .experience-matters h3 {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-teal);
+  .insight-card:hover h3 {
+    color: var(--color-white);
   }
 
-  .experience-matters p {
+  .insight-card-feature {
+    min-height: 360px;
+  }
+
+  .insights-more {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+
+  .more-link {
     font-size: 0.95rem;
-    color: var(--color-cream);
-    line-height: 1.7;
-    max-width: 800px;
-    margin: 0 auto;
+    font-weight: 600;
+    color: var(--color-teal);
+    transition: color var(--transition-fast);
+  }
+
+  .more-link:hover {
+    color: var(--color-teal-light);
   }
 
   /* ===== RESOURCE / LEAD MAGNET ===== */
@@ -1197,6 +1012,16 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     display: flex;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-md);
+  }
+
+  .resource-alt-ctas .btn-secondary {
+    color: var(--color-teal);
+    border-color: var(--color-teal);
+  }
+
+  .resource-alt-ctas .btn-secondary:hover {
+    color: var(--color-white);
+    background: var(--color-teal);
   }
 
   .response-note {
@@ -1276,125 +1101,9 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     text-align: center;
   }
 
-  /* ===== INSIGHTS CAROUSEL ===== */
-  .insights-carousel-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .insights-carousel {
-    display: flex;
-    gap: var(--spacing-lg);
-    transition: transform 0.5s ease;
-  }
-
-  .insight-card {
-    flex: 0 0 calc((100% - 2 * var(--spacing-lg)) / 3);
-    background: var(--color-charcoal-light);
-    border: 1px solid var(--color-charcoal-lighter);
-    border-radius: 8px;
-    padding: var(--spacing-lg);
-    display: flex;
-    flex-direction: column;
-    transition: border-color var(--transition-base), transform var(--transition-base);
-  }
-
-  .insight-card:hover {
-    border-color: var(--color-teal);
-    transform: translateY(-4px);
-  }
-
-  .insight-category {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--color-teal);
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .insight-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: var(--spacing-xs);
-    line-height: 1.4;
-  }
-
-  .insight-card p {
-    font-size: 0.9rem;
-    color: var(--color-gray-400);
-    line-height: 1.6;
-    flex-grow: 1;
-  }
-
-  .insight-link {
-    display: inline-block;
-    margin-top: var(--spacing-md);
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-teal);
-  }
-
-  .carousel-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
-  }
-
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-charcoal-light);
-    border: 1px solid var(--color-charcoal-lighter);
-    border-radius: 50%;
-    color: var(--color-cream);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-  }
-
-  .carousel-btn:hover {
-    background: var(--color-teal);
-    border-color: var(--color-teal);
-  }
-
-  .carousel-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .carousel-dots {
-    display: flex;
-    gap: var(--spacing-xs);
-  }
-
-  .carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--color-charcoal-lighter);
-    border: none;
-    cursor: pointer;
-    transition: background var(--transition-fast);
-  }
-
-  .carousel-dot.active,
-  .carousel-dot:hover {
-    background: var(--color-teal);
-  }
-
-  .insights-cta {
-    text-align: center;
-    margin-top: var(--spacing-xl);
-  }
-
   /* ===== CONTACT ===== */
   .contact {
-    background: var(--color-charcoal-light);
+    background: var(--color-charcoal);
   }
 
   .contact-grid {
@@ -1405,7 +1114,7 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
 
   .contact-form-tile,
   .contact-info-tile {
-    background: var(--color-charcoal);
+    background: var(--color-charcoal-light);
     border: 1px solid var(--color-charcoal-lighter);
     border-radius: 8px;
     padding: var(--spacing-xl);
@@ -1466,11 +1175,6 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 1024px) {
-    .hero-container {
-      grid-template-columns: 1fr;
-      gap: var(--spacing-xl);
-    }
-
     .industries-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -1483,18 +1187,6 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
       grid-template-columns: 1fr;
     }
 
-    .services-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .experience-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .insight-card {
-      flex: 0 0 calc((100% - var(--spacing-lg)) / 2);
-    }
-
     .contact-grid {
       grid-template-columns: 1fr;
     }
@@ -1502,13 +1194,16 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
 
   @media (max-width: 768px) {
     .hero {
-      min-height: auto;
-      padding-top: calc(var(--header-height) + var(--spacing-xl));
-      padding-bottom: var(--spacing-2xl);
+      min-height: 100vh;
     }
 
     .hero-ctas {
       flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-scroll {
+      bottom: 1.5rem;
     }
 
     .industries-grid {
@@ -1519,17 +1214,27 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
       grid-column: span 1;
     }
 
-    .services-grid {
+    .insights-grid {
       grid-template-columns: 1fr;
     }
 
-    .services-cta-row {
-      flex-direction: column;
-      align-items: stretch;
+    .insight-card {
+      min-height: 260px;
     }
 
-    .experience-grid {
-      grid-template-columns: 1fr 1fr;
+    .insight-card-feature {
+      min-height: 300px;
+    }
+
+    .insights-more {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .services-panel {
+      width: 95%;
+      padding: var(--spacing-xl) var(--spacing-md);
     }
 
     .resource-grid {
@@ -1541,16 +1246,6 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     }
 
     .form-row {
-      grid-template-columns: 1fr;
-    }
-
-    .insight-card {
-      flex: 0 0 100%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .experience-grid {
       grid-template-columns: 1fr;
     }
   }
