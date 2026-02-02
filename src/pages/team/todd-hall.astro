@@ -6,7 +6,7 @@ const member = {
   role: "Partner / Founder",
   email: "th@clglawaz.com",
   phone: "(480) 203-3039",
-  photo: "/images/team/todd-hall.jpg", // Upload photo to this location
+  photo: "/images/team/todd-hall-bg.jpg",
   linkedin: "https://www.linkedin.com/in/todd-hall-180a764/",
 };
 
@@ -18,11 +18,11 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
   <article class="team-member-page">
     <!-- Hero Section -->
     <header class="member-hero">
-      <div class="member-hero-bg"></div>
+      <div class="member-hero-bg">
+        <img src={member.photo} alt="" class="member-hero-img" aria-hidden="true" />
+        <div class="member-hero-overlay"></div>
+      </div>
       <div class="member-hero-container">
-        <div class="member-photo-wrapper">
-          <img src={member.photo} alt={member.name} class="member-photo" />
-        </div>
         <div class="member-intro">
           <h1>{member.name}</h1>
           <p class="member-role">{member.role}</p>
@@ -161,55 +161,57 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
     position: relative;
     padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
     background: var(--color-charcoal-light);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
   }
 
   .member-hero-bg {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
-      linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 100%);
     z-index: 0;
+  }
+
+  .member-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .member-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(30, 34, 38, 0.92) 0%, rgba(30, 34, 38, 0.78) 40%, rgba(30, 34, 38, 0.6) 100%);
+    z-index: 1;
   }
 
   .member-hero-container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: var(--spacing-xl);
-    align-items: center;
-  }
-
-  .member-photo-wrapper {
-    position: relative;
-  }
-
-  .member-photo {
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 8px;
-    border: 3px solid var(--color-charcoal-lighter);
-    box-shadow: var(--shadow-lg);
-    image-rendering: -webkit-optimize-contrast;
+    padding: var(--spacing-xl) var(--spacing-md);
   }
 
   .member-intro h1 {
-    font-size: 2.75rem;
+    font-size: 3rem;
     margin-bottom: var(--spacing-xs);
     color: var(--color-white);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   }
 
   .member-role {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: var(--color-teal);
     font-weight: 500;
     margin-bottom: var(--spacing-lg);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   }
 
   .member-contact {
@@ -225,6 +227,7 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
     color: var(--color-cream);
     font-size: 0.95rem;
     transition: color var(--transition-fast);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   }
 
   .contact-link:hover {
@@ -235,6 +238,7 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
     width: 20px;
     height: 20px;
     color: var(--color-teal);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
   }
 
   /* Main Content */
@@ -396,14 +400,17 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
 
   /* Responsive */
   @media (max-width: 768px) {
+    .member-hero {
+      min-height: 300px;
+    }
+
     .member-hero-container {
-      grid-template-columns: 1fr;
       text-align: center;
     }
 
-    .member-photo-wrapper {
-      max-width: 220px;
-      margin: 0 auto;
+    .member-hero-overlay {
+      background:
+        linear-gradient(135deg, rgba(30, 34, 38, 0.93) 0%, rgba(30, 34, 38, 0.85) 50%, rgba(30, 34, 38, 0.75) 100%);
     }
 
     .member-intro h1 {
