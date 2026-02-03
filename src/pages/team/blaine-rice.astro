@@ -6,7 +6,7 @@ const member = {
   role: "Partner",
   email: "brice@clglawaz.com",
   phone: "(480) 203-3039",
-  photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop", // Replace with actual photo
+  photo: "/images/team/blaine-rice-bg.jpg",
   linkedin: "",
 };
 
@@ -18,11 +18,11 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
   <article class="team-member-page">
     <!-- Hero Section -->
     <header class="member-hero">
-      <div class="member-hero-bg"></div>
+      <div class="member-hero-bg">
+        <img src={member.photo} alt="" class="member-hero-img" aria-hidden="true" />
+        <div class="member-hero-overlay"></div>
+      </div>
       <div class="member-hero-container">
-        <div class="member-photo-wrapper">
-          <img src={member.photo} alt={member.name} class="member-photo" />
-        </div>
         <div class="member-intro">
           <h1>{member.name}</h1>
           <p class="member-role">{member.role}</p>
@@ -126,53 +126,57 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
     position: relative;
     padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
     background: var(--color-charcoal-light);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
   }
 
   .member-hero-bg {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
-      linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 100%);
     z-index: 0;
+  }
+
+  .member-hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .member-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(30, 34, 38, 0.92) 0%, rgba(30, 34, 38, 0.78) 40%, rgba(30, 34, 38, 0.6) 100%);
+    z-index: 1;
   }
 
   .member-hero-container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: var(--spacing-2xl);
-    align-items: center;
-  }
-
-  .member-photo-wrapper {
-    position: relative;
-  }
-
-  .member-photo {
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 3px solid var(--color-charcoal-lighter);
-    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-xl) var(--spacing-md);
   }
 
   .member-intro h1 {
-    font-size: 2.75rem;
+    font-size: 3rem;
     margin-bottom: var(--spacing-xs);
     color: var(--color-white);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   }
 
   .member-role {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: var(--color-teal);
     font-weight: 500;
     margin-bottom: var(--spacing-lg);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   }
 
   .member-contact {
@@ -188,6 +192,7 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
     color: var(--color-cream);
     font-size: 0.95rem;
     transition: color var(--transition-fast);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   }
 
   .contact-link:hover {
@@ -198,11 +203,12 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
     width: 20px;
     height: 20px;
     color: var(--color-teal);
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
   }
 
   /* Main Content */
   .member-content {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-2xl) 0;
   }
 
   .member-container {
@@ -212,8 +218,8 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
   }
 
   .member-section {
-    margin-bottom: var(--spacing-2xl);
-    padding-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
     border-bottom: 1px solid var(--color-charcoal-lighter);
   }
 
@@ -222,18 +228,18 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
   }
 
   .member-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: var(--color-teal);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   .section-content {
     color: var(--color-cream);
-    line-height: 1.8;
+    line-height: 1.65;
   }
 
   .section-content p {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   .section-content p:last-child {
@@ -248,8 +254,8 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
 
   .work-list li {
     position: relative;
-    padding-left: var(--spacing-lg);
-    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
     color: var(--color-cream);
   }
 
@@ -257,15 +263,15 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
     content: '';
     position: absolute;
     left: 0;
-    top: 10px;
-    width: 8px;
-    height: 8px;
+    top: 8px;
+    width: 6px;
+    height: 6px;
     background: var(--color-teal);
     border-radius: 50%;
   }
 
   .education-list li {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   .education-list li strong {
@@ -285,18 +291,18 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
     background: var(--color-charcoal-light);
     border: 1px solid var(--color-charcoal-lighter);
     border-radius: 8px;
-    padding: var(--spacing-xl);
-    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
   }
 
   .member-cta h3 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     margin-bottom: var(--spacing-xs);
   }
 
   .member-cta p {
     color: var(--color-gray-400);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
   }
 
   /* Buttons */
@@ -330,14 +336,17 @@ const description = `Blaine Rice is a Partner at Camelback Law Group, specializi
 
   /* Responsive */
   @media (max-width: 768px) {
+    .member-hero {
+      min-height: 300px;
+    }
+
     .member-hero-container {
-      grid-template-columns: 1fr;
       text-align: center;
     }
 
-    .member-photo-wrapper {
-      max-width: 220px;
-      margin: 0 auto;
+    .member-hero-overlay {
+      background:
+        linear-gradient(135deg, rgba(30, 34, 38, 0.93) 0%, rgba(30, 34, 38, 0.85) 50%, rgba(30, 34, 38, 0.75) 100%);
     }
 
     .member-intro h1 {
