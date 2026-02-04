@@ -1,0 +1,50 @@
+{
+  "images": [
+    {
+      "url": "/images/hero-1.jpg",
+      "alt": "Commercial real estate skyline",
+      "enabled": true
+    },
+    {
+      "url": "/images/hero-2.jpg",
+      "alt": "City architecture",
+      "enabled": true
+    },
+    {
+      "url": "/images/hero-3.jpg",
+      "alt": "Property due diligence",
+      "enabled": true
+    },
+    {
+      "url": "/images/hero-4.jpg",
+      "alt": "Commercial office space",
+      "enabled": true
+    },
+    {
+      "url": "/images/hero-5.jpg",
+      "alt": "Arizona commercial property",
+      "enabled": true
+    },
+    {
+      "url": "/images/hero-6.jpg",
+      "alt": "Real estate development",
+      "enabled": true
+    },
+    {
+      "url": "/images/hero-7.jpg",
+      "alt": "Phoenix skyline",
+      "enabled": true
+    },
+    {
+      "url": "/images/hero-8.jpg",
+      "alt": "Commercial building",
+      "enabled": true
+    },
+    {
+      "url": "/images/hero-9.jpg",
+      "alt": "Arizona landscape",
+      "enabled": true
+    }
+  ],
+  "rotationInterval": 7000
+}

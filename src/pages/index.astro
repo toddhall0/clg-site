@@ -10,10 +10,12 @@ const description = "Sophisticated commercial real estate and environmental coun
   <!-- ===== HERO SECTION ===== -->
   <!--
     Hero background images rotate automatically every 7 seconds.
-    To swap images, replace the files in /public/images/hero-1.jpg through hero-5.jpg.
+    Images are managed via the admin panel at /admin/hero-images
+    Fallback images are loaded if no admin configuration exists.
   -->
   <section class="hero">
-    <div class="hero-slideshow">
+    <div class="hero-slideshow" id="hero-slideshow">
+      <!-- Default images shown before JS loads, then replaced dynamically -->
       <div class="hero-slide active" style="background-image: url('/images/hero-1.jpg')"></div>
       <div class="hero-slide" style="background-image: url('/images/hero-2.jpg')"></div>
       <div class="hero-slide" style="background-image: url('/images/hero-3.jpg')"></div>
@@ -499,16 +501,58 @@ const description = "Sophisticated commercial real estate and environmental coun
   </section>
 
   <script>
-    // Hero slideshow — rotates background images every 7 seconds
-    const slides = document.querySelectorAll('.hero-slide');
-    if (slides.length > 1) {
-      let current = 0;
-      setInterval(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
-      }, 7000);
-    }
+    // Hero slideshow — managed via /admin/hero-images
+    (function initHeroSlideshow() {
+      const STORAGE_KEY = 'clg_hero_images';
+      const slideshow = document.getElementById('hero-slideshow');
+
+      // Default images (fallback if no admin config)
+      const defaultImages = [
+        { url: '/images/hero-1.jpg', alt: 'Commercial real estate skyline', enabled: true },
+        { url: '/images/hero-2.jpg', alt: 'City architecture', enabled: true },
+        { url: '/images/hero-3.jpg', alt: 'Property due diligence', enabled: true },
+        { url: '/images/hero-4.jpg', alt: 'Commercial office space', enabled: true },
+        { url: '/images/hero-5.jpg', alt: 'Arizona commercial property', enabled: true },
+        { url: '/images/hero-6.jpg', alt: 'Real estate development', enabled: true },
+        { url: '/images/hero-7.jpg', alt: 'Phoenix skyline', enabled: true },
+        { url: '/images/hero-8.jpg', alt: 'Commercial building', enabled: true },
+        { url: '/images/hero-9.jpg', alt: 'Arizona landscape', enabled: true }
+      ];
+
+      // Load images from localStorage or use defaults
+      let images = defaultImages;
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          // Only use enabled images
+          const enabledImages = parsed.filter(img => img.enabled);
+          if (enabledImages.length > 0) {
+            images = enabledImages;
+          }
+        }
+      } catch (e) {
+        console.warn('Failed to load hero images from storage, using defaults');
+      }
+
+      // Rebuild slideshow with configured images
+      if (slideshow && images.length > 0) {
+        slideshow.innerHTML = images.map((img, i) =>
+          `<div class="hero-slide${i === 0 ? ' active' : ''}" style="background-image: url('${img.url}')" role="img" aria-label="${img.alt || 'Hero background image'}"></div>`
+        ).join('');
+      }
+
+      // Start rotation
+      const slides = document.querySelectorAll('.hero-slide');
+      if (slides.length > 1) {
+        let current = 0;
+        setInterval(() => {
+          slides[current].classList.remove('active');
+          current = (current + 1) % slides.length;
+          slides[current].classList.add('active');
+        }, 7000);
+      }
+    })();
   </script>
 
 </BaseLayout>

@@ -1,0 +1,943 @@
+---
+// Admin page for managing hero background images
+// This page is not linked from the main site navigation
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Hero Images Admin | Camelback Law Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Cloudinary Upload Widget -->
+  <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <style>
+    :root {
+      --color-charcoal: #1a1f1f;
+      --color-charcoal-light: #232a2a;
+      --color-charcoal-lighter: #2d3636;
+      --color-teal: #1a9ba5;
+      --color-teal-light: #2eb8c4;
+      --color-cream: #f5f5f2;
+      --color-white: #ffffff;
+      --color-gray-400: #9ca3a3;
+      --color-gray-500: #6b7575;
+      --color-red: #e74c3c;
+      --color-green: #27ae60;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-charcoal);
+      color: var(--color-cream);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Login Screen */
+    .login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .login-box {
+      background: var(--color-charcoal-light);
+      border: 1px solid var(--color-charcoal-lighter);
+      border-radius: 8px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-white);
+    }
+
+    .login-box p {
+      color: var(--color-gray-400);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.375rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--color-white);
+      background: var(--color-charcoal);
+      border: 1px solid var(--color-charcoal-lighter);
+      border-radius: 4px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--color-teal);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--color-teal);
+      color: var(--color-white);
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-teal-light);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--color-teal);
+      color: var(--color-teal);
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-teal);
+      color: var(--color-white);
+    }
+
+    .btn-danger {
+      background: var(--color-red);
+      color: var(--color-white);
+    }
+
+    .btn-danger:hover {
+      opacity: 0.9;
+    }
+
+    .btn-small {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .error-message {
+      color: var(--color-red);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    /* Admin Dashboard */
+    .admin-dashboard {
+      display: none;
+    }
+
+    .admin-header {
+      background: var(--color-charcoal-light);
+      border-bottom: 1px solid var(--color-charcoal-lighter);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .admin-header h1 {
+      font-size: 1.25rem;
+      color: var(--color-white);
+    }
+
+    .admin-header-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .admin-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--color-teal);
+    }
+
+    /* Instructions Panel */
+    .instructions-panel {
+      background: var(--color-charcoal-light);
+      border: 1px solid var(--color-charcoal-lighter);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .instructions-panel h2 {
+      font-size: 1rem;
+      color: var(--color-teal);
+      margin-bottom: 0.75rem;
+    }
+
+    .instructions-panel ol {
+      margin-left: 1.25rem;
+      color: var(--color-gray-400);
+      font-size: 0.9rem;
+    }
+
+    .instructions-panel li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Cloudinary Setup */
+    .cloudinary-setup {
+      background: var(--color-charcoal-light);
+      border: 1px solid var(--color-charcoal-lighter);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .cloudinary-setup h2 {
+      font-size: 1rem;
+      color: var(--color-white);
+      margin-bottom: 1rem;
+    }
+
+    .cloudinary-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+
+    .cloudinary-row .form-group {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* Image Grid */
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .image-card {
+      background: var(--color-charcoal-light);
+      border: 1px solid var(--color-charcoal-lighter);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .image-card:hover {
+      border-color: var(--color-teal);
+    }
+
+    .image-card.disabled {
+      opacity: 0.5;
+    }
+
+    .image-card.dragging {
+      opacity: 0.5;
+      border-color: var(--color-teal);
+    }
+
+    .image-preview {
+      aspect-ratio: 16/9;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      cursor: grab;
+    }
+
+    .image-preview:active {
+      cursor: grabbing;
+    }
+
+    .image-order {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      background: var(--color-charcoal);
+      color: var(--color-teal);
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+
+    .image-status {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .image-status.enabled {
+      background: var(--color-green);
+      color: var(--color-white);
+    }
+
+    .image-status.disabled {
+      background: var(--color-gray-500);
+      color: var(--color-white);
+    }
+
+    .image-info {
+      padding: 1rem;
+    }
+
+    .image-url {
+      font-size: 0.8rem;
+      color: var(--color-gray-400);
+      word-break: break-all;
+      margin-bottom: 0.5rem;
+      max-height: 40px;
+      overflow: hidden;
+    }
+
+    .image-alt {
+      margin-bottom: 0.75rem;
+    }
+
+    .image-alt input {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: var(--color-white);
+      background: var(--color-charcoal);
+      border: 1px solid var(--color-charcoal-lighter);
+      border-radius: 4px;
+    }
+
+    .image-alt input:focus {
+      outline: none;
+      border-color: var(--color-teal);
+    }
+
+    .image-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .image-actions button {
+      flex: 1;
+      padding: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-family: inherit;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-toggle {
+      background: var(--color-charcoal);
+      color: var(--color-cream);
+      border: 1px solid var(--color-charcoal-lighter);
+    }
+
+    .btn-toggle:hover {
+      border-color: var(--color-teal);
+    }
+
+    .btn-remove {
+      background: transparent;
+      color: var(--color-red);
+      border: 1px solid var(--color-red);
+    }
+
+    .btn-remove:hover {
+      background: var(--color-red);
+      color: var(--color-white);
+    }
+
+    /* Add Image Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: var(--color-charcoal-light);
+      border: 1px solid var(--color-charcoal-lighter);
+      border-radius: 8px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .modal h2 {
+      font-size: 1.25rem;
+      color: var(--color-white);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .modal-actions button {
+      flex: 1;
+    }
+
+    /* Status Bar */
+    .status-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-charcoal-light);
+      border-top: 1px solid var(--color-charcoal-lighter);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .status-text {
+      font-size: 0.9rem;
+      color: var(--color-gray-400);
+    }
+
+    .status-text.success {
+      color: var(--color-green);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--color-gray-400);
+    }
+
+    .empty-state p {
+      margin-bottom: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cloudinary-row {
+        flex-direction: column;
+      }
+
+      .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .status-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-box">
+      <h1>Hero Images Admin</h1>
+      <p>Enter the admin password to manage hero background images.</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter admin password" autocomplete="current-password">
+        </div>
+        <p id="login-error" class="error-message">Incorrect password. Please try again.</p>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div id="admin-dashboard" class="admin-dashboard">
+    <header class="admin-header">
+      <h1>Hero Images Admin</h1>
+      <div class="admin-header-actions">
+        <a href="/" class="btn btn-secondary btn-small">View Site</a>
+        <button id="logout-btn" class="btn btn-secondary btn-small">Log Out</button>
+      </div>
+    </header>
+
+    <main class="admin-content">
+      <!-- Instructions -->
+      <div class="instructions-panel">
+        <h2>How to Use</h2>
+        <ol>
+          <li><strong>Set up Cloudinary</strong> (free): Enter your Cloud Name below, then click "Upload to Cloudinary" to add new images.</li>
+          <li><strong>Or add URL directly</strong>: Click "Add Image URL" to add an image from any source (including /images/ folder).</li>
+          <li><strong>Drag to reorder</strong>: Drag image cards to change the slideshow order.</li>
+          <li><strong>Toggle visibility</strong>: Enable/disable images without removing them.</li>
+          <li>Changes are saved automatically and take effect immediately on the homepage.</li>
+        </ol>
+      </div>
+
+      <!-- Cloudinary Setup -->
+      <div class="cloudinary-setup">
+        <h2>Cloudinary Configuration (Optional)</h2>
+        <div class="cloudinary-row">
+          <div class="form-group">
+            <label for="cloud-name">Cloud Name</label>
+            <input type="text" id="cloud-name" placeholder="your-cloud-name">
+          </div>
+          <button id="save-cloudinary" class="btn btn-secondary">Save</button>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--color-gray-500); margin-top: 0.75rem;">
+          Get your free Cloud Name at <a href="https://cloudinary.com" target="_blank" rel="noopener" style="color: var(--color-teal);">cloudinary.com</a>.
+          Enable unsigned uploads in Settings > Upload > Upload presets.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="upload-cloudinary-btn" class="btn btn-primary">Upload to Cloudinary</button>
+        <button id="add-url-btn" class="btn btn-secondary">Add Image URL</button>
+        <button id="reset-defaults-btn" class="btn btn-secondary">Reset to Defaults</button>
+      </div>
+
+      <!-- Images Grid -->
+      <h2 class="section-title">Hero Images (<span id="image-count">0</span>)</h2>
+      <div id="images-grid" class="images-grid">
+        <!-- Images will be populated here -->
+      </div>
+
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <p>No hero images configured.</p>
+        <button id="add-first-btn" class="btn btn-primary">Add Your First Image</button>
+      </div>
+    </main>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span id="status-text" class="status-text">Changes save automatically</span>
+      <span class="status-text">Drag images to reorder</span>
+    </div>
+  </div>
+
+  <!-- Add URL Modal -->
+  <div id="add-url-modal" class="modal-overlay">
+    <div class="modal">
+      <h2>Add Image URL</h2>
+      <div class="form-group">
+        <label for="new-image-url">Image URL</label>
+        <input type="url" id="new-image-url" placeholder="https://... or /images/filename.jpg">
+      </div>
+      <div class="form-group">
+        <label for="new-image-alt">Alt Text (for accessibility)</label>
+        <input type="text" id="new-image-alt" placeholder="Description of the image">
+      </div>
+      <div class="modal-actions">
+        <button id="cancel-add-url" class="btn btn-secondary">Cancel</button>
+        <button id="confirm-add-url" class="btn btn-primary">Add Image</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Default hero images (from the JSON config)
+    const DEFAULT_IMAGES = [
+      { url: "/images/hero-1.jpg", alt: "Commercial real estate skyline", enabled: true },
+      { url: "/images/hero-2.jpg", alt: "City architecture", enabled: true },
+      { url: "/images/hero-3.jpg", alt: "Property due diligence", enabled: true },
+      { url: "/images/hero-4.jpg", alt: "Commercial office space", enabled: true },
+      { url: "/images/hero-5.jpg", alt: "Arizona commercial property", enabled: true },
+      { url: "/images/hero-6.jpg", alt: "Real estate development", enabled: true },
+      { url: "/images/hero-7.jpg", alt: "Phoenix skyline", enabled: true },
+      { url: "/images/hero-8.jpg", alt: "Commercial building", enabled: true },
+      { url: "/images/hero-9.jpg", alt: "Arizona landscape", enabled: true }
+    ];
+
+    // Simple password hash (in production, use proper auth)
+    // Default password: "clgadmin" - Change this!
+    const ADMIN_PASSWORD_HASH = 'clgadmin2024';
+    const STORAGE_KEY = 'clg_hero_images';
+    const AUTH_KEY = 'clg_admin_auth';
+    const CLOUDINARY_KEY = 'clg_cloudinary_config';
+
+    // DOM Elements
+    const loginScreen = document.getElementById('login-screen');
+    const adminDashboard = document.getElementById('admin-dashboard');
+    const loginForm = document.getElementById('login-form');
+    const loginError = document.getElementById('login-error');
+    const logoutBtn = document.getElementById('logout-btn');
+    const imagesGrid = document.getElementById('images-grid');
+    const imageCount = document.getElementById('image-count');
+    const emptyState = document.getElementById('empty-state');
+    const statusText = document.getElementById('status-text');
+    const cloudNameInput = document.getElementById('cloud-name');
+    const saveCloudinaryBtn = document.getElementById('save-cloudinary');
+    const uploadCloudinaryBtn = document.getElementById('upload-cloudinary-btn');
+    const addUrlBtn = document.getElementById('add-url-btn');
+    const addUrlModal = document.getElementById('add-url-modal');
+    const newImageUrl = document.getElementById('new-image-url');
+    const newImageAlt = document.getElementById('new-image-alt');
+    const cancelAddUrl = document.getElementById('cancel-add-url');
+    const confirmAddUrl = document.getElementById('confirm-add-url');
+    const resetDefaultsBtn = document.getElementById('reset-defaults-btn');
+    const addFirstBtn = document.getElementById('add-first-btn');
+
+    // State
+    let heroImages = [];
+    let draggedItem = null;
+
+    // Auth functions
+    function checkAuth() {
+      const auth = sessionStorage.getItem(AUTH_KEY);
+      if (auth === 'true') {
+        showDashboard();
+      }
+    }
+
+    function login(password) {
+      if (password === ADMIN_PASSWORD_HASH) {
+        sessionStorage.setItem(AUTH_KEY, 'true');
+        showDashboard();
+        return true;
+      }
+      return false;
+    }
+
+    function logout() {
+      sessionStorage.removeItem(AUTH_KEY);
+      location.reload();
+    }
+
+    function showDashboard() {
+      loginScreen.style.display = 'none';
+      adminDashboard.style.display = 'block';
+      loadImages();
+      loadCloudinaryConfig();
+    }
+
+    // Image management
+    function loadImages() {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        heroImages = JSON.parse(stored);
+      } else {
+        heroImages = [...DEFAULT_IMAGES];
+        saveImages();
+      }
+      renderImages();
+    }
+
+    function saveImages() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(heroImages));
+      showStatus('Changes saved', 'success');
+    }
+
+    function renderImages() {
+      const enabledImages = heroImages.filter(img => img.enabled);
+      imageCount.textContent = `${enabledImages.length} active / ${heroImages.length} total`;
+
+      if (heroImages.length === 0) {
+        imagesGrid.style.display = 'none';
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      imagesGrid.style.display = 'grid';
+      emptyState.style.display = 'none';
+
+      imagesGrid.innerHTML = heroImages.map((img, index) => `
+        <div class="image-card ${img.enabled ? '' : 'disabled'}" draggable="true" data-index="${index}">
+          <div class="image-preview" style="background-image: url('${img.url}')">
+            <span class="image-order">#${index + 1}</span>
+            <span class="image-status ${img.enabled ? 'enabled' : 'disabled'}">${img.enabled ? 'Active' : 'Hidden'}</span>
+          </div>
+          <div class="image-info">
+            <div class="image-url" title="${img.url}">${img.url}</div>
+            <div class="image-alt">
+              <input type="text" value="${img.alt || ''}" placeholder="Alt text" data-index="${index}" class="alt-input">
+            </div>
+            <div class="image-actions">
+              <button class="btn-toggle" data-index="${index}">${img.enabled ? 'Hide' : 'Show'}</button>
+              <button class="btn-remove" data-index="${index}">Remove</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Add event listeners
+      setupDragAndDrop();
+      setupImageActions();
+    }
+
+    function setupDragAndDrop() {
+      const cards = document.querySelectorAll('.image-card');
+
+      cards.forEach(card => {
+        card.addEventListener('dragstart', (e) => {
+          draggedItem = card;
+          card.classList.add('dragging');
+          e.dataTransfer.effectAllowed = 'move';
+        });
+
+        card.addEventListener('dragend', () => {
+          card.classList.remove('dragging');
+          draggedItem = null;
+        });
+
+        card.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+        });
+
+        card.addEventListener('drop', (e) => {
+          e.preventDefault();
+          if (draggedItem && draggedItem !== card) {
+            const fromIndex = parseInt(draggedItem.dataset.index);
+            const toIndex = parseInt(card.dataset.index);
+
+            // Reorder array
+            const [movedItem] = heroImages.splice(fromIndex, 1);
+            heroImages.splice(toIndex, 0, movedItem);
+
+            saveImages();
+            renderImages();
+          }
+        });
+      });
+    }
+
+    function setupImageActions() {
+      // Toggle buttons
+      document.querySelectorAll('.btn-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.dataset.index);
+          heroImages[index].enabled = !heroImages[index].enabled;
+          saveImages();
+          renderImages();
+        });
+      });
+
+      // Remove buttons
+      document.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const index = parseInt(btn.dataset.index);
+          if (confirm('Are you sure you want to remove this image?')) {
+            heroImages.splice(index, 1);
+            saveImages();
+            renderImages();
+          }
+        });
+      });
+
+      // Alt text inputs
+      document.querySelectorAll('.alt-input').forEach(input => {
+        input.addEventListener('change', () => {
+          const index = parseInt(input.dataset.index);
+          heroImages[index].alt = input.value;
+          saveImages();
+        });
+      });
+    }
+
+    function addImage(url, alt = '') {
+      heroImages.push({ url, alt, enabled: true });
+      saveImages();
+      renderImages();
+    }
+
+    function resetToDefaults() {
+      if (confirm('This will reset all hero images to the default set. Continue?')) {
+        heroImages = [...DEFAULT_IMAGES];
+        saveImages();
+        renderImages();
+      }
+    }
+
+    // Cloudinary
+    function loadCloudinaryConfig() {
+      const config = localStorage.getItem(CLOUDINARY_KEY);
+      if (config) {
+        const { cloudName } = JSON.parse(config);
+        cloudNameInput.value = cloudName || '';
+      }
+    }
+
+    function saveCloudinaryConfig() {
+      const cloudName = cloudNameInput.value.trim();
+      localStorage.setItem(CLOUDINARY_KEY, JSON.stringify({ cloudName }));
+      showStatus('Cloudinary config saved', 'success');
+    }
+
+    function openCloudinaryWidget() {
+      const cloudName = cloudNameInput.value.trim();
+
+      if (!cloudName) {
+        alert('Please enter your Cloudinary Cloud Name first.');
+        cloudNameInput.focus();
+        return;
+      }
+
+      const widget = cloudinary.createUploadWidget(
+        {
+          cloudName: cloudName,
+          uploadPreset: 'ml_default', // Use unsigned preset
+          sources: ['local', 'url', 'camera'],
+          multiple: true,
+          maxFiles: 10,
+          resourceType: 'image',
+          clientAllowedFormats: ['jpg', 'jpeg', 'png', 'webp'],
+          maxFileSize: 10000000, // 10MB
+          cropping: false,
+          showAdvancedOptions: false,
+          styles: {
+            palette: {
+              window: '#232a2a',
+              sourceBg: '#1a1f1f',
+              windowBorder: '#2d3636',
+              tabIcon: '#1a9ba5',
+              inactiveTabIcon: '#9ca3a3',
+              menuIcons: '#1a9ba5',
+              link: '#1a9ba5',
+              action: '#1a9ba5',
+              inProgress: '#1a9ba5',
+              complete: '#27ae60',
+              error: '#e74c3c',
+              textDark: '#1a1f1f',
+              textLight: '#f5f5f2'
+            }
+          }
+        },
+        (error, result) => {
+          if (!error && result && result.event === 'success') {
+            const url = result.info.secure_url;
+            const alt = result.info.original_filename || 'Hero image';
+            addImage(url, alt);
+          }
+        }
+      );
+
+      widget.open();
+    }
+
+    // Modal
+    function openAddUrlModal() {
+      addUrlModal.classList.add('active');
+      newImageUrl.value = '';
+      newImageAlt.value = '';
+      newImageUrl.focus();
+    }
+
+    function closeAddUrlModal() {
+      addUrlModal.classList.remove('active');
+    }
+
+    function confirmAddUrlImage() {
+      const url = newImageUrl.value.trim();
+      const alt = newImageAlt.value.trim();
+
+      if (!url) {
+        alert('Please enter an image URL.');
+        return;
+      }
+
+      addImage(url, alt);
+      closeAddUrlModal();
+    }
+
+    // Status
+    function showStatus(message, type = '') {
+      statusText.textContent = message;
+      statusText.className = 'status-text' + (type ? ' ' + type : '');
+
+      setTimeout(() => {
+        statusText.textContent = 'Changes save automatically';
+        statusText.className = 'status-text';
+      }, 3000);
+    }
+
+    // Event Listeners
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const password = document.getElementById('password').value;
+      if (!login(password)) {
+        loginError.style.display = 'block';
+      }
+    });
+
+    logoutBtn.addEventListener('click', logout);
+    saveCloudinaryBtn.addEventListener('click', saveCloudinaryConfig);
+    uploadCloudinaryBtn.addEventListener('click', openCloudinaryWidget);
+    addUrlBtn.addEventListener('click', openAddUrlModal);
+    addFirstBtn.addEventListener('click', openAddUrlModal);
+    cancelAddUrl.addEventListener('click', closeAddUrlModal);
+    confirmAddUrl.addEventListener('click', confirmAddUrlImage);
+    resetDefaultsBtn.addEventListener('click', resetToDefaults);
+
+    // Close modal on outside click
+    addUrlModal.addEventListener('click', (e) => {
+      if (e.target === addUrlModal) closeAddUrlModal();
+    });
+
+    // Enter key in modal
+    newImageUrl.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') confirmAddUrlImage();
+    });
+
+    // Initialize
+    checkAuth();
+  </script>
+</body>
+</html>
