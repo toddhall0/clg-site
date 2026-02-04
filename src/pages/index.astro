@@ -692,7 +692,8 @@ const description = "Sophisticated commercial real estate and environmental coun
     z-index: 0;
   }
 
-  .hero-slide {
+  /* Use :global() for hero slides since they're dynamically created by JS */
+  :global(.hero-slide) {
     position: absolute;
     inset: 0;
     background-size: cover;
@@ -701,7 +702,7 @@ const description = "Sophisticated commercial real estate and environmental coun
     transition: opacity 1.5s ease-in-out;
   }
 
-  .hero-slide.active {
+  :global(.hero-slide.active) {
     opacity: 1;
   }
 
