@@ -283,14 +283,23 @@
     }
 
     .image-preview {
-      aspect-ratio: 3/2;
-      background-size: contain !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
       background-color: #1a1f1f;
       position: relative;
       cursor: grab;
-      min-height: 200px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .image-preview img {
+      max-width: 100%;
+      max-height: 250px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
     }
 
     .image-preview:active {
@@ -703,7 +712,8 @@
 
       imagesGrid.innerHTML = heroImages.map((img, index) => `
         <div class="image-card ${img.enabled ? '' : 'disabled'}" draggable="true" data-index="${index}">
-          <div class="image-preview" style="background-image: url('${img.url}')">
+          <div class="image-preview">
+            <img src="${img.url}" alt="${img.alt || 'Hero image'}" loading="lazy">
             <span class="image-order">#${index + 1}</span>
             <span class="image-status ${img.enabled ? 'enabled' : 'disabled'}">${img.enabled ? 'Active' : 'Hidden'}</span>
           </div>
