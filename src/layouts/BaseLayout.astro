@@ -26,7 +26,7 @@ const jsonLd = {
   "@type": ["LocalBusiness", "LegalService", "ProfessionalService"],
   "@id": businessInfo.url,
   "name": businessInfo.name,
-  "description": "Camelback Law Group is a boutique commercial real estate law firm in Phoenix, Arizona serving developers, investors, lenders, and homebuilders with sophisticated transaction counsel.",
+  "description": "Camelback Law Group is a boutique commercial real estate and environmental law firm in Phoenix, Arizona serving developers, investors, lenders, homebuilders, corporations, and municipalities with sophisticated transaction and regulatory counsel.",
   "url": businessInfo.url,
   "telephone": businessInfo.phone,
   "email": businessInfo.email,
@@ -62,7 +62,7 @@ const jsonLd = {
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Commercial Real Estate Legal Services",
+    "name": "Commercial Real Estate and Environmental Legal Services",
     "itemListElement": [
       {
         "@type": "Offer",
@@ -70,6 +70,14 @@ const jsonLd = {
           "@type": "Service",
           "name": "Commercial Real Estate Transactions",
           "description": "Structuring, negotiation, and closing support for commercial real estate transactions across asset types."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Environmental Law & Compliance",
+          "description": "Environmental regulatory compliance, Superfund and state-supervised cleanups, contaminated property remediation and redevelopment, and legacy environmental liability management."
         }
       },
       {
@@ -125,7 +133,15 @@ const jsonLd = {
     "Multifamily Financing",
     "Entity Structuring",
     "Arizona Real Estate Law",
-    "Phoenix Commercial Real Estate"
+    "Phoenix Commercial Real Estate",
+    "Environmental Law",
+    "Environmental Compliance",
+    "Superfund Cleanups",
+    "CERCLA",
+    "RCRA",
+    "Contaminated Property Remediation",
+    "Environmental Liability Management",
+    "Arizona Environmental Law"
   ],
   "sameAs": []
 };
@@ -151,7 +167,7 @@ const jsonLd = {
   <title>{title}</title>
   <meta name="title" content={title}>
   <meta name="description" content={description}>
-  <meta name="keywords" content="commercial real estate attorney Phoenix, Arizona real estate lawyer, commercial property lawyer, real estate transaction attorney, purchase agreement lawyer, commercial lease attorney, title review attorney, due diligence lawyer, loan opinion attorney, FHA HUD attorney, real estate closing attorney Phoenix, commercial real estate law firm Arizona, Scottsdale real estate attorney, Mesa real estate lawyer, Tempe commercial property attorney">
+  <meta name="keywords" content="commercial real estate attorney Phoenix, Arizona real estate lawyer, commercial property lawyer, real estate transaction attorney, purchase agreement lawyer, commercial lease attorney, title review attorney, due diligence lawyer, loan opinion attorney, FHA HUD attorney, real estate closing attorney Phoenix, commercial real estate law firm Arizona, Scottsdale real estate attorney, Mesa real estate lawyer, Tempe commercial property attorney, environmental attorney Phoenix, Arizona environmental lawyer, Superfund attorney, CERCLA lawyer, contaminated property attorney, environmental compliance lawyer, environmental remediation attorney Arizona">
   <meta name="author" content="Camelback Law Group">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href={canonicalURL}>
@@ -246,7 +262,7 @@ const jsonLd = {
         <!-- About Column -->
         <div class="footer-col footer-about">
           <h3>Camelback Law Group</h3>
-          <p>A boutique commercial real estate law firm serving Arizona developers, investors, lenders, and homebuilders with sophisticated transaction counsel.</p>
+          <p>A boutique commercial real estate and environmental law firm serving Arizona developers, investors, lenders, homebuilders, corporations, and municipalities with sophisticated legal counsel.</p>
         </div>
         
         <!-- Services Column -->
@@ -254,11 +270,11 @@ const jsonLd = {
           <h4>Services</h4>
           <ul>
             <li><a href="/#services">Commercial Transactions</a></li>
+            <li><a href="/#services">Environmental Law</a></li>
             <li><a href="/#services">Purchase & Sale Agreements</a></li>
             <li><a href="/#services">Commercial Leasing</a></li>
             <li><a href="/#services">Due Diligence & Title</a></li>
             <li><a href="/#services">Loan Opinions</a></li>
-            <li><a href="/#services">Entity Structuring</a></li>
           </ul>
         </div>
 
@@ -270,7 +286,7 @@ const jsonLd = {
             <li><a href="/#industries">Investors</a></li>
             <li><a href="/#industries">Homebuilders</a></li>
             <li><a href="/#industries">Lenders</a></li>
-            <li><a href="/#industries">Brokers</a></li>
+            <li><a href="/#industries">Corporations & Municipalities</a></li>
           </ul>
         </div>
         
