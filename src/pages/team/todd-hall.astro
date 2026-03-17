@@ -6,7 +6,7 @@ const member = {
   role: "Partner / Founder",
   email: "th@clglawaz.com",
   phone: "(480) 203-3039",
-  photo: "/images/team/todd-hall-bg.jpg",
+  photo: "/images/team/todd-hall-center.jpg",
   linkedin: "https://www.linkedin.com/in/todd-hall-180a764/",
 };
 
@@ -52,6 +52,15 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
         </div>
       </div>
     </header>
+
+    <!-- Photo Gallery -->
+    <section class="member-gallery">
+      <div class="gallery-container">
+        <img src="/images/team/todd-hall-left.jpg" alt="Todd Hall" class="gallery-img" />
+        <img src="/images/team/todd-hall-center.jpg" alt="Todd Hall" class="gallery-img" />
+        <img src="/images/team/todd-hall-right.jpg" alt="Todd Hall" class="gallery-img" />
+      </div>
+    </section>
 
     <!-- Main Content -->
     <div class="member-content">
@@ -239,6 +248,35 @@ const description = `Todd Hall is the founding partner of Camelback Law Group, w
     height: 20px;
     color: var(--color-teal);
     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  }
+
+  /* Photo Gallery */
+  .member-gallery {
+    background: var(--color-charcoal);
+    padding: var(--spacing-xl) 0;
+  }
+
+  .gallery-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .gallery-img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-container {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
   }
 
   /* Main Content */
