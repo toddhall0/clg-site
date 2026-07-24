@@ -9,6 +9,13 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
   
   <!-- ===== HERO SECTION ===== -->
   <section class="hero">
+    <div class="hero-slideshow" aria-hidden="true">
+      <div class="hero-slide is-active" style="background-image:url('/images/hero/hero-1.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/hero/hero-2.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/hero/hero-3.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/hero/hero-4.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/hero/hero-5.jpg')"></div>
+    </div>
     <div class="hero-bg"></div>
     <div class="hero-container">
       <div class="hero-content">
@@ -666,13 +673,35 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     overflow: hidden;
   }
 
+  .hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    background: var(--color-charcoal);
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.6s ease-in-out;
+    will-change: opacity;
+  }
+
+  .hero-slide.is-active {
+    opacity: 1;
+  }
+
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: 
-      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.12) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 40% at 80% 60%, rgba(168, 216, 220, 0.1) 0%, transparent 50%),
-      linear-gradient(160deg, var(--color-charcoal) 0%, var(--color-charcoal-light) 50%, var(--color-charcoal) 100%);
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 40% at 80% 60%, rgba(168, 216, 220, 0.12) 0%, transparent 55%),
+      linear-gradient(160deg, rgba(20, 24, 24, 0.88) 0%, rgba(26, 31, 31, 0.72) 45%, rgba(20, 24, 24, 0.92) 100%);
     z-index: -1;
   }
 
@@ -1416,6 +1445,21 @@ const description = "Sophisticated commercial real estate counsel for Arizona de
     border-radius: 4px;
   }
 </style>
+
+<script>
+  // Hero background photo slideshow (crossfade)
+  (function () {
+    const slides = Array.from(document.querySelectorAll('.hero-slide'));
+    if (slides.length < 2) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let i = 0;
+    window.setInterval(function () {
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, 5000);
+  })();
+</script>
 
 <script>
   (function () {
