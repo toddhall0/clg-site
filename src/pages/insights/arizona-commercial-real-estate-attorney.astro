@@ -1,0 +1,733 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Do You Need a CRE Attorney in Arizona? | CLG";
+const description = "Arizona title companies run closings but can't give legal advice. When commercial parties need counsel, what it costs, and how to choose.";
+
+const article = {
+  title: "Arizona Is an Escrow State — So Why Hire a Commercial Real Estate Attorney?",
+  category: "Legal Counsel",
+  publishDate: "July 2026",
+  readTime: "11 min read",
+  author: "Todd Hall"
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Arizona Is an Escrow State — So Why Hire a Commercial Real Estate Attorney? (And How to Choose One)",
+      "description": "Arizona title companies run closings but can't give legal advice. When commercial parties need counsel, what it costs, and how to choose.",
+      "dateModified": "2026-07-24",
+      "author": {
+        "@type": "Person",
+        "name": "Todd Hall",
+        "jobTitle": "Partner",
+        "alumniOf": "Vanderbilt University Law School",
+        "worksFor": {
+          "@type": "LegalService",
+          "name": "Camelback Law Group",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2720 E. Camelback Rd.",
+            "addressLocality": "Phoenix",
+            "addressRegion": "AZ",
+            "postalCode": "85016",
+            "addressCountry": "US"
+          },
+          "telephone": "(480) 203-3039",
+          "url": "https://clglawaz.com"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I legally need an attorney to close a commercial deal in Arizona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Arizona is an escrow state: a licensed escrow agent under A.R.S. Title 6, Chapter 7 can lawfully close your transaction without any attorney involved. But the escrow agent cannot give legal advice or draft deal terms, so everything negotiable in the transaction — contract terms, title objections, entity structure, risk allocation — is either handled by counsel or not handled at all."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does lease or PSA review typically cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In our experience, tenant-side review of a commercial lease often runs roughly $2,500–$7,500, and PSA drafting or negotiation for a mid-size acquisition often runs roughly $5,000–$15,000, depending on complexity and rounds of negotiation. Many firms, including ours, will quote a flat or capped fee once they see the documents. Ask for the structure in writing before work begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the title company answer my legal questions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Arizona escrow officers are neutral fiduciaries to both parties and are prohibited from practicing law under Arizona Supreme Court Rule 31.2. They can explain the escrow process and the settlement statement, but they cannot interpret your contract, advise you whether to waive a title exception, or draft substantive amendments. When an escrow officer says \"ask your attorney,\" that is the law talking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should my home-state lawyer handle my Arizona deal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not alone. Arizona practice differs from other states in ways that matter — escrow closings, deeds of trust and trustee's sales, anti-deficiency statutes, city transaction privilege tax on commercial rent, and water-supply rules — and advising on Arizona law generally requires Arizona authorization. A common structure is home-state counsel handling entity and tax matters while Arizona counsel runs the contract, diligence, and closing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I have ready for a first call with counsel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bring the LOI or contract draft (even unsigned), the broker's offering materials, your intended entity and financing structure, your timeline, and any title commitment or survey you already have. Also flag known issues — tenants, environmental history, zoning questions. With those in hand, an experienced attorney can scope the engagement, quote a fee structure, and identify the two or three real risks on the first call."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>
+
+  <article class="article">
+    <!-- Hero Section -->
+    <header class="article-hero">
+      <div class="article-hero-bg"></div>
+      <div class="article-hero-container">
+        <div class="article-meta">
+          <span class="article-category">{article.category}</span>
+          <span class="article-date">{article.publishDate}</span>
+          <span class="article-read-time">{article.readTime}</span>
+        </div>
+        <h1>{article.title}</h1>
+        <p class="article-subtitle">Arizona title companies run closings but can't give legal advice — when commercial parties need counsel, what it costs, and how to choose one.</p>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="article-image-container">
+      <div class="article-image">
+        <img
+          src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=600&fit=crop"
+          alt="Two professionals shaking hands over a commercial real estate agreement"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="article-content">
+      <div class="article-body">
+
+        <p class="article-byline">By <a href="https://clglawaz.com" target="_blank" rel="noopener noreferrer">Todd Hall</a>, Partner, Camelback Law Group — J.D., Vanderbilt University Law School; member, State Bar of Arizona. Todd has practiced commercial real estate law in Arizona for more than 20 years, including as in-house counsel to a national homebuilder and an international master-planned community developer.</p>
+
+        <p class="article-updated"><em>Last updated: July 2026</em></p>
+
+        <p class="lead">Arizona commercial closings run through licensed escrow agents, not attorneys — and those escrow agents are legally prohibited from giving legal advice or drafting deal terms. A commercial real estate attorney does the work escrow cannot: negotiating the purchase agreement or lease, structuring the entity and risk allocation, clearing title and survey objections, and papering the financing. For most commercial transactions, counsel belongs at the letter-of-intent stage, engaged on hourly, flat, or capped fees scaled to the transaction.</p>
+
+        <h2>What Does the Title Company Do — and What Is It Legally Barred From Doing?</h2>
+
+        <p>An Arizona title company is a neutral transaction processor and an insurer, not an advisor to either side. Its escrow branch holds funds and documents, follows the written instructions the parties give it, prorates taxes and rents, and disburses at closing; its title branch searches the record and issues title insurance. What it cannot do — by law — is tell you whether the deal you signed protects you.</p>
+
+        <p>Escrow agents are licensed and regulated under Title 6, Chapter 7 of the Arizona Revised Statutes, and <a href="https://www.azleg.gov/ars/6/00813.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 6-813</a> makes it unlawful to act as an escrow agent without a license from the <a href="https://difi.az.gov/escrow-agents-dfi" target="_blank" rel="noopener noreferrer">Arizona Department of Insurance and Financial Institutions</a>. That licensing framework makes an escrow agent a fiduciary to the escrow — obligated to both parties equally, and therefore to neither party's advantage.</p>
+
+        <p>The harder boundary comes from the Arizona Supreme Court, which regulates the practice of law. Under the current rules, "practice of law" includes preparing documents intended to affect legal rights and giving legal advice about them (Ariz. R. Sup. Ct. 31.1), and Rule 31.2 prohibits anyone who is not an active State Bar member from doing either. The <a href="https://www.azbar.org/for-the-public/concerns-about-your-legal-professional/unauthorized-practice-of-law-upl/unauthorized-practice-of-law-upl/" target="_blank" rel="noopener noreferrer">State Bar of Arizona's unauthorized-practice-of-law guidance</a> is explicit: an escrow officer who interprets your purchase agreement, drafts a substantive amendment, or advises you whether to waive a title exception has crossed the line. Experienced escrow officers know this and will tell you, correctly, "you need to ask your attorney."</p>
+
+        <p>Unlike in many states — New York or Georgia, for example, where attorneys conventionally run closings — Arizona's system works without a lawyer in the room. It also, unusually, closes without a transfer tax: the <a href="https://www.azleg.gov/viewDocument/?docName=http://www.azleg.gov/const/9/24.htm" target="_blank" rel="noopener noreferrer">Arizona Constitution, article IX, § 24</a>, adopted by voters in 2008, prohibits state and local taxes on the sale or transfer of real property. The system is efficient. It is also silent. Nobody at the escrow table is paid to notice that your PSA has no survival cap, your entity is unformed, or your title commitment carries an exception that guts your site plan.</p>
+
+        <h3>Who handles what, stage by stage</h3>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Deal stage</th>
+                <th>What the title company handles</th>
+                <th>What only counsel handles</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>LOI / term sheet</strong></td>
+                <td>Nothing — escrow is not yet open</td>
+                <td>LOI structure, exclusivity, confidentiality, access agreements, avoiding unintended binding terms</td>
+              </tr>
+              <tr>
+                <td><strong>Purchase agreement</strong></td>
+                <td>Receives the signed PSA as escrow instructions</td>
+                <td>Drafting and negotiating price mechanics, diligence rights, reps and warranties, remedies, survival caps</td>
+              </tr>
+              <tr>
+                <td><strong>Due diligence</strong></td>
+                <td>Delivers the title commitment and recorded documents</td>
+                <td>Reviewing Schedule B exceptions, survey objections, leases, estoppels, zoning, environmental exposure</td>
+              </tr>
+              <tr>
+                <td><strong>Financing</strong></td>
+                <td>Follows lender instructions; records the deed of trust</td>
+                <td>Negotiating loan documents, guaranties, SNDAs; issuing borrower's counsel opinion letters</td>
+              </tr>
+              <tr>
+                <td><strong>Closing</strong></td>
+                <td>Prorations, settlement statement, disbursement, recording</td>
+                <td>Confirming closing deliverables match the contract; last-minute amendments and escrow instruction conflicts</td>
+              </tr>
+              <tr>
+                <td><strong>Post-closing</strong></td>
+                <td>Issues title policies</td>
+                <td>Enforcing surviving obligations, post-closing adjustments, disputes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Where Do Arizona Commercial Deals Go Wrong Without Counsel?</h2>
+
+        <p>In our experience, deals rarely blow up at the closing table — they blow up months later, on terms nobody negotiated because nobody was hired to negotiate them. The escrow process executes the contract you signed; it does not improve it. The most common failure points we see are seller-form purchase agreements signed unmodified, title exceptions waived by silence, and buyer entities formed after the contract instead of before it.</p>
+
+        <p>A concrete example: in an Arizona multifamily acquisition, <a href="https://www.azleg.gov/ars/33/01321.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 33-1321(H)</a> makes the buyer answerable to tenants for security deposits after closing — whether or not the seller actually transferred the money. A title company will prorate rents on the settlement statement; it will not flag that the deposit credit is short or that the PSA gives you no post-closing remedy when it is. That is a statutory exposure only counsel is looking for. We walk through this and the rest of the diligence workstream in our <a href="/insights/arizona-multifamily-due-diligence-checklist">Arizona multifamily due diligence checklist</a>, and through the acquisition itself in our guide to <a href="/insights/buying-apartment-complex-arizona">buying an apartment complex in Arizona</a>.</p>
+
+        <p>The same pattern repeats across asset classes. Title commitments arrive with Schedule B exceptions — easements, CC&amp;Rs, assessments — that an escrow officer transmits without comment, and the deals we handle in Maricopa, Pima, and Pinal Counties routinely turn on whether someone objected within the PSA's title-review window. Miss the window, and under most Arizona forms you have taken the exception. On financed deals, lenders will also require a borrower's counsel opinion letter — a deliverable no title company can produce.</p>
+
+        <h2>When Should Counsel Come In — LOI Stage or Contract Stage?</h2>
+
+        <p>Bring counsel in at the letter of intent, before anything is signed. The LOI sets the economic skeleton — price, deposit structure, diligence period, exclusivity — and terms conceded there are rarely recovered in the PSA. An LOI review is typically a small, fast engagement, and it is the cheapest legal work in the entire deal relative to what it protects.</p>
+
+        <p>Late engagement has a measurable cost. When we are retained after the PSA is signed, the job changes from negotiating terms to mitigating them: chasing amendments the counterparty has no obligation to grant, compressing diligence into whatever window survives, and restructuring the buyer entity mid-escrow, which can trigger assignment provisions in the very contract you are trying to close. The engagement that costs clients the most, in our experience, is the one that starts with "we already signed — can you take a quick look?"</p>
+
+        <p>There is a version of this that is genuinely fine: on smaller deals, some clients negotiate their own LOI and bring us in to draft or mark up the PSA. What does not work is signing the PSA and hiring counsel for "the closing" — by then, in an escrow state, the legal work is mostly done, and it was done by the other side's lawyer.</p>
+
+        <p>Many clients now arrive having already asked ChatGPT or another AI tool their legal questions, and often the general answer they got was directionally right. That is useful — it makes the first call faster. Counsel's job is not to gatekeep that information but to verify it and apply it to your specific contract, your title commitment, and your entity structure, which is where general answers stop.</p>
+
+        <h2>What Does an Arizona Commercial Real Estate Attorney Cost — and How Do Fee Structures Work?</h2>
+
+        <p>Commercial real estate counsel in Arizona is typically engaged hourly, flat-fee, or hourly-with-a-cap, and Arizona's ethics rules (Ariz. R. Sup. Ct. 42, ER 1.5) require that any fee be reasonable and its basis communicated to the client, preferably in writing. The right structure depends on how predictable the scope is: predictable work suits flat fees; open-ended negotiation suits hourly billing, sometimes with a cap.</p>
+
+        <p>The figures below reflect typical engagements in our experience; they are ranges, not quotes, and every deal prices on its own facts:</p>
+
+        <div class="callout">
+          <ul>
+            <li><strong>Hourly rates.</strong> Experienced Arizona commercial real estate partners commonly bill in the range of $400–$700 per hour, with associates lower.</li>
+            <li><strong>PSA drafting or negotiation.</strong> Often $5,000–$15,000 for a mid-size commercial acquisition, scaling with complexity and rounds of negotiation. See our discussion of what actually gets negotiated in <a href="/insights/arizona-commercial-purchase-agreements">Arizona commercial purchase agreements</a>.</li>
+            <li><strong>Lease review and negotiation.</strong> Tenant-side review of an office, retail, or industrial lease often runs $2,500–$7,500 depending on lease length and landlord flexibility.</li>
+            <li><strong>Full acquisition representation.</strong> LOI through closing on a multifamily or commercial asset is commonly a five-figure engagement, frequently capped by agreement.</li>
+          </ul>
+        </div>
+
+        <p>As a rough proportionality check: on deals above a few million dollars, legal fees usually land well under one percent of deal size, while the provisions counsel negotiates — remedies, survival, title protection, deposit structure — allocate risks measured in full percentage points of the purchase price. No lawyer can promise a result. What a fee agreement can promise is defined scope, a known structure, and no surprises on the invoice — ask for all three.</p>
+
+        <h2>When Do You Probably Not Need a Lawyer?</h2>
+
+        <p>Honestly: not every Arizona deal needs counsel. If you are buying a small owner-user property on a standard Arizona Association of REALTORS form, the title commitment is clean, there are no tenants, no seller financing, and no entity complexity, a careful principal and a good escrow officer can close it competently. Paying five figures of legal fees on that deal is poor risk allocation.</p>
+
+        <p>The same is often true of a simple lease renewal on unchanged terms, a month-to-month license for incidental space, or a cash purchase of vacant platted land with no development intent and no title exceptions beyond the standard set. Plenty of experienced investors self-perform at this level, and they are not wrong to.</p>
+
+        <p>The line moves when any of the following appear: a negotiated (non-form) contract, tenants in place, a lender, an entity or 1031 structure, development or entitlement intent, environmental history, water questions, or a counterparty with counsel. Any one of those converts legal review from overhead into cheap insurance. Two of them together, and self-performing is how the expensive stories in this article start.</p>
+
+        <h2>How Should You Evaluate an Arizona CRE Attorney?</h2>
+
+        <p>Evaluate counsel the way you would evaluate a contractor: on directly relevant completed work, references, availability, and price transparency — in that order. Bar membership and general litigation credentials tell you little about whether a lawyer can turn a PSA markup in three days or knows what a Maricopa County recorder will and will not accept.</p>
+
+        <p>Ask about deal experience in your asset class and your submarket. A lawyer who regularly closes multifamily in Phoenix, Tempe, and Mesa will know the current market positions on diligence periods, deposit go-hard structures, and estoppel thresholds — knowledge that shortens negotiations. In-house experience is worth asking about too: attorneys who have sat on the client side of the table, as our founder did for a national homebuilder and a master-planned community developer, tend to staff leaner and negotiate toward closing rather than toward a perfect document.</p>
+
+        <p>Then test responsiveness and conflicts. Commercial deals run on contract deadlines; an attorney who takes four days to return a diligence-period call is a liability regardless of skill. And in a market the size of Phoenix, conflicts are real — confirm the firm does not represent your counterparty, your lender, or the title company in related matters. Out-of-state investors should also ask whether their home-state counsel is authorized to advise on Arizona law at all.</p>
+
+        <h2>What Questions Should You Ask Before You Engage?</h2>
+
+        <p>Ask these before signing an engagement letter — any experienced Arizona commercial real estate attorney should answer all of them without hesitation:</p>
+
+        <ol>
+          <li>How many transactions like mine — asset class, size, county — have you closed in the last three years?</li>
+          <li>Who will actually do the work: you, an associate, or both, and at what rates?</li>
+          <li>What fee structure do you recommend for this scope — hourly, flat, or capped — and what is excluded?</li>
+          <li>What is your realistic turnaround for a PSA markup or lease redline?</li>
+          <li>Have you checked conflicts against the seller, lender, broker, and title company on this deal?</li>
+          <li>What do you see as the two or three biggest legal risks in this transaction, based on what I have told you?</li>
+          <li>If the deal dies in diligence, what will I owe?</li>
+          <li>Will you coordinate directly with my broker, lender, and escrow officer, or route everything through me?</li>
+        </ol>
+
+        <p>The answers matter less than their specificity. A lawyer who answers question 6 concretely — on the first call, before being retained — is showing you the product.</p>
+
+        <h2>How Camelback Law Group Can Help</h2>
+
+        <p>Camelback Law Group is a Phoenix-based commercial real estate and environmental law firm representing investors, developers, homebuilders, lenders, multifamily operators, and municipalities across Arizona. Our practice covers the full deal arc escrow cannot: LOIs, purchase and sale agreements, due diligence, entitlements, financing and loan opinions, leasing, and distressed transactions. Todd Hall has spent more than 20 years in Arizona commercial real estate, including as in-house counsel to a national homebuilder and an international master-planned community developer — so we have sat on your side of the table.</p>
+
+        <div class="article-cta">
+          <h3>Not Sure Your Deal Needs Counsel?</h3>
+          <p>If you are weighing whether your next transaction needs a lawyer, that conversation costs nothing. Call (480) 203-3039 or reach out and we'll tell you honestly where counsel changes the outcome — and where it doesn't.</p>
+          <a href="/#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Do I legally need an attorney to close a commercial deal in Arizona?</h3>
+
+        <p>No. Arizona is an escrow state: a licensed escrow agent under A.R.S. Title 6, Chapter 7 can lawfully close your transaction without any attorney involved. But the escrow agent cannot give legal advice or draft deal terms, so everything negotiable in the transaction — contract terms, title objections, entity structure, risk allocation — is either handled by counsel or not handled at all.</p>
+
+        <h3>What does lease or PSA review typically cost?</h3>
+
+        <p>In our experience, tenant-side review of a commercial lease often runs roughly $2,500–$7,500, and PSA drafting or negotiation for a mid-size acquisition often runs roughly $5,000–$15,000, depending on complexity and rounds of negotiation. Many firms, including ours, will quote a flat or capped fee once they see the documents. Ask for the structure in writing before work begins.</p>
+
+        <h3>Can the title company answer my legal questions?</h3>
+
+        <p>No. Arizona escrow officers are neutral fiduciaries to both parties and are prohibited from practicing law under Arizona Supreme Court Rule 31.2. They can explain the escrow process and the settlement statement, but they cannot interpret your contract, advise you whether to waive a title exception, or draft substantive amendments. When an escrow officer says "ask your attorney," that is the law talking.</p>
+
+        <h3>Should my home-state lawyer handle my Arizona deal?</h3>
+
+        <p>Usually not alone. Arizona practice differs from other states in ways that matter — escrow closings, deeds of trust and trustee's sales, anti-deficiency statutes, city transaction privilege tax on commercial rent, and water-supply rules — and advising on Arizona law generally requires Arizona authorization. A common structure is home-state counsel handling entity and tax matters while Arizona counsel runs the contract, diligence, and closing.</p>
+
+        <h3>What should I have ready for a first call with counsel?</h3>
+
+        <p>Bring the LOI or contract draft (even unsigned), the broker's offering materials, your intended entity and financing structure, your timeline, and any title commitment or survey you already have. Also flag known issues — tenants, environmental history, zoning questions. With those in hand, an experienced attorney can scope the engagement, quote a fee structure, and identify the two or three real risks on the first call.</p>
+
+        <p class="article-disclaimer"><em>This article is for general informational purposes only and does not constitute legal advice. Reading it does not create an attorney-client relationship. Outcomes depend on specific facts; consult an Arizona attorney about your situation.</em></p>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <div class="sidebar-card">
+          <h4>Related Articles</h4>
+          <ul>
+            <li><a href="/insights/buying-apartment-complex-arizona">Buying an Apartment Complex in Arizona</a></li>
+            <li><a href="/insights/arizona-multifamily-due-diligence-checklist">Arizona Multifamily Due Diligence Checklist</a></li>
+            <li><a href="/insights/arizona-commercial-purchase-agreements">Key Issues in Arizona Commercial Purchase Agreements</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="/#services">Commercial Transactions</a></li>
+            <li><a href="/#services">Purchase & Sale Agreements</a></li>
+            <li><a href="/#services">Due Diligence & Title Review</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card sidebar-contact">
+          <h4>Questions?</h4>
+          <p>Speak with an experienced Arizona commercial real estate attorney.</p>
+          <a href="tel:4802033039" class="sidebar-phone">(480) 203-3039</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Article Hero */
+  .article-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+  }
+
+  .article-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
+      var(--color-charcoal-light);
+    z-index: 0;
+  }
+
+  .article-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    text-align: center;
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .article-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    background: rgba(26, 155, 165, 0.15);
+    border-radius: 4px;
+  }
+
+  .article-date,
+  .article-read-time {
+    font-size: 0.85rem;
+    color: var(--color-gray-400);
+  }
+
+  .article-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .article-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+  }
+
+  /* Featured Image */
+  .article-image-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    margin-top: calc(-1 * var(--spacing-xl));
+    position: relative;
+    z-index: 2;
+  }
+
+  .article-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .article-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Article Content Layout */
+  .article-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-2xl);
+  }
+
+  /* Article Body */
+  .article-body {
+    color: var(--color-cream);
+  }
+
+  .article-byline {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    color: var(--color-gray-400) !important;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+    margin-bottom: var(--spacing-sm) !important;
+  }
+
+  .article-byline a {
+    color: var(--color-teal);
+    font-weight: 600;
+  }
+
+  .article-updated {
+    font-size: 0.85rem !important;
+    color: var(--color-gray-500) !important;
+    margin-bottom: var(--spacing-lg) !important;
+  }
+
+  .article-body .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .article-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-cream);
+  }
+
+  .article-body a {
+    color: var(--color-teal-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-body a:hover {
+    color: var(--color-teal);
+  }
+
+  .article-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-teal);
+  }
+
+  .article-body h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-body h4 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-body ul,
+  .article-body ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+  }
+
+  .article-body li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-cream);
+  }
+
+  .article-body ul li {
+    list-style-type: disc;
+  }
+
+  .article-body ol li {
+    list-style-type: decimal;
+  }
+
+  .article-body li strong {
+    color: var(--color-white);
+  }
+
+  /* Table */
+  .table-scroll {
+    overflow-x: auto;
+    margin: var(--spacing-lg) 0;
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+  }
+
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    min-width: 640px;
+  }
+
+  .article-body th,
+  .article-body td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+    line-height: 1.6;
+  }
+
+  .article-body thead th {
+    background: var(--color-slate-dark);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .article-body tbody td {
+    color: var(--color-cream);
+  }
+
+  .article-body tbody td strong {
+    color: var(--color-teal);
+  }
+
+  .article-body tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  /* Callout Box */
+  .callout {
+    background: var(--color-charcoal-light);
+    border-left: 4px solid var(--color-teal);
+    border-radius: 0 8px 8px 0;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .callout h4 {
+    margin-top: 0;
+  }
+
+  .callout ol,
+  .callout ul {
+    margin-bottom: 0;
+  }
+
+  .article-disclaimer {
+    font-size: 0.9rem !important;
+    color: var(--color-gray-500) !important;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-charcoal-lighter);
+  }
+
+  /* Article CTA */
+  .article-cta {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .article-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-cta p {
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 150ms ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  /* Sidebar */
+  .article-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .sidebar-card {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+  }
+
+  .sidebar-card h4 {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-card li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .sidebar-card a {
+    font-size: 0.9rem;
+    color: var(--color-cream);
+    transition: color 150ms ease;
+  }
+
+  .sidebar-card a:hover {
+    color: var(--color-teal-light);
+  }
+
+  .sidebar-contact {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-charcoal-light) 0%, var(--color-charcoal) 100%);
+  }
+
+  .sidebar-contact p {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-phone {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-teal) !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .article-content {
+      grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .sidebar-card {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .article-meta {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+
+    .article-sidebar {
+      flex-direction: column;
+    }
+
+    .sidebar-card {
+      min-width: 100%;
+    }
+  }
+</style>

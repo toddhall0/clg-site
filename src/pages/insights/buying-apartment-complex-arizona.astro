@@ -1,0 +1,655 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Buying an Apartment Complex in Arizona: Legal Process | CLG";
+const description = "The legal process for acquiring Arizona multifamily property — LOI, PSA, due diligence, estoppels, and escrow closing — from a Phoenix CRE law firm.";
+
+const article = {
+  title: "Buying an Apartment Complex in Arizona: The Legal Process from LOI to Closing",
+  category: "Multifamily",
+  publishDate: "July 2026",
+  readTime: "12 min read",
+  author: "Todd Hall"
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Buying an Apartment Complex in Arizona: The Legal Process from LOI to Closing",
+      "description": "The legal process for acquiring Arizona multifamily property — LOI, PSA, due diligence, estoppels, and escrow closing — from a Phoenix CRE law firm.",
+      "datePublished": "2026-07-24",
+      "dateModified": "2026-07-24",
+      "mainEntityOfPage": "https://clglawaz.com/insights/buying-apartment-complex-arizona",
+      "author": {
+        "@type": "Person",
+        "name": "Todd Hall",
+        "jobTitle": "Partner",
+        "alumniOf": "Vanderbilt University Law School",
+        "worksFor": {
+          "@type": "LegalService",
+          "name": "Camelback Law Group",
+          "url": "https://clglawaz.com",
+          "telephone": "(480) 203-3039",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2720 E. Camelback Rd.",
+            "addressLocality": "Phoenix",
+            "addressRegion": "AZ",
+            "postalCode": "85016",
+            "addressCountry": "US"
+          }
+        }
+      },
+      "publisher": {
+        "@type": "LegalService",
+        "name": "Camelback Law Group",
+        "url": "https://clglawaz.com",
+        "telephone": "(480) 203-3039",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2720 E. Camelback Rd.",
+          "addressLocality": "Phoenix",
+          "addressRegion": "AZ",
+          "postalCode": "85016",
+          "addressCountry": "US"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does it take to close a multifamily purchase in Arizona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most Arizona multifamily acquisitions run roughly 90 to 120 days from signed letter of intent to recorded deed: two to four weeks negotiating the purchase and sale agreement, 30 to 60 days of due diligence, and 10 to 15 days from due diligence expiration to closing. Loan underwriting usually runs concurrently with due diligence. All-cash deals on clean title can close faster; loan assumptions and portfolio transactions often take longer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my earnest money refundable during due diligence?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typically yes. Arizona multifamily contracts customarily give the buyer an unrestricted right to terminate for any reason or no reason before the due diligence deadline, with the escrow agent returning the earnest money in full. Once the deadline passes without termination, the deposit usually becomes nonrefundable except for seller default or failure of a closing condition. Make sure the PSA states the refund and release mechanics clearly, because ambiguity invites escrow disputes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an estoppel certificate and why do I need them from tenants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An estoppel certificate is a tenant's signed confirmation of its lease terms, rent, deposit, and any landlord defaults, which prevents the tenant from later claiming different terms. In Arizona multifamily deals, collecting estoppels from hundreds of residential tenants is impractical, so buyers customarily accept a seller's certified rent roll backed by a representation that survives closing, reserving true estoppels for commercial tenants in mixed-use projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who pays which closing costs in Arizona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By custom — always negotiable in the purchase agreement — the seller pays the premium for the buyer's standard owner's title policy, the buyer pays its lender's policy and any extended-coverage upgrade or endorsements, and the parties split the escrow fee equally. Recording fees are modest, and prorations of rent, deposits, and taxes are settled on the settlement statement. Arizona imposes no transfer tax on the deed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Arizona have a transfer tax?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Arizona has no state, county, or city real estate transfer tax, and the Arizona Constitution, article IX, section 24, adopted by voters in 2008, prohibits any new tax or fee on the sale or transfer of real property. Instead, A.R.S. § 11-1133 requires an affidavit of property value to accompany most deeds at recording, unless the transfer qualifies for an exemption under A.R.S. § 11-1134."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>
+
+  <article class="article">
+    <!-- Hero Section -->
+    <header class="article-hero">
+      <div class="article-hero-bg"></div>
+      <div class="article-hero-container">
+        <div class="article-meta">
+          <span class="article-category">{article.category}</span>
+          <span class="article-date">{article.publishDate}</span>
+          <span class="article-read-time">{article.readTime}</span>
+        </div>
+        <h1>{article.title}</h1>
+        <p class="article-subtitle">The legal process for acquiring Arizona multifamily property — LOI, PSA, due diligence, estoppels, and escrow closing.</p>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="article-image-container">
+      <div class="article-image">
+        <img
+          src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=1200&h=600&fit=crop"
+          alt="Arizona apartment complex representing a multifamily acquisition"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="article-content">
+      <div class="article-body">
+
+        <p class="article-byline">By <a href="https://clglawaz.com/todd-hall" target="_blank" rel="noopener noreferrer">Todd Hall</a>, Partner, Camelback Law Group — J.D., Vanderbilt University Law School; member, State Bar of Arizona. Todd has practiced commercial real estate law in Arizona for more than 20 years, including as in-house counsel to a national homebuilder and an international master-planned community developer.</p>
+
+        <p class="article-updated"><em>Last updated: July 2026</em></p>
+
+        <p class="lead">Buying an apartment complex in Arizona moves through five stages: a largely nonbinding letter of intent, a negotiated purchase and sale agreement, a due diligence period during which earnest money is typically fully refundable, loan underwriting, and a closing run through a licensed escrow agent rather than attorneys. Most deals take roughly 90 to 120 days from signed LOI to recorded deed. Arizona imposes no real estate transfer tax; the deed records with an affidavit of property value instead.</p>
+
+        <h2>What Does the Deal Path Look Like From LOI to Closing?</h2>
+
+        <p>An Arizona multifamily acquisition follows a predictable sequence: LOI, purchase and sale agreement (PSA), due diligence, financing, and an escrow closing. The escrow agent — not an attorney — holds the money, coordinates signatures, and records the deed, because Arizona is an escrow-closing state. Each stage has its own deadlines, and the PSA is the document that fixes them.</p>
+
+        <p>Here is the roadmap we use with buyers, with the timeframes we typically see in Arizona deals:</p>
+
+        <div class="callout">
+          <ol>
+            <li><strong>Letter of intent — typically 1 to 2 weeks.</strong> The parties negotiate price, earnest money, due diligence length, and closing timing in a short, mostly nonbinding term sheet. Exclusivity and confidentiality are usually the only binding terms.</li>
+            <li><strong>Purchase and sale agreement — typically 2 to 4 weeks.</strong> Counsel negotiate the PSA: deposit structure, termination rights, title procedure, seller representations, interim operating covenants, and closing deliverables. The "effective date" starts the contract clock.</li>
+            <li><strong>Due diligence — typically 30 to 60 days from the effective date.</strong> The buyer inspects the property, audits leases and financials, reviews the title commitment and survey, and orders third-party reports. Earnest money is customarily refundable until this period expires.</li>
+            <li><strong>Financing — usually concurrent with due diligence, often 45 to 75 days overall.</strong> Appraisal, environmental reports, and lender underwriting run in parallel. Agency (Fannie Mae/Freddie Mac) multifamily loans frequently drive the closing date more than any other workstream.</li>
+            <li><strong>Closing — typically 10 to 15 days after due diligence expires.</strong> The parties deposit signed documents and funds with the escrow agent, prorations are settled, the special warranty deed records with the county recorder, and the escrow agent disburses.</li>
+          </ol>
+        </div>
+
+        <p>All-cash deals on clean title can compress this materially; loan assumptions and portfolio deals stretch it. The dates are contractual, not statutory — which is why they deserve more negotiation than most buyers give them.</p>
+
+        <h2>Is the Letter of Intent Binding in Arizona?</h2>
+
+        <p>A properly drafted LOI is nonbinding as to the deal terms and binding only as to a few designated provisions — typically exclusivity, confidentiality, and sometimes access for early inspections. The purpose is to lock the business terms before spending money on PSA negotiation and diligence, not to create an enforceable sale contract. A carelessly drafted LOI, however, can create enforceable obligations the parties never intended.</p>
+
+        <p>What belongs in a multifamily LOI: price; earnest money amounts and when each deposit goes "hard"; the length of the due diligence period; the closing deadline; whether the sale is as-is; exclusivity; and any deal-specific economics such as loan assumption or seller financing. What should stay out: representations and warranties, remedies, indemnities, and detailed title procedure. Those belong in the PSA, where they are negotiated with full attention rather than conceded in shorthand.</p>
+
+        <p>Two drafting rules do most of the work. First, state expressly which paragraphs are binding and that no other obligation — including any duty to continue negotiating — arises until a PSA is fully signed. Second, do not let the LOI promise more than the buyer's underwriting supports; sellers remember LOI terms at the PSA table, and retreating from them costs credibility and sometimes the deal.</p>
+
+        <h2>What Are the Key PSA Provisions for a Multifamily Buyer?</h2>
+
+        <p>The PSA is where the buyer wins or loses the deal's legal protections, and multifamily assets add a layer that vacant land and single-tenant deals lack: hundreds of residential tenancies transfer with the dirt. The buyer's core protections are a clean due diligence termination right, rent-roll and lease representations, interim operating covenants, and closing deliverables that actually transfer the tenancies. We cover general Arizona PSA structure in our article on <a href="/insights/arizona-commercial-purchase-agreements">Arizona commercial purchase and sale agreements</a>; the points below are the multifamily-specific ones.</p>
+
+        <p><strong>Representations tied to the rent roll.</strong> The buyer needs the seller to certify the rent roll, the security deposit ledger, delinquencies, concessions, and any side agreements — and needs those representations to survive closing for a negotiated period, because rent-roll problems usually surface after takeover, not before.</p>
+
+        <p><strong>Interim operating covenants.</strong> Between contract and closing, the seller should be limited to leasing in the ordinary course on its standard form within stated rent parameters, with buyer consent required for non-standard tenancies after due diligence expires. Otherwise the asset the buyer underwrote is not the asset that closes.</p>
+
+        <p><strong>As-is with carve-outs.</strong> Arizona multifamily sales are customarily as-is, but as-is clauses do not have to swallow the seller's express representations or fraud. The carve-out language matters more than the as-is label.</p>
+
+        <p><strong>Tax treatment of the income stream.</strong> City transaction privilege tax on residential rent was repealed effective January 1, 2025 (Laws 2023, ch. 204; <a href="https://azdor.gov/business/transaction-privilege-tax/residential-rental-guidelines" target="_blank" rel="noopener noreferrer">A.R.S. § 42-6004(H)</a>) — Arizona cities may no longer tax residential rental income. Commercial space in a mixed-use project, such as ground-floor retail, remains subject to city TPT, so mixed-use buyers should underwrite and prorate the two income streams differently.</p>
+
+        <p>Entity structuring belongs on the same timeline: most buyers take title through a purpose-formed LLC, and out-of-state investors have their own added considerations to plan for early.</p>
+
+        <h2>How Do Earnest Money and Due Diligence Work in Arizona Escrow Practice?</h2>
+
+        <p>In Arizona, earnest money is deposited with a neutral escrow agent licensed under Title 6, Chapter 7 of the Arizona Revised Statutes (<a href="https://www.azleg.gov/arsDetail/?title=6" target="_blank" rel="noopener noreferrer">A.R.S. § 6-801 et seq.</a>), not held by a seller's attorney as in some states. During the due diligence period the deposit is customarily fully refundable: the buyer may terminate for any reason or no reason and the escrow agent returns the money. When the period expires without termination, the deposit goes hard — nonrefundable except for seller default or failure of a closing condition — and often a second deposit is added.</p>
+
+        <p>The PSA should spell out the mechanics the escrow agent will actually follow: who signs escrow instructions, whether a termination notice alone compels release of the deposit, and how disputes are handled. Vague release provisions are how refundable deposits end up frozen in escrow.</p>
+
+        <p>Due diligence itself is the buyer's one chance to reprice or leave. For an apartment complex, that means physical inspection, environmental and zoning review, financial audit, service contracts, and the lease files. On lease review scope, our practice reflects the asset class: on larger properties, buyers audit a meaningful sample of lease files — often 20 to 30 percent — plus every non-standard tenancy, and expand the sample if discrepancies against the rent roll surface. AI-assisted document review is shifting those economics toward full-population lease abstraction with attorney review of flagged exceptions. For the complete workstream, see our <a href="/insights/arizona-multifamily-due-diligence-checklist">Arizona multifamily due diligence checklist</a>.</p>
+
+        <h2>How Do Title, Survey, and Objection Deadlines Work?</h2>
+
+        <p>The title company issues a title commitment early in due diligence, the buyer objects to unacceptable exceptions by a contractual deadline, the seller elects what it will cure, and the buyer then terminates or takes title subject to the remaining "permitted exceptions." None of these deadlines is statutory — they exist only as the PSA writes them, so the objection and cure periods need to fit inside the due diligence period with room to react.</p>
+
+        <p>Sellers in Arizona commercial deals customarily convey by special warranty deed, warranting title only against matters arising during the seller's own ownership. That makes the owner's title policy, not the deed, the buyer's real protection — and makes the exception review the point of the exercise. Monetary liens, unreleased deeds of trust, and mechanics' liens are standard mandatory-cure items; easements, CC&amp;Rs, and mineral reservations require judgment about how the property actually operates.</p>
+
+        <p>Order the ALTA survey at contract signing, not mid-diligence. Surveys are a common critical-path item, and the ALTA/NSPS Minimum Standard Detail Requirements were updated effective February 23, 2026 — specify the <a href="https://www.alta.org/topics/topic-land-survey-standards" target="_blank" rel="noopener noreferrer">2026 standards</a> and the Table A items the lender requires. On financing, note a distinctly Arizona point: lenders here secure loans with deeds of trust (<a href="https://www.azleg.gov/ars/33/00801.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 33-801 et seq.</a>) rather than mortgages, which permit nonjudicial trustee's sales on default — a faster remedy than judicial foreclosure, and one reason loan documents deserve real negotiation rather than signature-page treatment.</p>
+
+        <h2>How Are Tenant Leases, Deposits, and Estoppels Handled at Closing?</h2>
+
+        <p>The buyer of an occupied apartment complex steps into every tenancy at closing, and the Arizona Residential Landlord and Tenant Act (<a href="https://www.azleg.gov/ars/33/01301.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 33-1301 et seq.</a>) governs those relationships from day one. The three closing workstreams are assignment of the leases, transfer of the deposit liability, and verification of the rent roll. Handled late, any of the three can move a closing date.</p>
+
+        <p>Security deposits deserve particular care because the statute has teeth. Under <a href="https://www.azleg.gov/ars/33/01321.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 33-1321</a>, deposits are capped at one and one-half month's rent including prepaid rent (subsection A); fees are refundable unless designated nonrefundable in writing (subsection B); deposits must be returned with an itemized deduction statement within 14 days — excluding Saturdays, Sundays, and legal holidays — after termination, delivery of possession, and demand (subsection D); and a landlord who wrongfully withholds owes damages of twice the amount withheld (subsection E). Critically for buyers, subsection H binds the holder of the landlord's interest at termination of the tenancy: <strong>the buyer inherits the seller's deposit liability whether or not the deposits were actually transferred.</strong> The PSA must require a full deposit ledger, a closing credit or transfer of every deposit and designated-nonrefundable fee, and an indemnity for pre-closing deposit claims.</p>
+
+        <p>Unlike in office and retail deals, full tenant estoppels are impractical in multifamily — no buyer collects signed certificates from three hundred residents. The customary substitute is a seller certification of the rent roll and deposit ledger, backed by a representation that survives closing, with true estoppels reserved for any commercial tenants in a mixed-use project. In the transactions we handle, the provision that most often delays multifamily closings is exactly this deliverable: the certified rent roll and updated deposit ledger arriving days late, stale, or inconsistent with the diligence files. We sequence it deliberately — the seller certifies the rent roll at contract, refreshes it at due diligence expiration, and re-certifies it a few business days before closing, so discrepancies surface while there is still time to resolve them instead of on the settlement-statement call.</p>
+
+        <h2>What Happens at an Arizona Escrow Closing — and Do I Need a Lawyer?</h2>
+
+        <p>Unlike in many states, Arizona closings are not conducted by attorneys: a licensed escrow agent (almost always affiliated with the title insurer) collects signed documents and funds, balances the settlement statement, records the deed with the county recorder — Maricopa, Pima, or Pinal County for most metro Phoenix and Tucson assets — and disburses. The escrow agent is strictly neutral. It follows written instructions; it cannot advise either party, flag a bad prorations clause, or negotiate a cure. That neutrality is precisely why sophisticated parties bring their own counsel.</p>
+
+        <p>Two Arizona-specific mechanics surprise out-of-state buyers. First, Arizona has no state, county, or city real estate transfer tax, and the Arizona Constitution (<a href="https://www.azleg.gov/const/9/24.htm" target="_blank" rel="noopener noreferrer">art. IX, § 24</a>, adopted by voters in 2008) prohibits any new tax, fee, or stamp requirement on the sale or transfer of real property. Second, in place of transfer-tax stamps, <a href="https://www.azleg.gov/ars/11/01133.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 11-1133</a> requires an affidavit of property value, signed by buyer and seller or their agents, to accompany the deed at recording — the recorder must refuse the deed without it unless the transfer is exempt under A.R.S. § 11-1134.</p>
+
+        <p>On cost allocation, Arizona custom — always negotiable in the PSA — runs as follows: the seller pays the premium for the buyer's standard owner's title policy; the buyer pays its lender's policy, any extended-coverage upgrade, and endorsements; and the parties split the escrow fee equally. Recording fees are modest; prorations of rents, deposits, taxes, and utilities are settled on the statement.</p>
+
+        <p>Where does an attorney change the outcome? Before closing: PSA terms that actually protect the deposit, title objections framed to compel cure, and surviving representations sized to the risk. At closing: escrow instructions that match the PSA, a settlement statement checked against the prorations clause and deposit ledger, and loan documents negotiated rather than merely executed. The escrow agent makes the closing happen; counsel makes it happen on the terms the buyer bargained for. The same dynamics run in reverse for owners exiting an asset, a topic we take up in our companion article on <a href="/insights/selling-multifamily-property-arizona">selling a multifamily property in Arizona</a>, and the broader case for local counsel is the subject of our article on <a href="/insights/arizona-commercial-real-estate-attorney">why buyers hire an Arizona commercial real estate attorney</a>.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How long does it take to close a multifamily purchase in Arizona?</h3>
+
+        <p>Most Arizona multifamily acquisitions run roughly 90 to 120 days from signed letter of intent to recorded deed: two to four weeks negotiating the purchase and sale agreement, 30 to 60 days of due diligence, and 10 to 15 days from due diligence expiration to closing. Loan underwriting usually runs concurrently with due diligence. All-cash deals on clean title can close faster; loan assumptions and portfolio transactions often take longer.</p>
+
+        <h3>Is my earnest money refundable during due diligence?</h3>
+
+        <p>Typically yes. Arizona multifamily contracts customarily give the buyer an unrestricted right to terminate for any reason or no reason before the due diligence deadline, with the escrow agent returning the earnest money in full. Once the deadline passes without termination, the deposit usually becomes nonrefundable except for seller default or failure of a closing condition. Make sure the PSA states the refund and release mechanics clearly, because ambiguity invites escrow disputes.</p>
+
+        <h3>What is an estoppel certificate and why do I need them from tenants?</h3>
+
+        <p>An estoppel certificate is a tenant's signed confirmation of its lease terms, rent, deposit, and any landlord defaults, which prevents the tenant from later claiming different terms. In Arizona multifamily deals, collecting estoppels from hundreds of residential tenants is impractical, so buyers customarily accept a seller's certified rent roll backed by a representation that survives closing, reserving true estoppels for commercial tenants in mixed-use projects.</p>
+
+        <h3>Who pays which closing costs in Arizona?</h3>
+
+        <p>By custom — always negotiable in the purchase agreement — the seller pays the premium for the buyer's standard owner's title policy, the buyer pays its lender's policy and any extended-coverage upgrade or endorsements, and the parties split the escrow fee equally. Recording fees are modest, and prorations of rent, deposits, and taxes are settled on the settlement statement. Arizona imposes no transfer tax on the deed.</p>
+
+        <h3>Does Arizona have a transfer tax?</h3>
+
+        <p>No. Arizona has no state, county, or city real estate transfer tax, and the Arizona Constitution, article IX, section 24, adopted by voters in 2008, prohibits any new tax or fee on the sale or transfer of real property. Instead, A.R.S. § 11-1133 requires an affidavit of property value to accompany most deeds at recording, unless the transfer qualifies for an exemption under A.R.S. § 11-1134.</p>
+
+        <h2>How Camelback Law Group Can Help</h2>
+
+        <p>Camelback Law Group represents multifamily buyers, sellers, operators, and lenders across metro Phoenix, Tucson, and the rest of Arizona — from LOI strategy through PSA negotiation, due diligence management, loan documentation, and escrow closing. In the transactions we handle, disciplined sequencing — certified rent rolls refreshed on a schedule, title and survey ordered at signing, and closing checklists that start at contract — is what most reliably protects the closing date.</p>
+
+        <div class="article-cta">
+          <h3>Acquiring an Apartment Complex in Arizona?</h3>
+          <p>Put a disciplined LOI-to-closing process to work on your transaction — from PSA negotiation through due diligence, loan documentation, and escrow closing.</p>
+          <a href="/#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+
+        <p class="article-disclaimer"><em>This article is for general informational purposes only and does not constitute legal advice. Reading it does not create an attorney-client relationship. Outcomes depend on specific facts; consult an Arizona attorney about your situation.</em></p>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <div class="sidebar-card">
+          <h4>Related Articles</h4>
+          <ul>
+            <li><a href="/insights/selling-multifamily-property-arizona">Selling a Multifamily Property in Arizona</a></li>
+            <li><a href="/insights/arizona-multifamily-due-diligence-checklist">Arizona Multifamily Due Diligence Checklist</a></li>
+            <li><a href="/insights/arizona-commercial-real-estate-attorney">Do You Need an Arizona CRE Attorney?</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="/#services">Commercial Transactions</a></li>
+            <li><a href="/#services">Purchase & Sale Agreements</a></li>
+            <li><a href="/#services">Due Diligence & Title Review</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card sidebar-contact">
+          <h4>Questions?</h4>
+          <p>Speak with an experienced Arizona commercial real estate attorney.</p>
+          <a href="tel:4802033039" class="sidebar-phone">(480) 203-3039</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Article Hero */
+  .article-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+  }
+
+  .article-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
+      var(--color-charcoal-light);
+    z-index: 0;
+  }
+
+  .article-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    text-align: center;
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .article-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    background: rgba(26, 155, 165, 0.15);
+    border-radius: 4px;
+  }
+
+  .article-date,
+  .article-read-time {
+    font-size: 0.85rem;
+    color: var(--color-gray-400);
+  }
+
+  .article-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .article-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+  }
+
+  /* Featured Image */
+  .article-image-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    margin-top: calc(-1 * var(--spacing-xl));
+    position: relative;
+    z-index: 2;
+  }
+
+  .article-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .article-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Article Content Layout */
+  .article-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-2xl);
+  }
+
+  /* Article Body */
+  .article-body {
+    color: var(--color-cream);
+  }
+
+  .article-byline {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    color: var(--color-gray-400) !important;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+    margin-bottom: var(--spacing-sm) !important;
+  }
+
+  .article-byline a {
+    color: var(--color-teal);
+    font-weight: 600;
+  }
+
+  .article-updated {
+    font-size: 0.85rem !important;
+    color: var(--color-gray-500) !important;
+    margin-bottom: var(--spacing-lg) !important;
+  }
+
+  .article-body .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .article-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-cream);
+  }
+
+  .article-body a {
+    color: var(--color-teal-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-body a:hover {
+    color: var(--color-teal);
+  }
+
+  .article-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-teal);
+  }
+
+  .article-body h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-body h4 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-body ul,
+  .article-body ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+  }
+
+  .article-body li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-cream);
+  }
+
+  .article-body ul li {
+    list-style-type: disc;
+  }
+
+  .article-body ol li {
+    list-style-type: decimal;
+  }
+
+  .article-body li strong {
+    color: var(--color-white);
+  }
+
+  /* Callout Box */
+  .callout {
+    background: var(--color-charcoal-light);
+    border-left: 4px solid var(--color-teal);
+    border-radius: 0 8px 8px 0;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .callout h4 {
+    margin-top: 0;
+  }
+
+  .callout ol,
+  .callout ul {
+    margin-bottom: 0;
+  }
+
+  .article-disclaimer {
+    font-size: 0.9rem !important;
+    color: var(--color-gray-500) !important;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-charcoal-lighter);
+  }
+
+  /* Article CTA */
+  .article-cta {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .article-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-cta p {
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 150ms ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  /* Sidebar */
+  .article-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .sidebar-card {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+  }
+
+  .sidebar-card h4 {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-card li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .sidebar-card a {
+    font-size: 0.9rem;
+    color: var(--color-cream);
+    transition: color 150ms ease;
+  }
+
+  .sidebar-card a:hover {
+    color: var(--color-teal-light);
+  }
+
+  .sidebar-contact {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-charcoal-light) 0%, var(--color-charcoal) 100%);
+  }
+
+  .sidebar-contact p {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-phone {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-teal) !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .article-content {
+      grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .sidebar-card {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .article-meta {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+
+    .article-sidebar {
+      flex-direction: column;
+    }
+
+    .sidebar-card {
+      min-width: 100%;
+    }
+  }
+</style>
