@@ -1,0 +1,653 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Selling Multifamily Property in Arizona: Seller's Guide | CLG";
+const description = "Disclosure duties, AS-IS clauses, deposits, and 1031 timing — how Arizona multifamily sellers prepare, negotiate, and close.";
+
+const article = {
+  title: "Selling a Multifamily Property in Arizona: How Sellers Prepare, Negotiate, and Close",
+  category: "Multifamily",
+  publishDate: "July 2026",
+  readTime: "12 min read",
+  author: "Todd Hall"
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Selling a Multifamily Property in Arizona: How Sellers Prepare, Negotiate, and Close",
+      "description": "Disclosure duties, AS-IS clauses, deposits, and 1031 timing — how Arizona multifamily sellers prepare, negotiate, and close.",
+      "dateModified": "2026-07-24",
+      "mainEntityOfPage": "https://clglawaz.com/insights/selling-multifamily-property-arizona",
+      "author": {
+        "@type": "Person",
+        "name": "Todd Hall",
+        "jobTitle": "Partner",
+        "alumniOf": "Vanderbilt University Law School",
+        "worksFor": {
+          "@type": "LegalService",
+          "name": "Camelback Law Group",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2720 E. Camelback Rd.",
+            "addressLocality": "Phoenix",
+            "addressRegion": "AZ",
+            "postalCode": "85016",
+            "addressCountry": "US"
+          },
+          "telephone": "(480) 203-3039",
+          "url": "https://clglawaz.com"
+        }
+      },
+      "publisher": {
+        "@type": "LegalService",
+        "name": "Camelback Law Group",
+        "url": "https://clglawaz.com"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do commercial sellers have to give the buyer a disclosure statement in Arizona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Arizona's seller disclosure statement practice applies to residential sales; there is no statutory disclosure form for commercial transactions, including apartment properties sold as investment assets. But common-law duties still apply: a seller may not misrepresent material facts or actively conceal known latent defects that materially affect value. The safe practice is accuracy in everything you certify — especially the rent roll — and disclosure of known material conditions the documents will reveal anyway."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I really sell \"AS-IS\"?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. AS-IS is the standard structure for Arizona multifamily sales, and courts enforce it between sophisticated parties. A proper AS-IS clause disclaims implied warranties and limits the buyer's reliance to its own inspections plus the express representations in the contract. What AS-IS cannot do is shield fraud or active concealment of known material defects — no disclaimer converts a lie into a defense. The express reps, not the AS-IS clause, define your real exposure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long do my reps and warranties survive closing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whatever the contract says — survival is negotiated, not statutory. In Arizona multifamily deals, seller representations customarily survive six to twelve months after closing, paired with a claim threshold or basket and an aggregate liability cap often negotiated as a percentage of the purchase price. Buyers sometimes request a holdback or escrow when the selling entity will dissolve after closing. Shorter survival, tighter knowledge qualifiers, and a hard cap are the seller's core asks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When must I identify my 1031 replacement property?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Within 45 days after the closing of your relinquished property, in a signed written identification delivered to your qualified intermediary, typically under the three-property or 200-percent rule. You must then acquire the replacement property within 180 days after the sale — or by your tax return due date, with extensions, if earlier. The IRS does not extend these deadlines outside formal disaster relief, so engage the intermediary before closing and build your pipeline during escrow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who keeps the tenants' security deposits?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The buyer takes them — economically through a credit against the purchase price at closing, and legally by statute. Under A.R.S. § 33-1321(H), the holder of the landlord's interest when a tenancy ends is bound to the tenant for the deposit, so the buyer inherits refund liability, including exposure to twice any amount wrongfully withheld. That is why buyers insist on a full credit for the reconciled ledger, and why sellers should reconcile it before marketing."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>
+
+  <article class="article">
+    <!-- Hero Section -->
+    <header class="article-hero">
+      <div class="article-hero-bg"></div>
+      <div class="article-hero-container">
+        <div class="article-meta">
+          <span class="article-category">{article.category}</span>
+          <span class="article-date">{article.publishDate}</span>
+          <span class="article-read-time">{article.readTime}</span>
+        </div>
+        <h1>{article.title}</h1>
+        <p class="article-subtitle">Disclosure duties, AS-IS clauses, deposits, and 1031 timing — how Arizona multifamily sellers prepare, negotiate, and close.</p>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="article-image-container">
+      <div class="article-image">
+        <img
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=600&fit=crop"
+          alt="Apartment building offered for sale representing an Arizona multifamily disposition"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="article-content">
+      <div class="article-body">
+
+        <p class="article-byline">By <a href="https://clglawaz.com/todd-hall" target="_blank" rel="noopener noreferrer">Todd Hall</a>, Partner, Camelback Law Group — J.D., Vanderbilt University Law School; member, State Bar of Arizona. Todd has practiced commercial real estate law in Arizona for more than 20 years, including as in-house counsel to a national homebuilder and an international master-planned community developer.</p>
+
+        <p class="article-updated"><em>Last updated: July 2026</em></p>
+
+        <p class="lead">Selling an Arizona apartment property well means doing the buyer's diligence before the buyer does. Reconcile the rent roll and deposit ledger, cure title and lease defects, and assemble a complete document room before marketing. Then negotiate a PSA built around an AS-IS conveyance, a certified rent roll with capped surviving representations, earnest money with a liquidated damages remedy, and — because A.R.S. § 33-1321 binds the buyer on deposits — a clean deposit credit at closing.</p>
+
+        <h2>What Should a Seller Do Before Taking an Arizona Apartment Property to Market?</h2>
+
+        <p>Preparation is the highest-leverage work in the entire sale. A seller who organizes the paper before the first offer arrives controls the diligence narrative, shortens the inspection period, and removes the ammunition buyers use to retrade price. In the dispositions we handle, the sellers who close at or near contract price are almost always those who built the diligence room before the listing went live.</p>
+
+        <p>Buyer's counsel will work from a checklist much like our <a href="/insights/arizona-multifamily-due-diligence-checklist">Arizona multifamily due diligence checklist</a> — leases, financials, title, survey, contracts, physical condition. Read it from the seller's side: every item on it is something to locate, reconcile, or fix now, on your own schedule, not during the buyer's inspection period.</p>
+
+        <h3>Pre-Marketing Preparation Checklist for Sellers</h3>
+
+        <div class="callout">
+          <ol>
+            <li><strong>Organize the lease file.</strong> Assemble a complete, signed lease (with all amendments, addenda, and renewal paperwork) for every unit. Confirm the lease file matches the rent roll unit by unit — rent, term, concessions, pet and parking charges. Buyers typically audit a meaningful sample of the files, often 20–30 percent plus every non-standard tenancy, and expand the audit the moment discrepancies surface. A clean file room keeps the sample clean.</li>
+            <li><strong>Reconcile the security deposit ledger.</strong> Tie every deposit, prepaid rent amount, and nonrefundable fee to a lease provision. Arizona law caps deposits and prepaid rent at one and one-half month's rent and treats fees not designated nonrefundable <em>in writing</em> as refundable, so mislabeled fees become the buyer's liability — and the buyer's retrade.</li>
+            <li><strong>Cure tenant defaults and clean up the delinquency report.</strong> Resolve or document evictions in process, address stale receivables, and be ready to explain every skip and month-to-month holdover.</li>
+            <li><strong>Resolve title and survey matters early.</strong> Order a current preliminary title report and deal with monetary liens, expired easements, and mechanics' lien exposure before a buyer's title objection letter does it for you. If your survey predates 2026, expect to replace it: the 2026 ALTA/NSPS Minimum Standard Detail Requirements took effect February 23, 2026, and a buyer's lender will not accept a survey certified to the old standards (<a href="https://www.alta.org/topics/topic-land-survey-standards" target="_blank" rel="noopener noreferrer">ALTA survey standards</a>).</li>
+            <li><strong>Assemble service contracts and operating permits.</strong> Gather every service contract (landscaping, pool, laundry, internet/cable marketing agreements), note which are terminable on 30 days' notice and which survive, and confirm business licenses and any city rental registrations are current.</li>
+            <li><strong>Verify tax compliance.</strong> City transaction privilege tax on residential rent was repealed effective January 1, 2025 under A.R.S. § 42-6004(H). A seller still collecting TPT from residential tenants in 2026 has a compliance problem every buyer will flag; see the <a href="https://azdor.gov/business/transaction-privilege-tax/residential-rental-guidelines" target="_blank" rel="noopener noreferrer">Arizona Department of Revenue's residential rental guidelines</a>. Commercial space in a mixed-use asset remains taxable, so segregate those ledgers.</li>
+          </ol>
+        </div>
+
+        <p>One more reason to pre-audit: buyers increasingly run AI-assisted abstraction across the <em>entire</em> lease file set, not just a sample. Discrepancies sellers once expected to survive a spot check now surface in the first week of diligence.</p>
+
+        <h2>What Must a Commercial Seller Disclose in Arizona?</h2>
+
+        <p>Arizona imposes no statutory disclosure form on commercial sellers. The Seller's Property Disclosure Statement regime belongs to residential practice; there is no commercial equivalent, and an apartment community sold as an investment asset between sophisticated parties is a commercial transaction. But the absence of a form is not the absence of a duty.</p>
+
+        <p>Arizona common law prohibits fraudulent concealment and fraudulent misrepresentation in real estate sales. Arizona courts have long held that a seller who knows of material facts affecting the property's value that are not readily observable and not known to the buyer may have a duty to disclose them — the principle announced in <em>Hill v. Jones</em>, 151 Ariz. 81, 725 P.2d 1115 (App. 1986), a residential termite-damage case whose reasoning rests on general contract and fraud principles rather than anything unique to housing. In the commercial context, the practical rule is simpler: you need not volunteer a diligence memo, but you cannot lie, half-truth, or actively conceal, and known latent conditions that materially affect value — structural failures, unpermitted work, environmental releases, undisclosed litigation — are the classic triggers.</p>
+
+        <p>An AS-IS clause narrows contractual exposure; it does not license fraud. No Arizona court will let a seller hide behind AS-IS language after actively concealing a known material defect. The discipline that actually protects sellers is accuracy: disclose what the documents will reveal anyway, and never certify a rent roll or make a representation you have not verified.</p>
+
+        <h2>How Should Sellers Negotiate the Purchase and Sale Agreement?</h2>
+
+        <p>The PSA is where preparation converts into protection. Seller-side, the priorities are a short, hard diligence period; earnest money that goes nonrefundable at the end of that period; a liquidated damages clause as the seller's sole remedy for buyer default (with earnest money sized to make it meaningful); and representations that are narrow, knowledge-qualified, and short-lived. Our companion article on <a href="/insights/arizona-commercial-purchase-agreements">Arizona commercial purchase and sale agreements</a> covers the full architecture; here is the seller's overlay.</p>
+
+        <p><strong>Compress the timeline.</strong> Every week of diligence is a free option for the buyer. A seller with a pre-packaged diligence room can credibly offer a 21- to 30-day inspection period instead of 45 to 60, because the buyer's team has everything on day one. In our experience, that compression — not the purchase price — is where a prepared seller earns the most: shorter option periods mean fewer market shifts, fewer retrades, and faster nonrefundable money.</p>
+
+        <p><strong>Certify the rent roll; skip the estoppels.</strong> Unlike office and retail deals, multifamily sales do not run on tenant estoppels — chasing signatures from two hundred residential tenants is impractical, and the market does not expect it. The customary substitute is a seller certification of the rent roll and deposit ledger, backed by a surviving representation. Since that certification is the representation most likely to be tested after closing, certify only what your reconciled ledger actually shows, and date the certification so post-signing tenant turnover does not create technical breaches.</p>
+
+        <p><strong>Control the closing conditions.</strong> Keep buyer's closing conditions objective and few. Financing contingencies are rare in competitive multifamily deals; if a buyer insists, treat it as a pricing issue.</p>
+
+        <h2>Can You Really Sell "AS-IS" — and How Long Do Reps Survive?</h2>
+
+        <p>Yes — AS-IS is the standard conveyance structure for Arizona multifamily sales, and courts respect it between sophisticated parties. A well-drafted AS-IS clause disclaims implied warranties, confirms the buyer relied on its own inspections rather than seller statements outside the contract, and channels every promise the seller <em>is</em> making into the express representations. The clause fails only where it is used to paper over fraud or active concealment, as discussed above.</p>
+
+        <p>The real negotiation is the representation package that survives the AS-IS clause. Seller-side, the framework has four dials:</p>
+
+        <div class="callout">
+          <ul>
+            <li><strong>Scope.</strong> Limit reps to what the seller uniquely knows: authority, litigation, condemnation notices, the rent roll and deposit ledger, service contracts, and notices of violation. Resist reps about physical condition or compliance with law — that is what the inspection period is for.</li>
+            <li><strong>Knowledge qualifiers.</strong> Define "seller's knowledge" as the actual knowledge of one or two named individuals, without a duty of inquiry.</li>
+            <li><strong>Survival period.</strong> Market survival for multifamily reps generally runs six to twelve months after closing — long enough for the buyer to run a full turnover cycle and audit the books, short enough to let the seller distribute proceeds and wind up the selling entity.</li>
+            <li><strong>Baskets and caps.</strong> A deductible or threshold basket screens out nuisance claims, and an aggregate liability cap — commonly negotiated as a percentage of the purchase price — defines the seller's worst case. Where the selling entity will dissolve, buyers may ask for a holdback or a post-closing escrow; sellers should size it to the cap and give it a hard expiration.</li>
+          </ul>
+        </div>
+
+        <p>In the deals we negotiate, the provision that generates the most post-closing friction is the rent roll representation — which is why deposit reconciliation and lease-file hygiene before marketing are risk management, not housekeeping.</p>
+
+        <h2>What Happens to Leases, Deposits, and Prorations at an Arizona Closing?</h2>
+
+        <p>Leases follow the property. An Arizona apartment sale closes through escrow — Arizona is an escrow-closing state, not an attorney-closing state — with an assignment and assumption of leases transferring the landlord's interest at closing. Tenants do not consent and are simply notified of the new owner and new payment address after closing, as the Arizona Residential Landlord and Tenant Act contemplates.</p>
+
+        <p>Security deposits are the statutory trap. Under <a href="https://www.azleg.gov/ars/33/01321.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 33-1321</a>, deposits plus prepaid rent are capped at one and one-half month's rent; fees are refundable unless designated nonrefundable in writing; and an outgoing tenant's deposit must be returned with an itemized statement within 14 days — excluding Saturdays, Sundays, and legal holidays — after termination, delivery of possession, and demand, with liability of <em>twice</em> the amount wrongfully withheld. Critically, subsection (H) binds whoever holds the landlord's interest when a tenancy ends. Unlike in many states where deposit transfer is purely contractual, in Arizona the buyer inherits statutory deposit liability by operation of law — which is why every buyer demands a full credit against the purchase price for the entire reconciled deposit ledger, and why a seller who cannot tie that ledger out will pay for the discrepancy at the closing table.</p>
+
+        <p>Prorations follow standard practice: rents prorated as of closing, with delinquent rents typically collected by the buyer and remitted in an agreed waterfall; property taxes prorated on the county's most recent figures with or without post-closing true-up; and utility and service contract charges apportioned through escrow.</p>
+
+        <p>One Arizona-specific piece of good news: there is no state, county, or city real estate transfer tax on the deed — Arizona voters wrote a prohibition on real property transfer taxes into the state constitution in 2008 (Ariz. Const. art. IX, § 24). What the escrow agent will require instead is an affidavit of property value under <a href="https://www.azleg.gov/ars/11/01133.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 11-1133</a>, signed by buyer and seller (or their agents) and stating the parties, parcel numbers, and consideration; the county recorder must refuse the deed without it unless an exemption under A.R.S. § 11-1134 is noted. Recording fees vary by county — Maricopa, Pima, and Pinal each set their own schedules.</p>
+
+        <h2>How Does a 1031 Exchange Change the Sale Timeline?</h2>
+
+        <p>A seller exchanging under <a href="https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips" target="_blank" rel="noopener noreferrer">IRC § 1031</a> must run two unforgiving clocks from the closing date: replacement property must be identified in writing within <strong>45 days</strong>, and the exchange must be completed within <strong>180 days</strong> after the transfer of the relinquished property — or by the due date (with extensions) of the seller's tax return for the year of sale, whichever is earlier. The IRS does not extend these deadlines except under formal disaster relief. That means the sale should not close until the seller's replacement pipeline is real.</p>
+
+        <p>Mechanically, a deferred exchange requires a qualified intermediary engaged <em>before</em> closing; if the seller touches the sale proceeds, the exchange dies. The PSA should include a 1031 cooperation clause — both directions, since Arizona multifamily buyers are often exchangers too — permitting assignment of contract rights to an intermediary at no cost, delay, or liability to the other party. Identification is typically made under the three-property rule or the 200-percent rule, so sellers should be lining up candidates during escrow, not after.</p>
+
+        <p>Timeline strategy is where counsel adds value. In exchange-driven sales we frequently negotiate closing dates, and occasionally extension options, around the seller's replacement schedule rather than the buyer's convenience — a lever most sellers do not realize is negotiable. Sellers acquiring the replacement asset through a new entity should also plan titling early.</p>
+
+        <h2>Which Seller Mistakes Cost Real Money?</h2>
+
+        <p>The expensive mistakes are almost never exotic. They are ordinary administrative failures that surface at the worst possible moment — inside a buyer's diligence period, when every discovery has a price tag.</p>
+
+        <p>The pattern we see most often: a rent roll that does not match the lease files, discovered by the buyer's audit rather than the seller's. The direct cost is a retrade; the indirect cost is credibility, because once one certified number proves wrong, the buyer re-audits everything. Close behind: unreconciled deposit ledgers; mislabeled "nonrefundable" fees never designated in writing; a pre-2026 survey that adds weeks while a new ALTA survey is ordered; service contract termination notice periods nobody diarized; and continued collection of residential TPT after the 2025 repeal.</p>
+
+        <p>The common thread is timing. Every one of these is cheap to fix before marketing and expensive to fix under a diligence deadline. Sellers preparing for the other side of the table — the buyer's playbook — should read our companion on <a href="/insights/buying-apartment-complex-arizona">buying an apartment complex in Arizona</a>, which shows exactly where a buyer's counsel will press.</p>
+
+        <h2>How Camelback Law Group Can Help</h2>
+
+        <p>Camelback Law Group represents multifamily owners, investors, and operators in dispositions across metro Phoenix, Tucson, and the rest of Arizona. We prepare sellers before marketing — diligence room assembly, deposit and rent roll reconciliation, title cleanup — then negotiate the PSA, the AS-IS and survival framework, and the closing mechanics, and coordinate 1031 timing with the seller's intermediary and tax advisors. Todd Hall has handled Arizona acquisitions and dispositions for more than 20 years, in private practice and as in-house counsel to national developers.</p>
+
+        <div class="article-cta">
+          <h3>Planning to Sell an Arizona Multifamily Asset?</h3>
+          <p>Talk through the exit before you go to market. We help sellers build the diligence room, reconcile the numbers buyers will audit, and negotiate the AS-IS and survival framework that protects the sale price.</p>
+          <a href="/#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Do commercial sellers have to give the buyer a disclosure statement in Arizona?</h3>
+
+        <p>No. Arizona's seller disclosure statement practice applies to residential sales; there is no statutory disclosure form for commercial transactions, including apartment properties sold as investment assets. But common-law duties still apply: a seller may not misrepresent material facts or actively conceal known latent defects that materially affect value. The safe practice is accuracy in everything you certify — especially the rent roll — and disclosure of known material conditions the documents will reveal anyway.</p>
+
+        <h3>Can I really sell "AS-IS"?</h3>
+
+        <p>Yes. AS-IS is the standard structure for Arizona multifamily sales, and courts enforce it between sophisticated parties. A proper AS-IS clause disclaims implied warranties and limits the buyer's reliance to its own inspections plus the express representations in the contract. What AS-IS cannot do is shield fraud or active concealment of known material defects — no disclaimer converts a lie into a defense. The express reps, not the AS-IS clause, define your real exposure.</p>
+
+        <h3>How long do my reps and warranties survive closing?</h3>
+
+        <p>Whatever the contract says — survival is negotiated, not statutory. In Arizona multifamily deals, seller representations customarily survive six to twelve months after closing, paired with a claim threshold or basket and an aggregate liability cap often negotiated as a percentage of the purchase price. Buyers sometimes request a holdback or escrow when the selling entity will dissolve after closing. Shorter survival, tighter knowledge qualifiers, and a hard cap are the seller's core asks.</p>
+
+        <h3>When must I identify my 1031 replacement property?</h3>
+
+        <p>Within 45 days after the closing of your relinquished property, in a signed written identification delivered to your qualified intermediary, typically under the three-property or 200-percent rule. You must then acquire the replacement property within 180 days after the sale — or by your tax return due date, with extensions, if earlier. The IRS does not extend these deadlines outside formal disaster relief, so engage the intermediary before closing and build your pipeline during escrow.</p>
+
+        <h3>Who keeps the tenants' security deposits?</h3>
+
+        <p>The buyer takes them — economically through a credit against the purchase price at closing, and legally by statute. Under A.R.S. § 33-1321(H), the holder of the landlord's interest when a tenancy ends is bound to the tenant for the deposit, so the buyer inherits refund liability, including exposure to twice any amount wrongfully withheld. That is why buyers insist on a full credit for the reconciled ledger, and why sellers should reconcile it before marketing.</p>
+
+        <p class="article-disclaimer"><em>This article is for general informational purposes only and does not constitute legal advice. Reading it does not create an attorney-client relationship. Outcomes depend on specific facts; consult an Arizona attorney about your situation.</em></p>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <div class="sidebar-card">
+          <h4>Related Articles</h4>
+          <ul>
+            <li><a href="/insights/buying-apartment-complex-arizona">Buying an Apartment Complex in Arizona</a></li>
+            <li><a href="/insights/arizona-multifamily-due-diligence-checklist">Arizona Multifamily Due Diligence Checklist</a></li>
+            <li><a href="/insights/arizona-commercial-purchase-agreements">Key Issues in Arizona Commercial Purchase Agreements</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="/#services">Commercial Transactions</a></li>
+            <li><a href="/#services">Purchase & Sale Agreements</a></li>
+            <li><a href="/#services">Due Diligence & Title Review</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card sidebar-contact">
+          <h4>Questions?</h4>
+          <p>Speak with an experienced Arizona commercial real estate attorney.</p>
+          <a href="tel:4802033039" class="sidebar-phone">(480) 203-3039</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Article Hero */
+  .article-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+  }
+
+  .article-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
+      var(--color-charcoal-light);
+    z-index: 0;
+  }
+
+  .article-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    text-align: center;
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .article-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    background: rgba(26, 155, 165, 0.15);
+    border-radius: 4px;
+  }
+
+  .article-date,
+  .article-read-time {
+    font-size: 0.85rem;
+    color: var(--color-gray-400);
+  }
+
+  .article-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .article-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+  }
+
+  /* Featured Image */
+  .article-image-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    margin-top: calc(-1 * var(--spacing-xl));
+    position: relative;
+    z-index: 2;
+  }
+
+  .article-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .article-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Article Content Layout */
+  .article-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-2xl);
+  }
+
+  /* Article Body */
+  .article-body {
+    color: var(--color-cream);
+  }
+
+  .article-byline {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    color: var(--color-gray-400) !important;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+    margin-bottom: var(--spacing-sm) !important;
+  }
+
+  .article-byline a {
+    color: var(--color-teal);
+    font-weight: 600;
+  }
+
+  .article-updated {
+    font-size: 0.85rem !important;
+    color: var(--color-gray-500) !important;
+    margin-bottom: var(--spacing-lg) !important;
+  }
+
+  .article-body .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .article-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-cream);
+  }
+
+  .article-body a {
+    color: var(--color-teal-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-body a:hover {
+    color: var(--color-teal);
+  }
+
+  .article-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-teal);
+  }
+
+  .article-body h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-body h4 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-body ul,
+  .article-body ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+  }
+
+  .article-body li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-cream);
+  }
+
+  .article-body ul li {
+    list-style-type: disc;
+  }
+
+  .article-body ol li {
+    list-style-type: decimal;
+  }
+
+  .article-body li strong {
+    color: var(--color-white);
+  }
+
+  /* Callout Box */
+  .callout {
+    background: var(--color-charcoal-light);
+    border-left: 4px solid var(--color-teal);
+    border-radius: 0 8px 8px 0;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .callout h4 {
+    margin-top: 0;
+  }
+
+  .callout ol,
+  .callout ul {
+    margin-bottom: 0;
+  }
+
+  .article-disclaimer {
+    font-size: 0.9rem !important;
+    color: var(--color-gray-500) !important;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-charcoal-lighter);
+  }
+
+  /* Article CTA */
+  .article-cta {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .article-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-cta p {
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 150ms ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  /* Sidebar */
+  .article-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .sidebar-card {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+  }
+
+  .sidebar-card h4 {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-card li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .sidebar-card a {
+    font-size: 0.9rem;
+    color: var(--color-cream);
+    transition: color 150ms ease;
+  }
+
+  .sidebar-card a:hover {
+    color: var(--color-teal-light);
+  }
+
+  .sidebar-contact {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-charcoal-light) 0%, var(--color-charcoal) 100%);
+  }
+
+  .sidebar-contact p {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-phone {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-teal) !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .article-content {
+      grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .sidebar-card {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .article-meta {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+
+    .article-sidebar {
+      flex-direction: column;
+    }
+
+    .sidebar-card {
+      min-width: 100%;
+    }
+  }
+</style>

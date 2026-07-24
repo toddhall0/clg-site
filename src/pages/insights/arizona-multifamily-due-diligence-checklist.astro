@@ -1,0 +1,730 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Arizona Multifamily Due Diligence Checklist | CLG";
+const description = "A practitioner's legal due diligence checklist for Arizona apartment acquisitions: leases, deposits, title, survey, zoning, and environmental.";
+
+const article = {
+  title: "Multifamily Due Diligence in Arizona: The Complete Legal Checklist",
+  category: "Due Diligence",
+  publishDate: "July 2026",
+  readTime: "14 min read",
+  author: "Todd Hall"
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Multifamily Due Diligence in Arizona: The Complete Legal Checklist",
+      "description": "A practitioner's legal due diligence checklist for Arizona apartment acquisitions: leases, deposits, title, survey, zoning, and environmental.",
+      "dateModified": "2026-07-23",
+      "author": {
+        "@type": "Person",
+        "name": "Todd Hall",
+        "jobTitle": "Partner",
+        "alumniOf": "Vanderbilt University Law School",
+        "worksFor": {
+          "@type": "LegalService",
+          "name": "Camelback Law Group",
+          "url": "https://clglawaz.com",
+          "telephone": "(480) 203-3039",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "2720 E. Camelback Rd.",
+            "addressLocality": "Phoenix",
+            "addressRegion": "AZ",
+            "postalCode": "85016",
+            "addressCountry": "US"
+          }
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long should the due diligence period be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thirty to 45 days is typical for Arizona multifamily deals, with 60 days negotiable for larger or more complicated assets. The practical driver is third-party lead time: a Phase I ESA and a new ALTA survey each take several weeks. If the seller resists a longer period, negotiate an extension right tied to a further deposit, or order third-party reports at LOI stage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if the seller's rent roll is wrong?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your remedy depends on the purchase agreement. Buyers should negotiate a seller representation that the rent roll is true and correct, certified again at closing, with survival after closing and a meaningful basket and cap. If the discrepancy surfaces during diligence, it becomes a repricing conversation or a termination right; if it surfaces after closing, you are litigating a rep — which is why the certification and survival period matter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a new ALTA survey or can I rely on the seller's?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Order a new one. A seller's survey is not certified to you or your lender, will not support the title company's survey-based endorsements, and predates any recent encroachments or easements. Surveys must now comply with the 2026 ALTA/NSPS Minimum Standard Detail Requirements, effective February 23, 2026, so older surveys are also out of date on the standards themselves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is liable for security deposit shortfalls after closing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The buyer. Under A.R.S. § 33-1321(H), the holder of the landlord's interest when a tenancy terminates is bound by the deposit obligations — and wrongful withholding carries damages of twice the amount withheld under § 33-1321(E). The buyer's protection is diligence: reconcile the deposit ledger before closing and take a full credit for the deposit liability on the settlement statement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I re-verify tenant information if closing slips?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A rent roll certified 60 days ago tells you nothing about last month's delinquencies, new skips, or leases signed at concession-heavy rates to dress occupancy. If closing extends past the original date, require an updated certified rent roll and delinquency report as a closing condition, and bring the deposit reconciliation current through the new closing date."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)}></script>
+
+  <article class="article">
+    <!-- Hero Section -->
+    <header class="article-hero">
+      <div class="article-hero-bg"></div>
+      <div class="article-hero-container">
+        <div class="article-meta">
+          <span class="article-category">{article.category}</span>
+          <span class="article-date">{article.publishDate}</span>
+          <span class="article-read-time">{article.readTime}</span>
+        </div>
+        <h1>{article.title}</h1>
+        <p class="article-subtitle">A practitioner's checklist for Arizona apartment acquisitions — leases, deposits, title, survey, zoning, and environmental, from LOI to closing.</p>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="article-image-container">
+      <div class="article-image">
+        <img
+          src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=600&fit=crop"
+          alt="Multifamily apartment building representing an Arizona real estate acquisition"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="article-content">
+      <div class="article-body">
+
+        <p class="article-byline">By <a href="https://clglawaz.com/todd-hall" target="_blank" rel="noopener noreferrer">Todd Hall</a>, Partner, Camelback Law Group — J.D., Vanderbilt University Law School; member, State Bar of Arizona. Todd has practiced commercial real estate law in Arizona for more than 20 years, including as in-house counsel to a national homebuilder and an international master-planned community developer.</p>
+
+        <p class="article-updated"><em>Last updated: July 2026</em></p>
+
+        <p class="lead">Before buying a multifamily property in Arizona, a buyer should audit the leases against the rent roll, reconcile security deposits under A.R.S. § 33-1321, review the title commitment and an ALTA/NSPS survey, confirm zoning and certificates of occupancy with the city, obtain a Phase I environmental site assessment under ASTM E1527-21, and inventory the service contracts and personnel that transfer at closing. The categorized checklist below covers each area.</p>
+
+        <p>Arizona apartment deals close through escrow on compressed timelines — often 30 to 45 days of due diligence before earnest money goes hard. The title company will not do this work for you, and the PSA will almost always sell the property AS-IS: whatever the buyer does not find before the go-hard date, the buyer owns. For the full acquisition process from LOI to closing, see our companion article on <a href="/insights/buying-apartment-complex-arizona">buying an apartment complex in Arizona</a>.</p>
+
+        <h2>What Should I Review in the Leases and Rent Roll?</h2>
+
+        <p>Audit the lease files against the seller's rent roll, and treat any mismatch as a pricing issue. On smaller properties, review every file; on larger assets, standard practice is a meaningful sample — often 20 to 30 percent — plus every non-standard tenancy: month-to-month arrangements, employee and model units, corporate leases, units with concessions, and anything signed in the last 90 days. If the sample turns up discrepancies, expand the audit — and as discussed below, AI-assisted abstraction now makes full-population review affordable on large assets. The rent roll is a marketing document; the leases are the contracts you inherit at closing. In Arizona, those leases are governed by the Arizona Residential Landlord and Tenant Act (<a href="https://www.azleg.gov/ars/33/01301.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 33-1301 et seq.</a>), which limits how far lease terms can depart from statute.</p>
+
+        <p>The red flags that matter most in our experience: concessions and rent credits that appear in the lease (or in a side letter) but not on the rent roll; month-to-month tenancies counted as term leases; units shown as occupied that are actually down for repairs; employee units and model units carried at market rent; and delinquencies recharacterized as "prepaid" adjustments. Compare the rent roll to actual bank deposits and the trailing-12 collections report — collections, not scheduled rent, are what you are buying.</p>
+
+        <p>One Arizona-specific item: since January 1, 2025, cities may not tax residential rent — the city transaction privilege tax (TPT) on residential rentals was repealed by Laws 2023, ch. 204 (A.R.S. § 42-6004(H)). A rent roll that still shows tax collected from residential tenants is a compliance problem you would inherit. Commercial space in a mixed-use asset — ground-floor retail, for example — remains subject to city TPT under the <a href="https://azdor.gov/business/transaction-privilege-tax/residential-rental-guidelines" target="_blank" rel="noopener noreferrer">Arizona Department of Revenue's rules</a>.</p>
+
+        <h3>What about estoppels?</h3>
+
+        <p>Tenant estoppels are less standard in multifamily than in commercial leasing — a 200-unit property makes universal estoppels impractical. The substitute is a seller certification of the rent roll at closing, backed by a rep with meaningful survival, negotiated in the PSA — see our article on <a href="/insights/arizona-commercial-purchase-agreements">Arizona commercial purchase and sale agreements</a>.</p>
+
+        <h2>How Do I Audit Security Deposit Compliance Under A.R.S. § 33-1321?</h2>
+
+        <p>Reconcile the deposit ledger unit by unit against the leases, confirm no deposit exceeds the statutory cap, and make sure the full deposit liability is credited to you at closing. Under <a href="https://www.azleg.gov/ars/33/01321.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 33-1321(A)</a>, an Arizona residential landlord may not collect security — including prepaid rent — exceeding one and one-half month's rent. Nonrefundable fees must be designated as nonrefundable in writing, or they are refundable (§ 33-1321(B)).</p>
+
+        <p>The reason this audit is not optional: liability follows the property. Under A.R.S. § 33-1321(H), the holder of the landlord's interest at the time the tenancy terminates is bound by the deposit obligations. After closing, that is you — regardless of whether the seller actually transferred the money. When a tenancy ends, the landlord must return the deposit with an itemized list of deductions within 14 days, excluding Saturdays, Sundays, and legal holidays, after termination, delivery of possession, and demand (§ 33-1321(D)). A landlord who fails to comply owes the tenant the amount due plus damages equal to twice the amount wrongfully withheld (§ 33-1321(E)).</p>
+
+        <p>In the deposit audits we run for buyers, the ledger rarely matches the leases on the first pass. Common findings: deposits collected above the cap on older leases, "nonrefundable" fees with no written designation, and deposits from long-departed tenants never returned or escheated. Each one is a dollar-for-dollar closing credit — or a post-closing lawsuit with statutory double damages attached.</p>
+
+        <h2>What Title and Survey Issues Most Often Derail Arizona Multifamily Deals?</h2>
+
+        <p>Order the title commitment early, calendar the objection deadline in the PSA, and put an ALTA/NSPS survey next to the commitment before objections are due. Arizona closings run through licensed escrow agents rather than attorneys, so no one at the title company will flag a problematic exception for you — the buyer's side has to read Schedule B itself.</p>
+
+        <p>The recurring problems in Valley multifamily deals: recorded CC&amp;Rs or use restrictions from a prior master development that limit density or unit count; access that depends on an easement rather than direct arterial frontage; utility easements running under buildings or carports; unreleased deeds of trust and old assignments of rents from prior financings; and mechanics' lien exposure from recent renovations. On the survey, the classic finding is a carport, monument sign, or trash enclosure encroaching into an easement or setback — cheap to fix before closing, expensive after.</p>
+
+        <p>For any institutional acquisition, order a new survey certified to the buyer, the lender, and the title company under the current ALTA/NSPS Minimum Standard Detail Requirements — the <a href="https://www.alta.org/topics/topic-land-survey-standards" target="_blank" rel="noopener noreferrer">2026 standards</a> took effect February 23, 2026. Select the Table A optional items deliberately: zoning information, parking counts, and utility locations matter for apartment assets. A stale seller survey misses new encroachments and will not support the lender's title endorsements.</p>
+
+        <h2>What Zoning, Permitting, and Code Compliance Checks Apply?</h2>
+
+        <p>Confirm three things with the city: that the current use and density are legal under the zoning ordinance, that certificates of occupancy exist for every building, and that there are no open code enforcement cases or unpermitted improvements. Request a zoning verification letter from the city's planning or development services department — Phoenix, Scottsdale, Tempe, Mesa, Gilbert, Chandler, and Tucson each issue them, and lenders increasingly require one.</p>
+
+        <p>Many metro Phoenix apartment properties are legal nonconforming — built under an older ordinance and grandfathered as to density, parking, or setbacks. That status usually survives a sale, but it can be lost through casualty, abandonment, or expansion, and the rules vary by city. Your lender's underwriting will ask what happens if the improvements burn down; the zoning letter should answer it.</p>
+
+        <p>Pull the permit history from the city and compare it to what is on the ground. Converted storage rooms, added units, enclosed patios, and repurposed common areas without permits or certificates of occupancy are common in older Tucson and central Phoenix stock. Also confirm the property is registered as residential rental property with the county assessor under <a href="https://www.azleg.gov/ars/33/01902.htm" target="_blank" rel="noopener noreferrer">A.R.S. § 33-1902</a> — Maricopa, Pima, and Pinal Counties enforce this, and an out-of-state owner must designate an in-state statutory agent. City rental licensing and inspection programs vary by municipality; check the specific city's requirements during diligence.</p>
+
+        <h2>What Environmental Diligence Does an Arizona Multifamily Buyer Need?</h2>
+
+        <p>Order a Phase I environmental site assessment conforming to ASTM E1527-21 — the standard EPA recognizes as satisfying the "all appropriate inquiries" rule for CERCLA innocent-landowner protection (40 C.F.R. Part 312, effective February 13, 2023). Without a compliant Phase I completed before closing, the buyer cannot claim the defense. Order it in the first week of diligence: a Phase I takes several weeks, and if it recommends a Phase II with sampling, you will need the runway before go-hard.</p>
+
+        <p>Arizona adds a state overlay. Check whether the property sits within or near a site on the state's Water Quality Assurance Revolving Fund (WQARF) registry — Arizona's state-level counterpart to federal Superfund, administered by the Arizona Department of Environmental Quality under A.R.S. § 49-281 et seq. Central and west Phoenix, Tucson, and parts of the East Valley contain mapped groundwater contamination areas, and proximity to a WQARF site affects both financing and exit.</p>
+
+        <p>For the asset itself, the recurring issues are historical: former dry cleaners or gas stations on or adjacent to the parcel, asbestos-containing materials and lead-based paint in pre-1980 buildings, and underground storage tanks from prior uses. None is necessarily a deal-killer, but each is a repricing conversation you want to have before your earnest money is nonrefundable.</p>
+
+        <h2>What Service Contracts and Employment Issues Transfer with the Property?</h2>
+
+        <p>Inventory every service contract, determine which ones the buyer must assume, and terminate the rest effective at closing. The PSA should require the seller to deliver all contracts early in diligence and to terminate any contract the buyer rejects — but many vendor agreements require 30 or 60 days' notice, so the rejection deadline has to be sequenced against the closing date.</p>
+
+        <p>Look hard at laundry room leases, which often run five to ten years, purport to bind successors, and are memorialized in ways that survive closing; bulk internet and revenue-share telecom agreements can likewise encumber the property longer than the buyer expects.</p>
+
+        <p>On-site personnel do not transfer automatically — Arizona is an at-will employment state, and property staff are typically employed by the seller's management company, whose new counterpart rehires whom it wants. The quieter diligence issues: employee units at below-market rent, accrued obligations owed by the manager, and whether the management agreement is terminable at closing without a fee that becomes the buyer's problem.</p>
+
+        <h2>How Can AI Help with Multifamily Due Diligence?</h2>
+
+        <p>AI is most useful in diligence for high-volume document review: abstracting lease files, reconciling the rent roll against the deposit ledger, and screening service contracts for survival and assignment clauses. Used well, it changes the economics of the lease audit — abstracting every file now costs little more than sampling did, with counsel reviewing the exceptions the software flags rather than a random slice of the files.</p>
+
+        <p>A workflow we find effective: use AI to extract rent, term, options, concessions, and deposit amounts from each lease, then compare the output against the seller's rent roll and deposit ledger. The mismatches — not the matches — get attorney attention. The same approach screens laundry, telecom, and vendor agreements for successor clauses and termination notice periods, and summarizes recorded CC&amp;Rs and Schedule B exception documents so counsel starts with the provisions that actually restrict the asset.</p>
+
+        <p>Two cautions apply. AI output is a screen, not a conclusion — every flagged item, and every statute or lease provision the tool characterizes, should be verified by a person before it drives a pricing decision or a PSA notice. And lease files contain tenant personal and financial information, so run them only through tools with enterprise-grade confidentiality and data-use terms, never consumer chat products. AI compresses the review; it does not replace the judgment about what a finding is worth at the negotiating table.</p>
+
+        <h2>The Arizona Multifamily Due Diligence Checklist</h2>
+
+        <p>Work each category in parallel from day one of the diligence period. Items marked with statutes are Arizona-specific.</p>
+
+        <div class="callout">
+          <h4>Tenant and lease diligence</h4>
+          <ol>
+            <li>Lease audit against the rent roll (rents, terms, concessions, options, side letters) — every file on smaller assets; on larger ones a meaningful sample plus all non-standard tenancies, expanded if discrepancies surface</li>
+            <li>Trailing-12 collections and delinquency report reconciled to bank statements</li>
+            <li>Security deposit ledger reconciled unit by unit; cap compliance under A.R.S. § 33-1321(A); deposit credit confirmed on the settlement statement</li>
+            <li>Nonrefundable fees confirmed as designated in writing (A.R.S. § 33-1321(B))</li>
+            <li>Confirmation that no residential tenant is being charged city TPT on rent (repealed effective January 1, 2025)</li>
+            <li>Pending evictions, tenant disputes, and fair-housing complaints identified</li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <h4>Title and survey</h4>
+          <ol start="7">
+            <li>Title commitment reviewed; all Schedule B exceptions read, not skimmed</li>
+            <li>New ALTA/NSPS survey (2026 standards) certified to buyer, lender, and title company, with appropriate Table A items</li>
+            <li>CC&amp;Rs, easements, and use restrictions mapped against the site plan and business plan</li>
+            <li>Title objection letter delivered before the PSA deadline; cure obligations documented</li>
+            <li>Mechanics' lien exposure from recent capital work assessed; lien waivers collected</li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <h4>Zoning, permits, and code compliance</h4>
+          <ol start="12">
+            <li>Zoning verification letter from the city planning/development services department</li>
+            <li>Legal nonconforming status analyzed (rebuild rights after casualty)</li>
+            <li>Certificates of occupancy confirmed for all buildings; permit history compared to as-built conditions</li>
+            <li>Open code enforcement cases searched; unpermitted improvements identified</li>
+            <li>County assessor residential rental registration confirmed (A.R.S. § 33-1902)</li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <h4>Environmental</h4>
+          <ol start="17">
+            <li>Phase I ESA (ASTM E1527-21) ordered in week one; Phase II if recommended</li>
+            <li>WQARF registry and ADEQ databases checked for the site and surrounding area</li>
+            <li>Asbestos and lead-based paint surveys for pre-1980 construction</li>
+            <li>Underground storage tank and historical use review (dry cleaners, fueling, industrial neighbors)</li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <h4>Financial and physical</h4>
+          <ol start="21">
+            <li>Operating statements (3 years) and current-year budget analyzed against the rent roll</li>
+            <li>Real property tax history from the Maricopa County Assessor (or Pima/Pinal), including pending appeals and the reassessment effect of the sale</li>
+            <li>Utility bills reconciled; utility billing (RUBS) programs reviewed for compliance</li>
+            <li>Property condition assessment covering roofs, HVAC, plumbing (including polybutylene piping in 1980s–90s stock), and deferred maintenance</li>
+            <li>Insurance loss runs (5 years) obtained</li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <h4>Legal, contracts, and operations</h4>
+          <ol start="26">
+            <li>All service contracts inventoried; assumption or termination elected against notice periods</li>
+            <li>Laundry leases and bulk internet/telecom agreements reviewed for survival and successor clauses</li>
+            <li>Management agreement termination confirmed, without transfer fees</li>
+            <li>Litigation, judgment, and UCC searches on seller and property</li>
+            <li>Employee unit arrangements and staffing transition planned</li>
+          </ol>
+        </div>
+
+        <h2>The Mistakes We See Most Often</h2>
+
+        <p>The diligence findings that most often cause our buyer clients to reprice or terminate are, in order: rent rolls that do not survive contact with the lease files, security deposit ledgers that cannot be reconciled, and unpermitted improvements discovered in the permit history. Each is cheap to find and expensive to skip.</p>
+
+        <p>The pattern behind most blown closings is sequencing, not effort. Buyers order the Phase I in week three instead of week one, and the go-hard date arrives before the consultant's report. They read the title commitment but never order the survey that would show the exception sitting under a building. They pull a lease sample, find discrepancies, and move on without expanding the audit. The checklist above is deliberately front-loaded: everything with a third-party lead time — survey, Phase I, zoning letter, estoppel or rent-roll certification — gets ordered in the first week, so the findings arrive while you can still act on them.</p>
+
+        <p>The other recurring mistake is treating diligence as separate from the contract. Every finding has a contractual home: a closing credit, a price adjustment, a seller cure obligation, an escrow holdback, or a walk. A finding you cannot tie to a PSA remedy before earnest money goes hard is just information. If you are selling and want to see this process from the other side, see our article on <a href="/insights/selling-multifamily-property-arizona">selling a multifamily property in Arizona</a>.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How long should the due diligence period be?</h3>
+
+        <p>Thirty to 45 days is typical for Arizona multifamily deals, with 60 days negotiable for larger or more complicated assets. The practical driver is third-party lead time: a Phase I ESA and a new ALTA survey each take several weeks. If the seller resists a longer period, negotiate an extension right tied to a further deposit, or order third-party reports at LOI stage.</p>
+
+        <h3>What happens if the seller's rent roll is wrong?</h3>
+
+        <p>Your remedy depends on the purchase agreement. Buyers should negotiate a seller representation that the rent roll is true and correct, certified again at closing, with survival after closing and a meaningful basket and cap. If the discrepancy surfaces during diligence, it becomes a repricing conversation or a termination right; if it surfaces after closing, you are litigating a rep — which is why the certification and survival period matter.</p>
+
+        <h3>Do I need a new ALTA survey or can I rely on the seller's?</h3>
+
+        <p>Order a new one. A seller's survey is not certified to you or your lender, will not support the title company's survey-based endorsements, and predates any recent encroachments or easements. Surveys must now comply with the 2026 ALTA/NSPS Minimum Standard Detail Requirements, effective February 23, 2026, so older surveys are also out of date on the standards themselves.</p>
+
+        <h3>Who is liable for security deposit shortfalls after closing?</h3>
+
+        <p>The buyer. Under A.R.S. § 33-1321(H), the holder of the landlord's interest when a tenancy terminates is bound by the deposit obligations — and wrongful withholding carries damages of twice the amount withheld under § 33-1321(E). The buyer's protection is diligence: reconcile the deposit ledger before closing and take a full credit for the deposit liability on the settlement statement.</p>
+
+        <h3>Should I re-verify tenant information if closing slips?</h3>
+
+        <p>Yes. A rent roll certified 60 days ago tells you nothing about last month's delinquencies, new skips, or leases signed at concession-heavy rates to dress occupancy. If closing extends past the original date, require an updated certified rent roll and delinquency report as a closing condition, and bring the deposit reconciliation current through the new closing date.</p>
+
+        <h2>How Camelback Law Group Can Help</h2>
+
+        <p>We run multifamily due diligence for buyers across metro Phoenix and Tucson — lease and deposit audits, title and survey review, zoning verification, environmental risk allocation, and the PSA provisions that convert findings into credits, holdbacks, and cure obligations. Todd Hall has handled Arizona multifamily acquisitions and dispositions for more than 20 years, on both principal and counsel sides of the table. If you are under contract or heading there, call Camelback Law Group at (480) 203-3039 or <a href="/#contact">contact us</a> to put this checklist to work on your deal. Learn more about <a href="/insights/arizona-commercial-real-estate-attorney">what an Arizona commercial real estate attorney adds to an escrow-state closing</a>.</p>
+
+        <div class="article-cta">
+          <h3>Under Contract on an Arizona Apartment Deal?</h3>
+          <p>Our team runs lease and deposit audits, title and survey review, and environmental risk allocation — and converts every finding into a credit, holdback, or cure obligation before your earnest money goes hard.</p>
+          <a href="/#contact" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+
+        <p class="article-disclaimer"><em>This article is for general informational purposes only and does not constitute legal advice. Reading it does not create an attorney-client relationship. Outcomes depend on specific facts; consult an Arizona attorney about your situation.</em></p>
+
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <div class="sidebar-card">
+          <h4>In This Article</h4>
+          <ul>
+            <li><a href="#">Leases and rent roll</a></li>
+            <li><a href="#">Security deposits (§ 33-1321)</a></li>
+            <li><a href="#">Title and survey</a></li>
+            <li><a href="#">Zoning and permits</a></li>
+            <li><a href="#">Environmental</a></li>
+            <li><a href="#">The full checklist</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Related Articles</h4>
+          <ul>
+            <li><a href="/insights/due-diligence-mistakes-delay-closings">Due Diligence Mistakes That Delay Closings</a></li>
+            <li><a href="/insights/title-report-survey-issues">Understanding Title Reports and Survey Issues</a></li>
+            <li><a href="/insights/arizona-commercial-purchase-agreements">Key Issues in Arizona Commercial Purchase Agreements</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="/#services">Due Diligence & Title Review</a></li>
+            <li><a href="/#services">Commercial Transactions</a></li>
+            <li><a href="/#services">Purchase & Sale Agreements</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card sidebar-contact">
+          <h4>Questions?</h4>
+          <p>Speak with an experienced Arizona commercial real estate attorney.</p>
+          <a href="tel:4802033039" class="sidebar-phone">(480) 203-3039</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  /* Article Hero */
+  .article-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+  }
+
+  .article-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(26, 155, 165, 0.1) 0%, transparent 50%),
+      var(--color-charcoal-light);
+    z-index: 0;
+  }
+
+  .article-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    text-align: center;
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .article-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    background: rgba(26, 155, 165, 0.15);
+    border-radius: 4px;
+  }
+
+  .article-date,
+  .article-read-time {
+    font-size: 0.85rem;
+    color: var(--color-gray-400);
+  }
+
+  .article-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .article-subtitle {
+    font-size: 1.15rem;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+  }
+
+  /* Featured Image */
+  .article-image-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    margin-top: calc(-1 * var(--spacing-xl));
+    position: relative;
+    z-index: 2;
+  }
+
+  .article-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .article-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Article Content Layout */
+  .article-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-2xl);
+  }
+
+  /* Article Body */
+  .article-body {
+    color: var(--color-cream);
+  }
+
+  .article-byline {
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    color: var(--color-gray-400) !important;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-charcoal-lighter);
+    margin-bottom: var(--spacing-sm) !important;
+  }
+
+  .article-byline a {
+    color: var(--color-teal);
+    font-weight: 600;
+  }
+
+  .article-updated {
+    font-size: 0.85rem !important;
+    color: var(--color-gray-500) !important;
+    margin-bottom: var(--spacing-lg) !important;
+  }
+
+  .article-body .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .article-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-cream);
+  }
+
+  .article-body a {
+    color: var(--color-teal-light);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .article-body a:hover {
+    color: var(--color-teal);
+  }
+
+  .article-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-teal);
+  }
+
+  .article-body h3 {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-body h4 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-body ul,
+  .article-body ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+  }
+
+  .article-body li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-cream);
+  }
+
+  .article-body ul li {
+    list-style-type: disc;
+  }
+
+  .article-body ol li {
+    list-style-type: decimal;
+  }
+
+  .article-body li strong {
+    color: var(--color-white);
+  }
+
+  /* Callout Box */
+  .callout {
+    background: var(--color-charcoal-light);
+    border-left: 4px solid var(--color-teal);
+    border-radius: 0 8px 8px 0;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .callout.warning {
+    border-left-color: #d97706;
+  }
+
+  .callout h4 {
+    margin-top: 0;
+  }
+
+  .callout ol,
+  .callout ul {
+    margin-bottom: 0;
+  }
+
+  /* Highlight Box */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(26, 155, 165, 0.1) 0%, rgba(26, 155, 165, 0.05) 100%);
+    border: 1px solid rgba(26, 155, 165, 0.3);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .article-disclaimer {
+    font-size: 0.9rem !important;
+    color: var(--color-gray-500) !important;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-charcoal-lighter);
+  }
+
+  /* Article CTA */
+  .article-cta {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .article-cta h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .article-cta p {
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 150ms ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  /* Sidebar */
+  .article-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .sidebar-card {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+  }
+
+  .sidebar-card h4 {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-card li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .sidebar-card a {
+    font-size: 0.9rem;
+    color: var(--color-cream);
+    transition: color 150ms ease;
+  }
+
+  .sidebar-card a:hover {
+    color: var(--color-teal-light);
+  }
+
+  .sidebar-contact {
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-charcoal-light) 0%, var(--color-charcoal) 100%);
+  }
+
+  .sidebar-contact p {
+    font-size: 0.9rem;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-phone {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-teal) !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .article-content {
+      grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .sidebar-card {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .article-meta {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+
+    .article-sidebar {
+      flex-direction: column;
+    }
+
+    .sidebar-card {
+      min-width: 100%;
+    }
+  }
+</style>
