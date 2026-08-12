@@ -1,17 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Attorneys | Camelback Law Group";
-const description = "Meet the attorneys of Camelback Law Group — a boutique commercial real estate and environmental law firm in Phoenix, Arizona.";
+const title = "Our Team | Camelback Law Group";
+const description = "Meet the attorneys and staff of Camelback Law Group — a boutique commercial real estate and environmental law firm in Phoenix, Arizona.";
 
 const attorneys = [
-  {
-    name: "Todd Hall",
-    role: "Partner & Founder",
-    initials: "TH",
-    blurb: "Founding partner with 20+ years in Arizona commercial real estate — acquisitions, development, financing, leasing, and environmental matters.",
-    href: "/team/todd-hall"
-  }
+  { name: "Todd Hall", role: "Partner / Founder", photo: "/images/team/todd-hall-bg.jpg", href: "/team/todd-hall" },
+  { name: "James J. Hamula", role: "Partner", photo: "/images/team/james-hamula-bg.jpg", href: "/team/james-hamula" },
+  { name: "Blaine Rice", role: "Partner", photo: "/images/team/blaine-rice-bg.jpg", href: "/team/blaine-rice" },
+];
+
+const staff = [
+  { name: "Rachel Saxelby", role: "Paralegal", photo: "/images/team/rachel-saxelby-bg.jpg", href: "/team/rachel-saxelby" },
+  { name: "Melissa Vizcarra", role: "Paralegal", photo: "/images/team/melissa-vizcarra-bg.jpg", href: "/team/melissa-vizcarra" },
+  { name: "Kathy Vizcarra", role: "Legal Assistant", photo: "/images/team/kathy-vizcarra-bg.jpg", href: "/team/kathy-vizcarra" },
 ];
 ---
 
@@ -21,20 +23,40 @@ const attorneys = [
       <div class="team-hero-bg"></div>
       <div class="team-hero-container">
         <span class="team-eyebrow">Camelback Law Group</span>
-        <h1>Attorneys</h1>
+        <h1>Our Team</h1>
         <p>Senior counsel on every matter. Our attorneys bring principal-side experience to commercial real estate and environmental transactions across Arizona.</p>
       </div>
     </header>
 
     <div class="team-content">
+      <h2 class="team-section-title">Attorneys</h2>
       <div class="team-grid">
         {attorneys.map((a) => (
-          <a class="attorney-card" href={a.href}>
-            <div class="attorney-avatar" aria-hidden="true">{a.initials}</div>
-            <h2>{a.name}</h2>
-            <p class="attorney-role">{a.role}</p>
-            <p class="attorney-blurb">{a.blurb}</p>
-            <span class="attorney-link">View Profile →</span>
+          <a class="member-card" href={a.href}>
+            <div class="member-photo">
+              <img src={a.photo} alt={a.name} loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h3>{a.name}</h3>
+              <p class="member-role">{a.role}</p>
+              <span class="member-link">View Profile →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <h2 class="team-section-title">Paralegals &amp; Staff</h2>
+      <div class="team-grid">
+        {staff.map((a) => (
+          <a class="member-card" href={a.href}>
+            <div class="member-photo">
+              <img src={a.photo} alt={a.name} loading="lazy" />
+            </div>
+            <div class="member-info">
+              <h3>{a.name}</h3>
+              <p class="member-role">{a.role}</p>
+              <span class="member-link">View Profile →</span>
+            </div>
           </a>
         ))}
       </div>
@@ -96,68 +118,71 @@ const attorneys = [
     padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-3xl);
   }
 
+  .team-section-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-teal);
+  }
+
   .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
   }
 
-  .attorney-card {
+  .member-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     background: var(--color-charcoal-light);
     border: 1px solid var(--color-charcoal-lighter);
     border-radius: 10px;
-    padding: var(--spacing-lg);
+    overflow: hidden;
     transition: border-color var(--transition-base), transform var(--transition-base);
     color: var(--color-cream);
   }
 
-  .attorney-card:hover {
+  .member-card:hover {
     border-color: var(--color-teal);
     transform: translateY(-4px);
     color: var(--color-cream);
   }
 
-  .attorney-avatar {
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 1.9rem;
-    font-weight: 600;
-    color: var(--color-white);
-    background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%);
-    margin-bottom: var(--spacing-md);
+  .member-photo {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--color-charcoal);
   }
 
-  .attorney-card h2 {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    color: var(--color-white);
-    margin-bottom: 0.15rem;
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
   }
 
-  .attorney-role {
+  .member-info {
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+  }
+
+  .member-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--color-white);
+    margin-bottom: 0.1rem;
+  }
+
+  .member-role {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-teal-sky);
     margin-bottom: var(--spacing-sm);
   }
 
-  .attorney-blurb {
-    font-size: 0.95rem;
-    color: var(--color-gray-400);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-md);
-    flex-grow: 1;
-  }
-
-  .attorney-link {
+  .member-link {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-teal);
