@@ -1,0 +1,342 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Todd Hall | Partner & Founder | Camelback Law Group";
+const description = "Todd Hall is the founding partner of Camelback Law Group — a Phoenix commercial real estate and environmental attorney with more than 20 years of experience.";
+
+const attorney = {
+  name: "Todd Hall",
+  role: "Partner & Founder",
+  initials: "TH",
+  email: "info@clglawaz.com",
+  phone: "(480) 203-3039"
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Attorney",
+  "name": "Todd Hall",
+  "jobTitle": "Partner & Founder",
+  "worksFor": {
+    "@type": "LegalService",
+    "name": "Camelback Law Group",
+    "url": "https://clglawaz.com",
+    "telephone": "(480) 203-3039",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2720 E. Camelback Rd.",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "postalCode": "85016",
+      "addressCountry": "US"
+    }
+  },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Vanderbilt University Law School" },
+    { "@type": "CollegeOrUniversity", "name": "University of Kentucky" }
+  ],
+  "knowsAbout": [
+    "Commercial Real Estate Law",
+    "Real Estate Transactions",
+    "Real Estate Finance",
+    "Commercial Leasing",
+    "Land Development",
+    "Environmental Law"
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+
+  <article class="profile">
+    <header class="profile-hero">
+      <div class="profile-hero-bg"></div>
+      <div class="profile-hero-container">
+        <a href="/team" class="profile-back">← Attorneys</a>
+        <div class="profile-avatar" aria-hidden="true">{attorney.initials}</div>
+        <h1>{attorney.name}</h1>
+        <p class="profile-role">{attorney.role} · Camelback Law Group</p>
+        <div class="profile-hero-ctas">
+          <a href={`tel:${attorney.phone.replace(/[^0-9]/g, '')}`} class="btn btn-primary">Call {attorney.phone}</a>
+          <a href="/#contact" class="btn btn-secondary">Schedule a Consultation</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="profile-content">
+      <div class="profile-body">
+        <p class="lead">Todd Hall is the founding partner of Camelback Law Group. For more than 20 years he has represented developers, investors, lenders, homebuilders, and multifamily operators in commercial real estate transactions across Arizona and the United States — acquisitions and dispositions, development, complex financing, leasing, and the environmental issues that run alongside them.</p>
+
+        <p>Todd built the firm around how deals actually run: senior-level attention on every matter, practical judgment over reflexive over-lawyering, and momentum toward closing. Having sat on the client side of the table as in-house counsel, he brings an owner's perspective to risk allocation and execution.</p>
+
+        <h2>Practice Focus</h2>
+        <ul>
+          <li>Acquisitions and dispositions of office, retail, industrial, multifamily, and mixed-use assets</li>
+          <li>Land development, entitlements, and joint development agreements</li>
+          <li>Complex real estate financing and sale-leaseback transactions</li>
+          <li>Commercial leasing for landlords and tenants</li>
+          <li>Distressed asset acquisition and disposition</li>
+          <li>Environmental risk, diligence, and contamination-related deal structuring</li>
+        </ul>
+
+        <h2>Experience</h2>
+        <p>Before founding Camelback Law Group, Todd practiced at Fennemore Craig, P.C. in Phoenix and served as in-house counsel to a national homebuilder and developer and to an international master-planned community developer. His clients include mixed-use developers, private equity firms, multifamily operators, and national restaurant companies.</p>
+
+        <h2>Education &amp; Admissions</h2>
+        <ul>
+          <li>J.D., Vanderbilt University Law School (2003)</li>
+          <li>B.A., University of Kentucky (2000)</li>
+          <li>Admitted to the State Bar of Arizona</li>
+        </ul>
+
+        <h2>Recognition &amp; Affiliations</h2>
+        <ul>
+          <li>Best Lawyers in America® 2026 — Corporate Law and Real Estate Law</li>
+          <li>Member, State Bar of Arizona</li>
+          <li>Member, Urban Land Institute</li>
+          <li>Member, Valley Partnership and Pinal Partnership</li>
+          <li>Former member, Planning Commission and Parks, Recreation &amp; Library Services Advisory Board, Town of Gilbert</li>
+        </ul>
+      </div>
+
+      <aside class="profile-sidebar">
+        <div class="sidebar-card">
+          <h4>Contact Todd</h4>
+          <p><a href={`tel:${attorney.phone.replace(/[^0-9]/g, '')}`}>{attorney.phone}</a></p>
+          <p><a href={`mailto:${attorney.email}`}>{attorney.email}</a></p>
+          <p>2720 E. Camelback Rd.<br>Phoenix, AZ 85016</p>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="/#services">Commercial Real Estate Transactions</a></li>
+            <li><a href="/#services">Purchase &amp; Sale Agreements</a></li>
+            <li><a href="/#services">Environmental &amp; Contamination Risk</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>Insights by Todd</h4>
+          <ul>
+            <li><a href="/insights/buying-apartment-complex-arizona">Buying an Apartment Complex in Arizona</a></li>
+            <li><a href="/insights/arizona-multifamily-due-diligence-checklist">Multifamily Due Diligence Checklist</a></li>
+            <li><a href="/insights/arizona-commercial-real-estate-attorney">Do You Need an Arizona CRE Attorney?</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .profile-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+    text-align: center;
+  }
+
+  .profile-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(26, 155, 165, 0.14) 0%, transparent 55%),
+      var(--color-charcoal-light);
+    z-index: 0;
+  }
+
+  .profile-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .profile-back {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .profile-avatar {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto var(--spacing-md);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%);
+    border: 3px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .profile-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .profile-role {
+    font-size: 1.05rem;
+    color: var(--color-teal-sky);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .profile-hero-ctas {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .profile-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-2xl);
+  }
+
+  .profile-body {
+    color: var(--color-cream);
+  }
+
+  .profile-body .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-cream);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .profile-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-cream);
+  }
+
+  .profile-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--color-white);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-teal);
+  }
+
+  .profile-body ul {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+  }
+
+  .profile-body li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-cream);
+    list-style-type: disc;
+  }
+
+  .profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .sidebar-card {
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+  }
+
+  .sidebar-card h4 {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .sidebar-card p {
+    font-size: 0.95rem;
+    color: var(--color-cream);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .sidebar-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-card li {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .sidebar-card a {
+    font-size: 0.95rem;
+    color: var(--color-teal-sky);
+  }
+
+  .sidebar-card a:hover {
+    color: var(--color-teal-light);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 150ms ease;
+  }
+
+  .btn-primary {
+    color: var(--color-white);
+    background: var(--color-teal);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-teal-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    color: var(--color-cream);
+    background: transparent;
+    border: 1px solid var(--color-charcoal-lighter);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-teal);
+    color: var(--color-white);
+  }
+
+  @media (max-width: 900px) {
+    .profile-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

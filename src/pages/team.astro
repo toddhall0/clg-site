@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Attorneys | Camelback Law Group";
+const description = "Meet the attorneys of Camelback Law Group — a boutique commercial real estate and environmental law firm in Phoenix, Arizona.";
+
+const attorneys = [
+  {
+    name: "Todd Hall",
+    role: "Partner & Founder",
+    initials: "TH",
+    blurb: "Founding partner with 20+ years in Arizona commercial real estate — acquisitions, development, financing, leasing, and environmental matters.",
+    href: "/team/todd-hall"
+  }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="team">
+    <header class="team-hero">
+      <div class="team-hero-bg"></div>
+      <div class="team-hero-container">
+        <span class="team-eyebrow">Camelback Law Group</span>
+        <h1>Attorneys</h1>
+        <p>Senior counsel on every matter. Our attorneys bring principal-side experience to commercial real estate and environmental transactions across Arizona.</p>
+      </div>
+    </header>
+
+    <div class="team-content">
+      <div class="team-grid">
+        {attorneys.map((a) => (
+          <a class="attorney-card" href={a.href}>
+            <div class="attorney-avatar" aria-hidden="true">{a.initials}</div>
+            <h2>{a.name}</h2>
+            <p class="attorney-role">{a.role}</p>
+            <p class="attorney-blurb">{a.blurb}</p>
+            <span class="attorney-link">View Profile →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .team-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+    background: var(--color-charcoal-light);
+    text-align: center;
+  }
+
+  .team-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(26, 155, 165, 0.12) 0%, transparent 55%),
+      var(--color-charcoal-light);
+    z-index: 0;
+  }
+
+  .team-hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .team-eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-teal);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .team-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .team-hero-container p {
+    font-size: 1.1rem;
+    color: var(--color-gray-400);
+    line-height: 1.7;
+  }
+
+  .team-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-3xl);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .attorney-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--color-charcoal-light);
+    border: 1px solid var(--color-charcoal-lighter);
+    border-radius: 10px;
+    padding: var(--spacing-lg);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+    color: var(--color-cream);
+  }
+
+  .attorney-card:hover {
+    border-color: var(--color-teal);
+    transform: translateY(-4px);
+    color: var(--color-cream);
+  }
+
+  .attorney-avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .attorney-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: var(--color-white);
+    margin-bottom: 0.15rem;
+  }
+
+  .attorney-role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-teal-sky);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .attorney-blurb {
+    font-size: 0.95rem;
+    color: var(--color-gray-400);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+  }
+
+  .attorney-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-teal);
+  }
+
+  @media (max-width: 900px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
